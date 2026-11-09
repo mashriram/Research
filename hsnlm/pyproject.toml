@@ -1,0 +1,11 @@
+[project]
+name = "hsnlm"
+version = "0.1.0"
+description = "Householder Sheaf Network LM: O(N) training, O(1)-state inference, optional backprop-free local learning"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.1", "numpy"]
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+[tool.setuptools]
+packages = ["hsnlm"]

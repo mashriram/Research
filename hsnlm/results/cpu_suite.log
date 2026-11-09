@@ -1,0 +1,86 @@
+19:19:01 gpt lr 0.001 seed 100 (50, 4.6246, 16)
+19:19:17 gpt lr 0.001 seed 100 (100, 4.0126, 32)
+19:19:33 gpt lr 0.001 seed 100 (150, 3.8237, 48)
+19:19:48 gpt lr 0.001 seed 100 (200, 3.5929, 63)
+19:20:06 gpt lr 0.002 seed 100 (50, 4.3185, 17)
+19:20:22 gpt lr 0.002 seed 100 (100, 3.7888, 33)
+19:20:38 gpt lr 0.002 seed 100 (150, 3.5787, 49)
+19:20:53 gpt lr 0.002 seed 100 (200, 3.3401, 64)
+19:21:10 gpt lr 0.004 seed 100 (50, 4.1935, 16)
+19:21:26 gpt lr 0.004 seed 100 (100, 3.6538, 32)
+19:21:42 gpt lr 0.004 seed 100 (150, 3.4266, 48)
+19:21:57 gpt lr 0.004 seed 100 (200, 3.1689, 63)
+19:22:32 sheaf-delta lr 0.001 seed 100 (50, 4.5634, 34)
+19:23:06 sheaf-delta lr 0.001 seed 100 (100, 3.731, 67)
+19:23:40 sheaf-delta lr 0.001 seed 100 (150, 3.4569, 102)
+19:24:16 sheaf-delta lr 0.001 seed 100 (200, 3.168, 138)
+19:24:52 sheaf-delta lr 0.002 seed 100 (50, 4.1716, 34)
+19:25:26 sheaf-delta lr 0.002 seed 100 (100, 3.4425, 68)
+19:26:00 sheaf-delta lr 0.002 seed 100 (150, 3.1189, 102)
+19:26:34 sheaf-delta lr 0.002 seed 100 (200, 2.8755, 136)
+19:27:10 sheaf-delta lr 0.004 seed 100 (50, 4.083, 34)
+19:27:44 sheaf-delta lr 0.004 seed 100 (100, 3.3091, 68)
+19:28:19 sheaf-delta lr 0.004 seed 100 (150, 2.9674, 103)
+19:28:54 sheaf-delta lr 0.004 seed 100 (200, 2.7478, 137)
+19:29:26 hybrid lr 0.001 seed 100 (50, 4.5608, 30)
+19:29:55 hybrid lr 0.001 seed 100 (100, 3.7106, 59)
+19:30:26 hybrid lr 0.001 seed 100 (150, 3.4248, 90)
+19:30:55 hybrid lr 0.001 seed 100 (200, 3.1527, 119)
+19:31:27 hybrid lr 0.002 seed 100 (50, 4.2116, 30)
+19:31:58 hybrid lr 0.002 seed 100 (100, 3.456, 61)
+19:32:28 hybrid lr 0.002 seed 100 (150, 3.1617, 91)
+19:32:59 hybrid lr 0.002 seed 100 (200, 2.9109, 121)
+19:33:33 hybrid lr 0.004 seed 100 (50, 4.0272, 33)
+19:34:03 hybrid lr 0.004 seed 100 (100, 3.3143, 62)
+19:34:33 hybrid lr 0.004 seed 100 (150, 2.9769, 92)
+19:35:03 hybrid lr 0.004 seed 100 (200, 2.7314, 122)
+19:35:05 best lr {'gpt': 0.004, 'sheaf-delta': 0.004, 'hybrid': 0.004}
+19:38:37 gpt lr 0.004 seed 0 (625, 2.4874, 212)
+19:42:00 gpt lr 0.004 seed 0 (1250, 2.2609, 415)
+19:45:22 gpt lr 0.004 seed 0 (1875, 1.9936, 618)
+19:48:45 gpt lr 0.004 seed 0 (2500, 1.9138, 820)
+19:49:07 DONE lm|gpt|seed0 {'params': 820352, 'steps': 2500, 'train_s': 820.2965452671051, 'tok_s': 12483.29041379255, 'val_bpb': 1.9567116390571158, 'val_bpb_len512': 2.4072905876410244, 'val_bpb_len1024': 3.368949745607916, 'val_bpb_len2048': 4.157485964741117}
+19:56:21 sheaf-delta lr 0.004 seed 0 (625, 2.288, 434)
+20:03:10 sheaf-delta lr 0.004 seed 0 (1250, 2.1174, 843)
+20:09:53 sheaf-delta lr 0.004 seed 0 (1875, 1.9118, 1246)
+20:16:24 sheaf-delta lr 0.004 seed 0 (2500, 1.7861, 1637)
+20:16:48 DONE lm|sheaf-delta|seed0 {'params': 826736, 'steps': 2500, 'train_s': 1636.8444819450378, 'tok_s': 6255.939469479691, 'val_bpb': 1.8888496282902694, 'val_bpb_len512': 1.849289410391335, 'val_bpb_len1024': 1.8882675637573398, 'val_bpb_len2048': 1.8819619166036963}
+20:23:30 hybrid lr 0.004 seed 0 (625, 2.321, 402)
+20:29:29 hybrid lr 0.004 seed 0 (1250, 2.1383, 761)
+20:35:36 hybrid lr 0.004 seed 0 (1875, 1.924, 1128)
+20:41:38 hybrid lr 0.004 seed 0 (2500, 1.8205, 1490)
+20:42:00 DONE lm|hybrid|seed0 {'params': 837812, 'steps': 2500, 'train_s': 1489.7789254188538, 'tok_s': 6873.5030582614845, 'val_bpb': 1.8865814243504495, 'val_bpb_len512': 1.8568701852885963, 'val_bpb_len1024': 1.9235515029105223, 'val_bpb_len2048': 1.935812844770051}
+20:42:00 STAGE lm seed0 done
+20:42:43 DONE mqar|gpt|pairs4 {'acc': 0.46240234375, 'train_s': 43.29889392852783}
+20:44:30 DONE mqar|sheaf-delta|pairs4 {'acc': 0.5322265625, 'train_s': 106.80420017242432}
+20:45:43 DONE mqar|hybrid|pairs4 {'acc': 0.501953125, 'train_s': 72.87494373321533}
+20:46:44 DONE mqar|gpt|pairs8 {'acc': 0.2216796875, 'train_s': 60.49589228630066}
+20:49:11 DONE mqar|sheaf-delta|pairs8 {'acc': 0.330322265625, 'train_s': 147.55144238471985}
+20:50:54 DONE mqar|hybrid|pairs8 {'acc': 0.34375, 'train_s': 102.64738202095032}
+20:52:22 DONE mqar|gpt|pairs16 {'acc': 0.1085205078125, 'train_s': 88.68232250213623}
+20:56:09 DONE mqar|sheaf-delta|pairs16 {'acc': 0.1700439453125, 'train_s': 226.78119659423828}
+20:58:45 DONE mqar|hybrid|pairs16 {'acc': 0.23779296875, 'train_s': 156.28701639175415}
+21:00:22 DONE parity|gpt {'acc_len32': 0.5655517578125, 'acc_len64': 0.531005859375, 'acc_len128': 0.5135498046875, 'train_s': 96.6608726978302}
+21:04:04 DONE parity|sheaf-delta {'acc_len32': 1.0, 'acc_len64': 0.99932861328125, 'acc_len128': 0.964691162109375, 'train_s': 221.43283653259277}
+21:06:30 DONE parity|hybrid {'acc_len32': 1.0, 'acc_len64': 1.0, 'acc_len128': 0.9971923828125, 'train_s': 146.6864972114563}
+21:06:30 STAGE synthetic done
+21:09:34 gpt lr 0.004 seed 1 (625, 2.4938, 183)
+21:12:36 gpt lr 0.004 seed 1 (1250, 2.3701, 365)
+21:15:38 gpt lr 0.004 seed 1 (1875, 2.1296, 547)
+21:18:37 gpt lr 0.004 seed 1 (2500, 2.2162, 726)
+21:18:53 DONE lm|gpt|seed1 {'params': 820352, 'steps': 2500, 'train_s': 726.3782911300659, 'tok_s': 14097.337606371852, 'val_bpb': 1.9664590890111515, 'val_bpb_len512': 2.5956109239030276, 'val_bpb_len1024': 3.5960150428847277, 'val_bpb_len2048': 4.265567558766931}
+21:26:58 sheaf-delta lr 0.004 seed 1 (625, 2.2933, 485)
+21:33:06 best lr {'gpt': 0.004, 'sheaf-delta': 0.004, 'hybrid': 0.004}
+21:33:06 STAGE lm seed0 done
+21:33:06 STAGE synthetic done
+21:39:30 sheaf-delta lr 0.004 seed 1 (625, 2.2933, 383)
+21:45:46 sheaf-delta lr 0.004 seed 1 (1250, 2.2699, 758)
+21:52:02 sheaf-delta lr 0.004 seed 1 (1875, 2.002, 1134)
+21:58:17 sheaf-delta lr 0.004 seed 1 (2500, 2.0907, 1509)
+21:58:41 DONE lm|sheaf-delta|seed1 {'params': 826736, 'steps': 2500, 'train_s': 1509.0922544002533, 'tok_s': 6785.536119572493, 'val_bpb': 1.870166035039812, 'val_bpb_len512': 1.8408078494878908, 'val_bpb_len1024': 1.8837803214180158, 'val_bpb_len2048': 1.8751796087842705}
+22:04:20 hybrid lr 0.004 seed 1 (625, 2.2891, 339)
+22:09:37 hybrid lr 0.004 seed 1 (1250, 2.3018, 655)
+22:14:52 hybrid lr 0.004 seed 1 (1875, 2.0141, 971)
+22:20:29 hybrid lr 0.004 seed 1 (2500, 2.1249, 1308)
+22:20:51 DONE lm|hybrid|seed1 {'params': 837812, 'steps': 2500, 'train_s': 1308.411442041397, 'tok_s': 7826.284355954153, 'val_bpb': 1.8924248681298996, 'val_bpb_len512': 1.8684437094082884, 'val_bpb_len1024': 1.936992914477862, 'val_bpb_len2048': 1.949302153505656}
+22:20:51 STAGE lm seed1 done  ALL DONE
