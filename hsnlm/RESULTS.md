@@ -1,5 +1,7 @@
 # hsnlm – first benchmark (CPU, 8 cores, tiny-shakespeare char-level, ~0.81M params, 800 steps x 32 x 128 tok, 1 seed)
 
+> **In plain English:** this is the raw output of the very first, smallest experiment ever run in this project — a quick sanity check, on a laptop CPU, with a tiny amount of text (Shakespeare) and a tiny model, done before investing any real time or GPU budget. It's kept here as a historical record of where the idea started. The numbers that actually matter for judging whether this architecture (now named DEEPA, see `ARCHITECTURE.md`) is any good are in `findings_report_gpu.md` and `TRAINING_ADVANTAGE.md` — this file predates all of the careful double-checking described there.
+
 | model | train rule | val bits/char (lower=better) | train tok/s | gen tok/s (B=16) |
 |---|---|---|---|---|
 | GPT (pre-LN Transformer) | backprop | 2.592 | 11.7k | 3.1k |

@@ -1,0 +1,27 @@
+23:37:44 gpt-yarn-fixed lr 0.002 150 3.1427 37.5
+23:38:21 gpt-yarn-fixed lr 0.002 300 2.8286 74.7
+23:38:58 gpt-yarn-fixed lr 0.002 450 2.4047 112.1
+23:39:36 gpt-yarn-fixed lr 0.002 600 2.434 149.4
+23:40:13 gpt-yarn-fixed lr 0.002 750 2.2771 186.7
+23:40:50 gpt-yarn-fixed lr 0.002 900 2.0154 224.1
+23:41:39 gpt-yarn-fixed lr 0.002 1050 1.9259 273.1
+23:42:36 gpt-yarn-fixed lr 0.002 1200 1.8839 330.3
+23:43:34 gpt-yarn-fixed lr 0.002 1350 1.9184 387.9
+23:44:31 gpt-yarn-fixed lr 0.002 1500 1.8753 444.5
+23:44:35 DONE {'params': 14260608, 'steps': 1500, 'train_s': 444.4588530063629, 'val_bpb_nwin64': 1.424487001165973, 'val_bpb_nwin32_oldbuggy': 1.1805318896872028, 'plain_len2048': 2.584348768998265, 'yarn_len2048': 1.429524996446854, 'plain_len4096': 3.8386947310246993, 'yarn_len4096': 1.5216676898451624}
+23:44:35 ALL DONE
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+256 {'step_ms': 5.247, 'kv_cache_mb': 4.194, 'sheafdelta_state_mb': 1.966}
+1024 {'step_ms': 5.963, 'kv_cache_mb': 16.777, 'sheafdelta_state_mb': 1.966}
+4096 {'step_ms': 7.275, 'kv_cache_mb': 67.109, 'sheafdelta_state_mb': 1.966}
+16384 {'step_ms': 13.64, 'kv_cache_mb': 268.435, 'sheafdelta_state_mb': 1.966}
+65536 {'step_ms': 41.673, 'kv_cache_mb': 1073.742, 'sheafdelta_state_mb': 1.966}
+ALL DONE
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+23:46:09 yarn-hybrid lr 0.002 150 2.4342 81.8
+23:47:11 yarn-hybrid lr 0.002 300 2.3454 144.1
+23:48:13 yarn-hybrid lr 0.002 450 2.0452 206.3
+23:49:15 yarn-hybrid lr 0.002 600 2.1355 268.5
+23:50:18 yarn-hybrid lr 0.002 750 1.979 330.9
+23:51:20 yarn-hybrid lr 0.002 900 1.7819 393.7
+23:52:23 yarn-hybrid lr 0.002 1050 1.732 456.2

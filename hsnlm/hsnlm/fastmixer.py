@@ -61,12 +61,13 @@ class SheafDeltaMixer(nn.Module):
     def dyadic(s, v, g):  # v [B,T,D], g [B,T,K,H] -> sum_k g_k * shift_k(H_k v)   (H_k isometric)
         B, T, D = v.shape; V, G = s._VG()
         c = hh_coef(torch.einsum("btd,kmd->btkm", v, V), G)                      # [B,T,K,M]
-        off = torch.tensor(s.offsets, device=v.device)[:, None]; idx = torch.arange(T, device=v.device)[None] - off  # [K,T]
-        ok = (idx >= 0).to(v.dtype); idx = idx.clamp(min=0)
-        vs = (v[:, idx] * ok[None, :, :, None]).view(B, s.K, T, s.H, s.dh)          # one gather for all K edges
-        cs = c.permute(0, 2, 1, 3).gather(2, idx[None, :, :, None].expand(B, s.K, T, s.M)) * ok[None, :, :, None]
-        p1 = torch.einsum("btkh,bkthd->bthd", g, vs)
-        p2 = torch.einsum("btkh,bktm,kmhd->bthd", g, cs, V.view(s.K, s.M, s.H, s.dh))
+        vh = v.view(B, T, s.H, s.dh); p1 = torch.zeros_like(vh)
+        gc = c.new_zeros(B, T, s.K, s.H, s.M)
+        for k, d in enumerate(s.offsets):
+            if d < T:
+                p1[:, d:] = p1[:, d:] + g[:, d:, k, :, None] * vh[:, :T - d]
+                gc[:, d:, k] = g[:, d:, k, :, None] * c[:, :T - d, k, None, :]
+        p2 = torch.einsum("btkhm,kmhd->bthd", gc, V.view(s.K, s.M, s.H, s.dh))
         return ((p1 - 2 * p2) / s.K ** 0.5).reshape(B, T, D)
     def forward(s, x):
         B, T, D = x.shape; q, k, v, b, a = s._proj(x)
@@ -78,12 +79,11 @@ class SheafDeltaMixer(nn.Module):
         q, k, v, b, a = s._proj(x)
         S = a[..., None, None] * (S + b[..., None, None] * (v - torch.einsum("bhvk,bhk->bhv", S, k))[..., None] * k[..., None, :])
         o = torch.einsum("bhvk,bhk->bhv", S, q); vf = v.reshape(B, s.D); V, G = s._VG()
-        cur = torch.stack([vf] + [buf[:, d - 2] for d in s.offsets[1:]], 0) if False else None
-        g = torch.sigmoid(s.edge(x)).view(B, s.K, s.H); acc = 0
-        for i, d in enumerate(s.offsets):
-            u = vf if d == 0 else buf[:, d - 1]          # v_{t-d}; buf[:,j] = v_{t-1-j}
-            c = hh_coef(torch.einsum("bd,kmd->bkm", u, V), G)[:, i]   # [B,M]
-            tr = (u - 2 * c @ V[i]).view(B, s.H, s.dh); acc = acc + g[:, i, :, None] * tr
+        g = torch.sigmoid(s.edge(x)).view(B, s.K, s.H)
+        u = buf[:, [d - 1 for d in s.offsets]]                                       # [B,K,D]
+        c = hh_coef(torch.einsum("bkd,kmd->bkm", u, V), G)                           # [B,K,M]
+        tr = (u - 2 * torch.einsum("bkm,kmd->bkd", c, V)).view(B, s.K, s.H, s.dh)
+        acc = (g[..., None] * tr).sum(1)
         buf = torch.cat([vf[:, None], buf[:, :-1]], 1)
         y = s.onorm(o).reshape(B, s.D) + (acc / s.K ** 0.5).reshape(B, s.D)
         return s.out(y * F.silu(s.g(x))), (S, buf)

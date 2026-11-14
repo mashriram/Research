@@ -146,6 +146,8 @@ class DeltaMixer(nn.Module):
 def make_mixer(c):
     if c.mixer == "sheaf": return SheafMixer(c)
     if c.mixer == "delta": return DeltaMixer(c)
+    if c.mixer == "sheafdelta-fused":
+        from .fastmixer_fused import FusedSheafDeltaMixer; return FusedSheafDeltaMixer(c)
     from .fastmixer import SheafDeltaMixer; return SheafDeltaMixer(c)
 
 class HBlock(nn.Module):

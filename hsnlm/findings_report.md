@@ -3,6 +3,8 @@
 **Date:** 2026-11-09  **Scope:** everything done on CPU before the first GPU run
 **One-line verdict:** At ~0.8M parameters, a Householder/delta-rule "sheaf" sequence mixer beats a matched Transformer on quality (~4%), length extrapolation, associative recall and state tracking, and decodes with constant cost and memory. It currently trains about 2x *slower* on CPU (eager PyTorch, no fused kernels), no backprop replacement we tried saves compute, and nothing here yet predicts behaviour at 100M+ parameters.
 
+> **In plain English:** this is the very first, smallest-scale test of the idea that eventually became "DEEPA" (see `ARCHITECTURE.md`) — done entirely on an ordinary CPU, before any GPU time was spent. At this tiny size, the new design already wrote better text, handled longer text, and could solve a couple of toy logic puzzles an ordinary Transformer of the same size couldn't — but it ran slower in this early, unoptimized form, and a result this small (less than a million adjustable numbers, the kind of "size" where almost any new idea looks good) is not yet proof the idea holds up at real scale. The later GPU-phase report (`findings_report_gpu.md`) is where that question actually gets tested, at 14x the size, with much more scrutiny.
+
 ---
 
 ## 1. Executive summary

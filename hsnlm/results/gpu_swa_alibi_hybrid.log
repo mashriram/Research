@@ -1,0 +1,30 @@
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+22:53:04 decode_o1 ctx 256 {'step_ms': 5.343, 'state_mb': 3.08}
+22:53:04 decode_o1 ctx 1024 {'step_ms': 5.391, 'state_mb': 5.177}
+22:53:04 decode_o1 ctx 4096 {'step_ms': 5.485, 'state_mb': 5.177}
+22:53:04 decode_o1 ctx 16384 {'step_ms': 5.75, 'state_mb': 5.177}
+22:53:05 decode_o1 ctx 65536 {'step_ms': 5.617, 'state_mb': 5.177}
+W1114 22:53:10.695000 306971 torch/_inductor/utils.py:1137] [0/0] Not enough SMs to use max_autotune_gemm mode
+22:54:39 swa512-alibi-hybrid lr 0.002 (150, 2.4468, 61.3)
+22:55:41 swa512-alibi-hybrid lr 0.002 (300, 2.3303, 123.2)
+22:56:43 swa512-alibi-hybrid lr 0.002 (450, 2.065, 185.1)
+22:57:45 swa512-alibi-hybrid lr 0.002 (600, 2.1548, 247.1)
+22:58:47 swa512-alibi-hybrid lr 0.002 (750, 1.992, 309.3)
+22:59:50 swa512-alibi-hybrid lr 0.002 (900, 1.767, 371.5)
+23:00:52 swa512-alibi-hybrid lr 0.002 (1050, 1.7262, 433.8)
+23:01:55 swa512-alibi-hybrid lr 0.002 (1200, 1.6929, 496.6)
+23:02:58 swa512-alibi-hybrid lr 0.002 (1350, 1.707, 559.6)
+23:04:01 swa512-alibi-hybrid lr 0.002 (1500, 1.6973, 622.6)
+23:04:14 DONE lm_swa512 {'window': 512, 'compiled': True, 'params': 14468592, 'steps': 1500, 'train_s': 622.5839900970459, 'tok_s': 39474.19206229378, 'peak_mem_mb': 4114.84928, 'val_bpb': 0.9620922532774272, 'val_bpb_len2048': 1.1594311877680255, 'val_bpb_len2048_evalw1024': 1.1593801519163818, 'val_bpb_len4096': 1.2341516731707982, 'val_bpb_len4096_evalw1024': 1.2341852527833792}
+23:05:17 swa1024-alibi-hybrid lr 0.002 (150, 2.4508, 62.4)
+23:06:20 swa1024-alibi-hybrid lr 0.002 (300, 2.3368, 124.9)
+23:07:22 swa1024-alibi-hybrid lr 0.002 (450, 2.0549, 187.5)
+23:08:25 swa1024-alibi-hybrid lr 0.002 (600, 2.1495, 250.0)
+23:09:27 swa1024-alibi-hybrid lr 0.002 (750, 1.9765, 312.6)
+23:10:30 swa1024-alibi-hybrid lr 0.002 (900, 1.7677, 375.2)
+23:11:33 swa1024-alibi-hybrid lr 0.002 (1050, 1.7248, 438.1)
+23:12:36 swa1024-alibi-hybrid lr 0.002 (1200, 1.6927, 501.3)
+23:13:39 swa1024-alibi-hybrid lr 0.002 (1350, 1.7078, 564.5)
+23:14:42 swa1024-alibi-hybrid lr 0.002 (1500, 1.6993, 627.7)
+23:14:48 DONE lm_swa1024 {'window': 1024, 'compiled': True, 'params': 14468592, 'steps': 1500, 'train_s': 627.6643433570862, 'tok_s': 39154.685557816374, 'peak_mem_mb': 4156.507136, 'val_bpb': 0.9565205313374248, 'val_bpb_len2048': 1.1589406717499333, 'val_bpb_len2048_evalw512': 1.1589785079331232, 'val_bpb_len2048_evalw_inf': 1.1589406717499333, 'val_bpb_len4096': 1.2352509432794505, 'val_bpb_len4096_evalw512': 1.2352663572245342, 'val_bpb_len4096_evalw_inf': 1.2352509432794505}
+23:14:48 ALL DONE

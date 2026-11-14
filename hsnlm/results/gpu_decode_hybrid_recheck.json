@@ -1,0 +1,27 @@
+{
+ "256": {
+  "step_ms": 5.247,
+  "kv_cache_mb": 4.194,
+  "sheafdelta_state_mb": 1.966
+ },
+ "1024": {
+  "step_ms": 5.963,
+  "kv_cache_mb": 16.777,
+  "sheafdelta_state_mb": 1.966
+ },
+ "4096": {
+  "step_ms": 7.275,
+  "kv_cache_mb": 67.109,
+  "sheafdelta_state_mb": 1.966
+ },
+ "16384": {
+  "step_ms": 13.64,
+  "kv_cache_mb": 268.435,
+  "sheafdelta_state_mb": 1.966
+ },
+ "65536": {
+  "step_ms": 41.673,
+  "kv_cache_mb": 1073.742,
+  "sheafdelta_state_mb": 1.966
+ }
+}

@@ -1,0 +1,38 @@
+13:11:04 gpt|fp32|256 {'params': 3213568, 'ms': 59.48, 'median_ms': 61.33, 'peak_mem_mb': 396.1, 'tok_s': 68865}
+13:11:05 hsn-eager|fp32|256 {'params': 3228256, 'ms': 188.89, 'median_ms': 191.18, 'peak_mem_mb': 843.1, 'tok_s': 21684}
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+13:11:17 hsn-fused|fp32|256 {'params': 3228256, 'ms': 91.4, 'median_ms': 95.28, 'peak_mem_mb': 649.8, 'tok_s': 44815}
+13:11:19 gpt|fp32|512 {'params': 3213568, 'ms': 135.84, 'median_ms': 137.0, 'peak_mem_mb': 762.0, 'tok_s': 60305}
+13:11:23 hsn-eager|fp32|512 {'params': 3228256, 'ms': 519.71, 'median_ms': 525.35, 'peak_mem_mb': 1652.1, 'tok_s': 15763}
+13:11:24 hsn-fused|fp32|512 {'params': 3228256, 'ms': 199.98, 'median_ms': 201.81, 'peak_mem_mb': 1270.1, 'tok_s': 40964}
+13:11:27 gpt|fp32|1024 {'params': 3213568, 'ms': 356.78, 'median_ms': 361.76, 'peak_mem_mb': 1479.1, 'tok_s': 45922}
+13:11:39 hsn-eager|fp32|1024 {'params': 3228256, 'ms': 1453.38, 'median_ms': 1463.92, 'peak_mem_mb': 3259.8, 'tok_s': 11273}
+13:11:43 hsn-fused|fp32|1024 {'params': 3228256, 'ms': 428.53, 'median_ms': 432.98, 'peak_mem_mb': 2492.2, 'tok_s': 38233}
+13:11:51 gpt|fp32|2048 {'params': 3213568, 'ms': 982.25, 'median_ms': 1007.01, 'peak_mem_mb': 2923.7, 'tok_s': 33360}
+13:12:49 hsn-eager|fp32|2048 {'params': 3228256, 'ms': 7142.28, 'median_ms': 7198.9, 'peak_mem_mb': 6489.8, 'tok_s': 4588}
+13:12:56 hsn-fused|fp32|2048 {'params': 3228256, 'ms': 925.02, 'median_ms': 933.78, 'peak_mem_mb': 4950.5, 'tok_s': 35424}
+13:13:20 gpt|fp32|4096 {'params': 3213568, 'ms': 2898.43, 'median_ms': 2924.72, 'peak_mem_mb': 5817.2, 'tok_s': 22611}
+13:13:20 hsn-eager|fp32|4096 {'oom': True}
+13:13:21 hsn-fused|fp32|4096 {'oom': True}
+13:13:23 gpt|fp32|8192 {'oom': True}
+13:13:24 hsn-eager|fp32|8192 {'oom': True}
+13:13:24 hsn-fused|fp32|8192 {'oom': True}
+13:13:25 gpt|bf16|256 {'params': 3213568, 'ms': 23.03, 'median_ms': 25.67, 'peak_mem_mb': 276.5, 'tok_s': 177825}
+13:13:26 hsn-eager|bf16|256 {'params': 3228256, 'ms': 137.43, 'median_ms': 141.92, 'peak_mem_mb': 584.9, 'tok_s': 29805}
+13:13:34 hsn-fused|bf16|256 {'params': 3228256, 'ms': 68.43, 'median_ms': 72.32, 'peak_mem_mb': 456.2, 'tok_s': 59855}
+13:13:34 gpt|bf16|512 {'params': 3213568, 'ms': 49.06, 'median_ms': 51.06, 'peak_mem_mb': 516.6, 'tok_s': 166993}
+13:13:38 hsn-eager|bf16|512 {'params': 3228256, 'ms': 377.47, 'median_ms': 379.69, 'peak_mem_mb': 1139.5, 'tok_s': 21702}
+13:13:39 hsn-fused|bf16|512 {'params': 3228256, 'ms': 142.64, 'median_ms': 148.99, 'peak_mem_mb': 875.8, 'tok_s': 57431}
+13:13:40 gpt|bf16|1024 {'params': 3213568, 'ms': 116.83, 'median_ms': 120.41, 'peak_mem_mb': 982.1, 'tok_s': 140241}
+13:13:50 hsn-eager|bf16|1024 {'params': 3228256, 'ms': 1216.52, 'median_ms': 1221.95, 'peak_mem_mb': 2218.4, 'tok_s': 13468}
+13:13:53 hsn-fused|bf16|1024 {'params': 3228256, 'ms': 327.06, 'median_ms': 330.62, 'peak_mem_mb': 1697.7, 'tok_s': 50095}
+13:13:55 gpt|bf16|2048 {'params': 3213568, 'ms': 294.64, 'median_ms': 296.3, 'peak_mem_mb': 1923.4, 'tok_s': 111213}
+13:14:47 hsn-eager|bf16|2048 {'params': 3228256, 'ms': 6521.53, 'median_ms': 6536.32, 'peak_mem_mb': 4396.3, 'tok_s': 5025}
+13:14:53 hsn-fused|bf16|2048 {'params': 3228256, 'ms': 724.14, 'median_ms': 768.01, 'peak_mem_mb': 3348.8, 'tok_s': 45251}
+13:15:00 gpt|bf16|4096 {'params': 3213568, 'ms': 750.64, 'median_ms': 756.43, 'peak_mem_mb': 3810.3, 'tok_s': 87306}
+13:15:00 hsn-eager|bf16|4096 {'oom': True}
+13:15:06 hsn-fused|bf16|4096 {'oom': True}
+13:15:06 gpt|bf16|8192 {'oom': True}
+13:15:07 hsn-eager|bf16|8192 {'oom': True}
+13:15:08 hsn-fused|bf16|8192 {'oom': True}
+13:15:08 ALL DONE

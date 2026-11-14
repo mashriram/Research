@@ -1,0 +1,15 @@
+W1115 00:32:58.096000 355396 torch/_inductor/utils.py:1137] [0/0] Not enough SMs to use max_autotune_gemm mode
+00:33:55 gpt compiled (300, 2.7933, 49.81)
+00:34:45 gpt compiled (600, 2.3777, 99.99)
+00:35:35 gpt compiled (900, 1.835, 150.21)
+00:36:25 gpt compiled (1200, 1.7156, 200.45)
+00:37:16 gpt compiled (1500, 1.7119, 250.81)
+00:37:16 DONE gpt|compiled {'params': 14260608, 'steps': 1500, 'train_s': 250.81360292434692, 'tok_s': 97985.11609202024, 'peak_mem_mb': 2407.61088, 'val_bpb': 1.1145141778725467}
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+00:38:47 hybrid compiled (300, 2.3209, 60.76)
+00:39:48 hybrid compiled (600, 2.119, 121.63)
+00:40:49 hybrid compiled (900, 1.6945, 182.54)
+00:41:49 hybrid compiled (1200, 1.5931, 243.46)
+00:42:50 hybrid compiled (1500, 1.6049, 304.37)
+00:42:51 DONE hybrid|compiled {'params': 14468592, 'steps': 1500, 'train_s': 304.3655278682709, 'tok_s': 80745.01791358077, 'peak_mem_mb': 2867.516928, 'val_bpb': 1.0178048721415407}
+00:42:51 ALL DONE

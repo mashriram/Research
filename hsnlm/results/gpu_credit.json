@@ -1,0 +1,14 @@
+{
+ "backprop(teacher)": {
+  "val_bpc": 2.2019227025779884,
+  "train_s": 53.28297233581543
+ },
+ "DFA(random feedback)": {
+  "val_bpc": 3.1276696045461017,
+  "train_s": 36.34789156913757
+ },
+ "layerwise teacher-target (no x-block grad)": {
+  "val_bpc": 2.3146807933120574,
+  "train_s": 71.73220419883728
+ }
+}

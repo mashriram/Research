@@ -1,0 +1,26 @@
+{
+ "lm|alibi-pure": {
+  "kind": "alibi-pure",
+  "params": 14260608,
+  "steps": 1500,
+  "train_s": 431.3851420879364,
+  "tok_s": 56969.97323795233,
+  "peak_mem_mb": 2726.509568,
+  "val_bpb_nwin64": 1.0299582518919903,
+  "val_bpb_nwin32_oldbuggy": 0.8820720794926541,
+  "val_bpb_len2048": 1.0062017186357797,
+  "val_bpb_len4096": 1.087220789154595
+ },
+ "lm|alibi-hybrid": {
+  "kind": "alibi-hybrid",
+  "params": 14468592,
+  "steps": 1500,
+  "train_s": 770.1176874637604,
+  "tok_s": 31912.00565842929,
+  "peak_mem_mb": 4030.80192,
+  "val_bpb_nwin64": 1.0237030601485435,
+  "val_bpb_nwin32_oldbuggy": 0.8500008192532517,
+  "val_bpb_len2048": 1.0047500130798466,
+  "val_bpb_len4096": 1.0875147934962452
+ }
+}

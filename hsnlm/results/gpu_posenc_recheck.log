@@ -1,0 +1,24 @@
+23:17:34 alibi-pure lr 0.002 (150, 2.9727, 46.5)
+23:18:21 alibi-pure lr 0.002 (300, 2.7125, 92.9)
+23:19:07 alibi-pure lr 0.002 (450, 2.3235, 139.5)
+23:19:54 alibi-pure lr 0.002 (600, 2.2982, 186.2)
+23:20:41 alibi-pure lr 0.002 (750, 2.0761, 232.9)
+23:21:27 alibi-pure lr 0.002 (900, 1.8257, 279.8)
+23:22:14 alibi-pure lr 0.002 (1050, 1.7571, 326.7)
+23:23:01 alibi-pure lr 0.002 (1200, 1.7176, 373.8)
+23:23:49 alibi-pure lr 0.002 (1350, 1.7529, 420.9)
+23:24:36 alibi-pure lr 0.002 (1500, 1.7224, 468.1)
+23:24:39 DONE lm|alibi-pure {'kind': 'alibi-pure', 'params': 14260608, 'steps': 1500, 'train_s': 468.0724399089813, 'tok_s': 52504.69351448872, 'peak_mem_mb': 2726.509568, 'val_bpb_nwin64': 1.1155630140688335, 'val_bpb_nwin32_oldbuggy': 0.9393126352226956, 'val_bpb_len2048': 1.0954630791950266, 'val_bpb_len4096': 1.1826963128461427}
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+23:26:03 alibi-hybrid lr 0.002 (150, 2.4327, 80.7)
+23:27:16 alibi-hybrid lr 0.002 (300, 2.3348, 153.6)
+23:28:29 alibi-hybrid lr 0.002 (450, 2.0522, 226.4)
+23:29:42 alibi-hybrid lr 0.002 (600, 2.1554, 299.2)
+23:30:54 alibi-hybrid lr 0.002 (750, 1.9844, 371.6)
+23:32:06 alibi-hybrid lr 0.002 (900, 1.7718, 443.8)
+23:33:19 alibi-hybrid lr 0.002 (1050, 1.7249, 516.2)
+23:34:31 alibi-hybrid lr 0.002 (1200, 1.6806, 588.5)
+23:35:43 alibi-hybrid lr 0.002 (1350, 1.7019, 661.1)
+23:36:59 alibi-hybrid lr 0.002 (1500, 1.6901, 736.3)
+23:37:01 DONE lm|alibi-hybrid {'kind': 'alibi-hybrid', 'params': 14468592, 'steps': 1500, 'train_s': 736.2985291481018, 'tok_s': 33377.76598363501, 'peak_mem_mb': 4030.80192, 'val_bpb_nwin64': 1.1390874137420421, 'val_bpb_nwin32_oldbuggy': 0.9422849253862321, 'val_bpb_len2048': 1.1242878659297546, 'val_bpb_len4096': 1.2059681452476436}
+23:37:01 ALL DONE

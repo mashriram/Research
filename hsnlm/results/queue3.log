@@ -1,0 +1,50 @@
+23:54:32 alibi-pure lr 0.002 (150, 3.0035, 40.9)
+23:55:13 alibi-pure lr 0.002 (300, 2.7143, 81.9)
+23:55:54 alibi-pure lr 0.002 (450, 2.2223, 122.8)
+23:56:35 alibi-pure lr 0.002 (600, 2.1913, 163.7)
+23:57:16 alibi-pure lr 0.002 (750, 1.9413, 204.6)
+23:57:57 alibi-pure lr 0.002 (900, 1.6988, 245.5)
+23:58:38 alibi-pure lr 0.002 (1050, 1.6925, 286.5)
+23:59:19 alibi-pure lr 0.002 (1200, 1.6487, 327.5)
+00:00:06 alibi-pure lr 0.002 (1350, 1.6848, 374.8)
+00:01:03 alibi-pure lr 0.002 (1500, 1.656, 431.4)
+00:01:07 DONE lm|alibi-pure {'kind': 'alibi-pure', 'params': 14260608, 'steps': 1500, 'train_s': 431.3851420879364, 'tok_s': 56969.97323795233, 'peak_mem_mb': 2726.509568, 'val_bpb_nwin64': 1.0299582518919903, 'val_bpb_nwin32_oldbuggy': 0.8820720794926541, 'val_bpb_len2048': 1.0062017186357797, 'val_bpb_len4096': 1.087220789154595}
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+00:02:46 alibi-hybrid lr 0.002 (150, 2.4303, 96.9)
+00:04:17 alibi-hybrid lr 0.002 (300, 2.3336, 187.3)
+00:05:45 alibi-hybrid lr 0.002 (450, 2.0445, 275.6)
+00:07:15 alibi-hybrid lr 0.002 (600, 2.1246, 366.0)
+00:08:43 alibi-hybrid lr 0.002 (750, 1.932, 454.2)
+00:09:47 alibi-hybrid lr 0.002 (900, 1.6788, 517.3)
+00:10:50 alibi-hybrid lr 0.002 (1050, 1.6265, 580.5)
+00:11:53 alibi-hybrid lr 0.002 (1200, 1.5904, 643.8)
+00:12:56 alibi-hybrid lr 0.002 (1350, 1.6297, 707.0)
+00:13:59 alibi-hybrid lr 0.002 (1500, 1.603, 770.1)
+00:14:02 DONE lm|alibi-hybrid {'kind': 'alibi-hybrid', 'params': 14468592, 'steps': 1500, 'train_s': 770.1176874637604, 'tok_s': 31912.00565842929, 'peak_mem_mb': 4030.80192, 'val_bpb_nwin64': 1.0237030601485435, 'val_bpb_nwin32_oldbuggy': 0.8500008192532517, 'val_bpb_len2048': 1.0047500130798466, 'val_bpb_len4096': 1.0875147934962452}
+00:14:02 ALL DONE
+00:14:42 gpt-yarn-fixed lr 0.002 150 3.138 37.5
+00:15:20 gpt-yarn-fixed lr 0.002 300 2.8037 74.8
+00:15:57 gpt-yarn-fixed lr 0.002 450 2.3653 112.1
+00:16:34 gpt-yarn-fixed lr 0.002 600 2.3851 149.5
+00:17:12 gpt-yarn-fixed lr 0.002 750 2.088 186.9
+00:17:49 gpt-yarn-fixed lr 0.002 900 1.8257 224.2
+00:18:26 gpt-yarn-fixed lr 0.002 1050 1.7436 261.5
+00:19:04 gpt-yarn-fixed lr 0.002 1200 1.707 298.7
+00:19:41 gpt-yarn-fixed lr 0.002 1350 1.7488 336.0
+00:20:18 gpt-yarn-fixed lr 0.002 1500 1.7036 373.3
+00:20:21 DONE {'params': 14260608, 'steps': 1500, 'train_s': 373.2538800239563, 'val_bpb_nwin64': 1.104853063209244, 'val_bpb_nwin32_oldbuggy': 0.9330634521231131, 'plain_len2048': 2.114417354387946, 'yarn_len2048': 1.1010868043890838, 'plain_len4096': 3.441079011405802, 'yarn_len4096': 1.225229234741867}
+00:20:21 ALL DONE
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+00:21:35 yarn-hybrid lr 0.002 150 2.4306 69.9
+00:22:38 yarn-hybrid lr 0.002 300 2.3223 132.2
+00:23:40 yarn-hybrid lr 0.002 450 2.039 194.5
+00:24:42 yarn-hybrid lr 0.002 600 2.1081 256.7
+00:25:44 yarn-hybrid lr 0.002 750 1.9239 318.9
+00:26:47 yarn-hybrid lr 0.002 900 1.6889 381.1
+00:27:49 yarn-hybrid lr 0.002 1050 1.6501 443.3
+00:28:51 yarn-hybrid lr 0.002 1200 1.5931 505.5
+00:29:53 yarn-hybrid lr 0.002 1350 1.6313 567.7
+00:30:55 yarn-hybrid lr 0.002 1500 1.6008 629.9
+00:30:59 DONE {'params': 14468592, 'steps': 1500, 'train_s': 629.9462456703186, 'tok_s': 39012.852555139776, 'peak_mem_mb': 4081.417216, 'val_bpb_nwin64': 1.0250114504117294, 'val_bpb_nwin32': 0.8529363696229976, 'plain_len2048': 1.0073085344832386, 'yarn_len2048': 1.024427236095664, 'plain_len4096': 1.0988700985042816, 'yarn_len4096': 1.1306070889639008}
+00:30:59 ALL DONE
+QUEUE3 ALL DONE

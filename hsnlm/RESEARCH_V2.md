@@ -1,5 +1,7 @@
 # RESEARCH V2 — a cheap-to-train, cheap-to-run hybrid (block-diffusion × Householder-delta memory) 1B model
 
+> **In plain English:** this is the original design document and brainstorm that kicked off the whole project — written *before* any serious GPU testing happened, surveying what other researchers had published and sketching out ambitious future directions (like generating many words at once, or handling images/audio). Some ideas here were later tested and confirmed (the core "notebook memory + a few attention layers" design, now named DEEPA — see `ARCHITECTURE.md`); others were deliberately dropped before ever being tried (noted inline below); and the most ambitious ones (multi-word-at-once generation, true multimodal data) are still just plans, clearly marked as such. Read this as "the hypothesis," and `findings_report_gpu.md` as "what actually happened when we tested it."
+
 Status: design + falsifiable experiments. Nothing here beyond the 0.8M-param CPU result in RESULTS.md has been measured by us.
 Literature claims below are from web search (Nov 2026); items marked (?) I could not verify in full.
 
