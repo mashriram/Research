@@ -22,6 +22,9 @@ class Config:
     rope: bool = True        # RoPE in attention (GPT / hybrid attention layers)
     pattern: str = ""        # hybrid layer pattern, e.g. "ddad" (d = sheaf-delta, a = attention); empty = homogeneous
     mixer: str = "sheaf"    # 'sheaf' (diag gated) | 'delta' (Householder delta-rule matrix memory)
+    mixer_heads: int = 0     # DEEPA v2 ablation: head count for SheafDeltaMixer only, independent of `heads` (0 = fall back to `heads`, v1 behavior)
+    decay_init: str = "flat"  # DEEPA v2 ablation: 'flat' (v1, all heads biased to 3.0) | 'multiscale' (linspace(-1.0, 4.5, H) per head)
+    postnorm: bool = False   # DEEPA v2 ablation: apply SheafDeltaMixer's onorm after summing delta+dyadic instead of before (v1 = False)
 
 class RMSNorm(nn.Module):
     def __init__(s, d, eps=1e-6):

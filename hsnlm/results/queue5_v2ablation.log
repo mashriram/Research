@@ -1,0 +1,75 @@
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+W1115 14:43:01.911000 541269 torch/_inductor/utils.py:1137] [4/0] Not enough SMs to use max_autotune_gemm mode
+14:44:15 h6 seed 0 300 2.33 60.7
+14:45:15 h6 seed 0 600 2.1159 121.5
+14:46:16 h6 seed 0 900 1.6827 182.3
+14:47:17 h6 seed 0 1200 1.5997 243.2
+14:48:18 h6 seed 0 1500 1.6023 304.0
+14:48:21 DONE h6|seed0 {'variant': 'h6', 'seed': 0, 'params': 14436348, 'steps': 1500, 'train_s': 304.0376579761505, 'tok_s': 80832.09219407881, 'peak_mem_mb': 2719.921664, 'val_bpb': 1.0291820834397307, 'val_bpb_len2048': 1.0110717298624303, 'val_bpb_len4096': 1.0943012718949543}
+14:49:22 h6 seed 1 300 2.1644 60.8
+14:50:23 h6 seed 1 600 1.9193 121.7
+14:51:23 h6 seed 1 900 1.7828 182.6
+14:52:24 h6 seed 1 1200 1.7007 243.5
+14:53:25 h6 seed 1 1500 1.483 304.4
+14:53:27 DONE h6|seed1 {'variant': 'h6', 'seed': 1, 'params': 14436348, 'steps': 1500, 'train_s': 304.3689033985138, 'tok_s': 80744.12243034682, 'peak_mem_mb': 2720.337408, 'val_bpb': 1.031078202914409, 'val_bpb_len2048': 1.0105467958163343, 'val_bpb_len4096': 1.0858856233424532}
+14:54:29 h6 seed 2 300 2.2227 60.9
+14:55:30 h6 seed 2 600 1.9976 121.9
+14:56:31 h6 seed 2 900 1.7095 182.9
+14:57:32 h6 seed 2 1200 1.5954 243.8
+14:58:32 h6 seed 2 1500 1.6441 304.8
+14:58:35 DONE h6|seed2 {'variant': 'h6', 'seed': 2, 'params': 14436348, 'steps': 1500, 'train_s': 304.79253602027893, 'tok_s': 80631.8957835794, 'peak_mem_mb': 2720.337408, 'val_bpb': 1.0271531396140081, 'val_bpb_len2048': 1.0061007218240603, 'val_bpb_len4096': 1.0804426949101156}
+15:00:04 decay seed 0 300 2.3298 65.1
+15:01:09 decay seed 0 600 2.1284 130.3
+15:02:14 decay seed 0 900 1.7128 195.5
+15:03:19 decay seed 0 1200 1.6234 260.6
+15:04:24 decay seed 0 1500 1.6214 325.8
+15:04:27 DONE decay|seed0 {'variant': 'decay', 'seed': 0, 'params': 14468592, 'steps': 1500, 'train_s': 325.81272983551025, 'tok_s': 75429.8336114965, 'peak_mem_mb': 2827.019264, 'val_bpb': 1.0566443591208294, 'val_bpb_len2048': 1.0390358939144095, 'val_bpb_len4096': 1.1194699439484839}
+15:05:32 decay seed 1 300 2.1713 65.1
+15:06:38 decay seed 1 600 1.9164 130.4
+15:07:43 decay seed 1 900 1.7704 195.6
+15:08:48 decay seed 1 1200 1.6881 260.8
+15:09:53 decay seed 1 1500 1.49 326.1
+15:09:56 DONE decay|seed1 {'variant': 'decay', 'seed': 1, 'params': 14468592, 'steps': 1500, 'train_s': 326.0851950645447, 'tok_s': 75366.80711657416, 'peak_mem_mb': 2827.019264, 'val_bpb': 1.0345046562632114, 'val_bpb_len2048': 1.014016266325684, 'val_bpb_len4096': 1.093337115656386}
+15:11:01 decay seed 2 300 2.2247 65.2
+15:12:06 decay seed 2 600 2.0005 130.5
+15:13:12 decay seed 2 900 1.7239 195.7
+15:14:17 decay seed 2 1200 1.6179 261.0
+15:15:22 decay seed 2 1500 1.6488 326.2
+15:15:24 DONE decay|seed2 {'variant': 'decay', 'seed': 2, 'params': 14468592, 'steps': 1500, 'train_s': 326.2028045654297, 'tok_s': 75339.6342889828, 'peak_mem_mb': 2827.019264, 'val_bpb': 1.0443962061808387, 'val_bpb_len2048': 1.024183085224933, 'val_bpb_len4096': 1.0983306104263564}
+15:16:46 postnorm seed 0 300 2.2846 65.8
+15:17:52 postnorm seed 0 600 2.1044 131.7
+15:18:58 postnorm seed 0 900 1.724 197.7
+15:20:04 postnorm seed 0 1200 1.6475 263.6
+15:21:10 postnorm seed 0 1500 1.6572 329.7
+15:21:12 DONE postnorm|seed0 {'variant': 'postnorm', 'seed': 0, 'params': 14468592, 'steps': 1500, 'train_s': 329.68268871307373, 'tok_s': 74544.40539760566, 'peak_mem_mb': 2753.432064, 'val_bpb': 1.0844681315851261, 'val_bpb_len2048': 1.0690074609650906, 'val_bpb_len4096': 1.151035231229048}
+15:22:18 postnorm seed 1 300 2.1156 66.0
+15:23:24 postnorm seed 1 600 1.918 131.9
+15:24:30 postnorm seed 1 900 1.8053 197.9
+15:25:36 postnorm seed 1 1200 1.7092 263.9
+15:26:42 postnorm seed 1 1500 1.5248 329.8
+15:26:44 DONE postnorm|seed1 {'variant': 'postnorm', 'seed': 1, 'params': 14468592, 'steps': 1500, 'train_s': 329.809987783432, 'tok_s': 74515.63297148448, 'peak_mem_mb': 2753.432064, 'val_bpb': 1.0792754916543723, 'val_bpb_len2048': 1.061314784481154, 'val_bpb_len4096': 1.1402822954556584}
+15:27:51 postnorm seed 2 300 2.1725 65.9
+15:28:56 postnorm seed 2 600 1.9684 131.8
+15:30:02 postnorm seed 2 900 1.7131 197.8
+15:31:08 postnorm seed 2 1200 1.6064 263.7
+15:32:14 postnorm seed 2 1500 1.6375 329.7
+15:32:17 DONE postnorm|seed2 {'variant': 'postnorm', 'seed': 2, 'params': 14468592, 'steps': 1500, 'train_s': 329.6858425140381, 'tok_s': 74543.69229990078, 'peak_mem_mb': 2753.432064, 'val_bpb': 1.05078121257894, 'val_bpb_len2048': 1.031298716919562, 'val_bpb_len4096': 1.10056634189191}
+15:33:37 combined seed 0 300 2.2963 64.8
+15:34:42 combined seed 0 600 2.0892 129.6
+15:35:47 combined seed 0 900 1.7144 194.5
+15:36:52 combined seed 0 1200 1.6247 259.4
+15:37:57 combined seed 0 1500 1.6127 324.5
+15:37:59 DONE combined|seed0 {'variant': 'combined', 'seed': 0, 'params': 14436348, 'steps': 1500, 'train_s': 324.4902606010437, 'tok_s': 75737.25003172237, 'peak_mem_mb': 2718.209024, 'val_bpb': 1.0440004741012034, 'val_bpb_len2048': 1.0243556053215797, 'val_bpb_len4096': 1.1086844604584187}
+15:39:04 combined seed 1 300 2.118 64.9
+15:40:09 combined seed 1 600 1.9063 129.8
+15:41:14 combined seed 1 900 1.795 194.7
+15:42:19 combined seed 1 1200 1.7252 259.6
+15:43:24 combined seed 1 1500 1.5247 324.5
+15:43:26 DONE combined|seed1 {'variant': 'combined', 'seed': 1, 'params': 14436348, 'steps': 1500, 'train_s': 324.45632767677307, 'tok_s': 75745.1709324741, 'peak_mem_mb': 2718.209024, 'val_bpb': 1.0884563555140563, 'val_bpb_len2048': 1.072236736204679, 'val_bpb_len4096': 1.1433861093514424}
+15:44:31 combined seed 2 300 2.1828 64.8
+15:45:36 combined seed 2 600 1.9784 129.6
+15:46:41 combined seed 2 900 1.7382 194.5
+15:47:46 combined seed 2 1200 1.6611 259.4
+15:48:50 combined seed 2 1500 1.6667 324.3
+15:48:53 DONE combined|seed2 {'variant': 'combined', 'seed': 2, 'params': 14436348, 'steps': 1500, 'train_s': 324.2626373767853, 'tok_s': 75790.41544475964, 'peak_mem_mb': 2718.209024, 'val_bpb': 1.0822984414575036, 'val_bpb_len2048': 1.0669125617927622, 'val_bpb_len4096': 1.1465170965060625}
+15:48:53 ALL DONE
