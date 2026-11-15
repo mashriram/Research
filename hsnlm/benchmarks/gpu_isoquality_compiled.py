@@ -4,9 +4,9 @@ uniformly -- not compiling only the hybrid's mixer while leaving GPT uncompiled,
 comparison). Same recipe as gpu_scale.py/gpu_ratio.py (14M params, width 384, 8 layers, ctx 1024,
 lr=0.002, enwik8), real training curves saved for both so the iso-quality crossing point is measured,
 not guessed from an uncompiled baseline's curve."""
-import sys, os, copy, json, time, math, torch, torch.nn.functional as F; sys.path.insert(0, ".")
+import sys, os, copy, json, time, math, torch, torch.nn as nn, torch.nn.functional as F; sys.path.insert(0, ".")
 from hsnlm import GPT, Config, ByteData
-from hsnlm.models import LM, HBlock, TBlock
+from hsnlm.models import LM, HBlock, TBlock, RMSNorm, MLP
 assert torch.cuda.is_available()
 torch.backends.cudnn.benchmark = True
 DIM, HEADS, LAYERS, CTX, B, VOCAB = 384, 8, 8, 1024, 16, 256
@@ -25,8 +25,37 @@ class HybridFusedLM(LM):
         if ch == "a": return TBlock(c)
         c.mixer = "sheafdelta-fused"; return HBlock(c)
 
+def alibi_bias(T, H, device, dtype):
+    slopes = torch.tensor([2.0 ** (-8.0 * (i + 1) / H) for i in range(H)], device=device, dtype=torch.float32)
+    pos = torch.arange(T, device=device)
+    rel = (pos[None, :] - pos[:, None]).to(torch.float32)
+    bias = slopes[:, None, None] * rel[None, :, :]
+    causal = torch.triu(torch.ones(T, T, device=device, dtype=torch.bool), diagonal=1)
+    bias = bias.masked_fill(causal, float("-inf"))
+    return bias[None].to(dtype)
+
+class AlibiAttn(nn.Module):
+    def __init__(s, c):
+        super().__init__(); s.h = c.heads; s.qkv = nn.Linear(c.dim, 3 * c.dim, bias=False); s.o = nn.Linear(c.dim, c.dim, bias=False)
+    def forward(s, x):
+        B_, T, D = x.shape
+        q, k, v = s.qkv(x).view(B_, T, 3, s.h, D // s.h).permute(2, 0, 3, 1, 4)
+        bias = alibi_bias(T, s.h, x.device, q.dtype)
+        y = F.scaled_dot_product_attention(q, k, v, attn_mask=bias)
+        return s.o(y.transpose(1, 2).reshape(B_, T, D))
+
+class TBlockAlibi(nn.Module):
+    def __init__(s, c):
+        super().__init__(); s.n1 = RMSNorm(c.dim); s.n2 = RMSNorm(c.dim); s.mix = AlibiAttn(c); s.mlp = MLP(c.dim, c.mlp_mult, False)
+    def forward(s, x): x = x + s.mix(s.n1(x)); return x + s.mlp(s.n2(x))
+
+class AlibiPureLM(LM):
+    use_pos = False
+    def make_block(s, i): return TBlockAlibi(s.c)
+
 def build(arch):
     if arch == "gpt": return GPT(Config(vocab=VOCAB, dim=DIM, layers=LAYERS, ctx=CTX, heads=HEADS, mlp_mult=4.0)).cuda()
+    if arch == "alibi-pure": return AlibiPureLM(Config(vocab=VOCAB, dim=DIM, layers=LAYERS, ctx=CTX, heads=HEADS, mlp_mult=4.0)).cuda()
     return HybridFusedLM(Config(vocab=VOCAB, dim=DIM, layers=LAYERS, ctx=CTX, heads=HEADS, mlp_mult=3.65, pattern=PATTERN)).cuda()
 
 data = ByteData("data/enwik8", ctx=CTX, n_train=40_000_000, n_val=1_000_000)
@@ -64,10 +93,12 @@ def train_lm(arch, lr, steps, seed, compiled):
             if (s + 1) % 300 == 0: log(arch, "compiled" if compiled else "uncompiled", curve[-1])
     train_s = time.time() - t0
     res = dict(params=m0.n_params(), steps=steps, train_s=train_s, tok_s=steps * B * CTX / train_s, curve=curve,
-               peak_mem_mb=torch.cuda.max_memory_allocated() / 1e6, val_bpb=eval_len(m0, CTX))
+               peak_mem_mb=torch.cuda.max_memory_allocated() / 1e6, val_bpb=eval_len(m0, CTX, nwin=64))
+    for L in (2048, 4096): res[f"val_bpb_len{L}"] = eval_len(m0, L, nwin=32)
     return res
 
-for arch in ("gpt", "hybrid"):
+ARCHES = sys.argv[1:] if len(sys.argv) > 1 else ("gpt", "hybrid", "alibi-pure")
+for arch in ARCHES:
     k = f"{arch}|compiled"
     if k not in R: R[k] = train_lm(arch, LR, STEPS, seed=0, compiled=True); save(); log("DONE", k, {a: b for a, b in R[k].items() if a != "curve"})
 log("ALL DONE")

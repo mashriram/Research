@@ -88,18 +88,18 @@ def train_lm(mode, lr, steps, seed, final_eval=False):
             torch.cuda.synchronize(); curve.append((s + 1, round(loss.item() / math.log(2), 4), round(time.time() - t0, 1)))
             log(mode, "lr", lr, curve[-1])
     train_s = time.time() - t0
-    res = dict(params=m.n_params(), steps=steps, train_s=train_s, tok_s=steps * B * CTX / train_s, val_bpb=eval_len(m, CTX))
+    res = dict(params=m.n_params(), steps=steps, train_s=train_s, tok_s=steps * B * CTX / train_s, val_bpb=eval_len(m, CTX, nwin=64))
     if final_eval:
-        for L in (2048, 4096): res[f"val_bpb_len{L}"] = eval_len(m, L)
+        for L in (2048, 4096): res[f"val_bpb_len{L}"] = eval_len(m, L, nwin=32)
     return res
 
-for mode in ("nope", "alibi"):
+for mode in ("nope",):
     for lr in (1e-3, 2e-3):
         k = f"sweep|{mode}|{lr}"
         if k not in R: R[k] = train_lm(mode, lr, 100, seed=100); save(); log("sweep", k, R[k]["val_bpb"])
 best = {m: min((1e-3, 2e-3), key=lambda lr: R.get(f"sweep|{m}|{lr}", {"val_bpb": 9})["val_bpb"]) for m in ("nope", "alibi")}
 log("best lr", best); R["best_lr"] = best; save()
-for mode in ("nope", "alibi"):
+for mode in ("nope",):
     k = f"lm|{mode}"
     if k not in R: R[k] = train_lm(mode, best[mode], STEPS, seed=0, final_eval=True); save(); log("DONE", k, {a: b for a, b in R[k].items() if a != "curve"})
 log("ALL DONE")

@@ -172,7 +172,7 @@ def train_lm(lr, steps, seed, window=512, compile_mixer=True, final_eval=False):
         train_s=train_s,
         tok_s=steps * B * CTX / train_s,
         peak_mem_mb=torch.cuda.max_memory_allocated() / 1e6,
-        val_bpb=eval_len(m, CTX),
+        val_bpb=eval_len(m, CTX, nwin=64),
     )
     if final_eval:
         for L in (2048, 4096):

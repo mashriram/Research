@@ -1,0 +1,212 @@
+=== 1. MULTISEED (3 kinds x 3 seeds, compiled) ===
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+12:14:46 rope-hybrid seed 0 300 2.321 60.1
+12:15:46 rope-hybrid seed 0 600 2.1193 120.2
+12:16:46 rope-hybrid seed 0 900 1.714 180.3
+12:17:46 rope-hybrid seed 0 1200 1.6115 240.6
+12:18:47 rope-hybrid seed 0 1500 1.6227 300.9
+12:18:49 DONE rope-hybrid|seed0 {'kind': 'rope-hybrid', 'seed': 0, 'params': 14468592, 'steps': 1500, 'train_s': 300.93100357055664, 'tok_s': 81666.56046869521, 'peak_mem_mb': 2873.972736, 'val_bpb': 1.0288810815539737, 'val_bpb_len2048': 1.0121988611605226, 'val_bpb_len4096': 1.1004979357925295}
+12:19:50 rope-hybrid seed 1 300 2.1451 60.3
+12:20:50 rope-hybrid seed 1 600 1.9179 120.6
+12:21:50 rope-hybrid seed 1 900 1.7396 181.0
+12:22:51 rope-hybrid seed 1 1200 1.6699 241.5
+12:23:51 rope-hybrid seed 1 1500 1.4646 301.9
+12:23:53 DONE rope-hybrid|seed1 {'kind': 'rope-hybrid', 'seed': 1, 'params': 14468592, 'steps': 1500, 'train_s': 301.9208381175995, 'tok_s': 81398.8201451254, 'peak_mem_mb': 2872.553472, 'val_bpb': 1.0078830532773615, 'val_bpb_len2048': 0.9896644473702586, 'val_bpb_len4096': 1.0741389933102097}
+12:24:54 rope-hybrid seed 2 300 2.2228 60.4
+12:25:54 rope-hybrid seed 2 600 1.9872 120.9
+12:26:55 rope-hybrid seed 2 900 1.7344 181.3
+12:27:55 rope-hybrid seed 2 1200 1.649 241.8
+12:28:56 rope-hybrid seed 2 1500 1.6703 302.4
+12:28:58 DONE rope-hybrid|seed2 {'kind': 'rope-hybrid', 'seed': 2, 'params': 14468592, 'steps': 1500, 'train_s': 302.3692817687988, 'tok_s': 81278.09761704429, 'peak_mem_mb': 2872.553472, 'val_bpb': 1.072372720736933, 'val_bpb_len2048': 1.0590251794502175, 'val_bpb_len4096': 1.146227391730684}
+W1115 12:28:58.606000 464976 torch/_inductor/utils.py:1137] [8/0] Not enough SMs to use max_autotune_gemm mode
+12:29:57 alibi-pure seed 0 300 2.7007 57.1
+12:30:55 alibi-pure seed 0 600 2.136 114.5
+12:31:52 alibi-pure seed 0 900 1.7006 171.9
+12:32:49 alibi-pure seed 0 1200 1.6464 229.3
+12:33:47 alibi-pure seed 0 1500 1.6417 286.8
+12:33:50 DONE alibi-pure|seed0 {'kind': 'alibi-pure', 'seed': 0, 'params': 14260608, 'steps': 1500, 'train_s': 286.75624680519104, 'tok_s': 85703.45118478204, 'peak_mem_mb': 2152.640512, 'val_bpb': 1.035873079220464, 'val_bpb_len2048': 1.0117422902181445, 'val_bpb_len4096': 1.0877370810724853}
+12:34:48 alibi-pure seed 1 300 2.5679 57.4
+12:35:45 alibi-pure seed 1 600 1.9861 114.9
+12:36:43 alibi-pure seed 1 900 1.738 172.5
+12:37:41 alibi-pure seed 1 1200 1.7357 230.8
+12:38:38 alibi-pure seed 1 1500 1.5014 288.3
+12:38:41 DONE alibi-pure|seed1 {'kind': 'alibi-pure', 'seed': 1, 'params': 14260608, 'steps': 1500, 'train_s': 288.2817807197571, 'tok_s': 85249.92435748372, 'peak_mem_mb': 2152.640512, 'val_bpb': 1.0363516209464898, 'val_bpb_len2048': 1.008836320864347, 'val_bpb_len4096': 1.0855491177882086}
+12:39:39 alibi-pure seed 2 300 2.5802 57.4
+12:40:36 alibi-pure seed 2 600 2.0303 114.9
+12:41:34 alibi-pure seed 2 900 1.7627 172.4
+12:42:32 alibi-pure seed 2 1200 1.6044 230.0
+12:43:29 alibi-pure seed 2 1500 1.6771 287.5
+12:43:32 DONE alibi-pure|seed2 {'kind': 'alibi-pure', 'seed': 2, 'params': 14260608, 'steps': 1500, 'train_s': 287.5015592575073, 'tok_s': 85481.27552236315, 'peak_mem_mb': 2152.640512, 'val_bpb': 1.0385367787637743, 'val_bpb_len2048': 1.0082431741993525, 'val_bpb_len4096': 1.0831723820467787}
+12:44:37 alibi-hybrid seed 0 300 2.3385 62.6
+12:45:40 alibi-hybrid seed 0 600 2.1305 125.2
+12:46:42 alibi-hybrid seed 0 900 1.6869 187.9
+12:47:45 alibi-hybrid seed 0 1200 1.5956 250.5
+12:48:48 alibi-hybrid seed 0 1500 1.6053 313.1
+12:48:50 DONE alibi-hybrid|seed0 {'kind': 'alibi-hybrid', 'seed': 0, 'params': 14468592, 'steps': 1500, 'train_s': 313.1378858089447, 'tok_s': 78482.99779029163, 'peak_mem_mb': 2828.733952, 'val_bpb': 1.0200959497739253, 'val_bpb_len2048': 1.0003225777073599, 'val_bpb_len4096': 1.0816146491865888}
+12:49:53 alibi-hybrid seed 1 300 2.1575 62.5
+12:50:55 alibi-hybrid seed 1 600 1.9323 125.1
+12:51:58 alibi-hybrid seed 1 900 1.7628 187.7
+12:53:00 alibi-hybrid seed 1 1200 1.6954 250.3
+12:54:03 alibi-hybrid seed 1 1500 1.4763 312.9
+12:54:05 DONE alibi-hybrid|seed1 {'kind': 'alibi-hybrid', 'seed': 1, 'params': 14468592, 'steps': 1500, 'train_s': 312.9107892513275, 'tok_s': 78539.95721528397, 'peak_mem_mb': 2828.733952, 'val_bpb': 1.0241239876865302, 'val_bpb_len2048': 1.004068789799779, 'val_bpb_len4096': 1.0777730297186037}
+12:55:08 alibi-hybrid seed 2 300 2.2097 62.5
+12:56:11 alibi-hybrid seed 2 600 1.9939 125.2
+12:57:13 alibi-hybrid seed 2 900 1.7118 187.8
+12:58:16 alibi-hybrid seed 2 1200 1.6021 250.4
+12:59:18 alibi-hybrid seed 2 1500 1.6407 312.9
+12:59:21 DONE alibi-hybrid|seed2 {'kind': 'alibi-hybrid', 'seed': 2, 'params': 14468592, 'steps': 1500, 'train_s': 312.94293761253357, 'tok_s': 78531.8888724323, 'peak_mem_mb': 2828.733952, 'val_bpb': 1.0377707035433372, 'val_bpb_len2048': 1.0157521517143362, 'val_bpb_len4096': 1.0897901669628227}
+12:59:21 ALL DONE
+=== 2. ISOQUALITY refresh (gpt, hybrid compiled, with extrapolation) ===
+13:00:18 gpt compiled (300, 2.7974, 50.15)
+13:01:08 gpt compiled (600, 2.3696, 100.43)
+13:01:59 gpt compiled (900, 1.8114, 150.77)
+13:02:49 gpt compiled (1200, 1.7039, 201.05)
+13:03:39 gpt compiled (1500, 1.7117, 251.36)
+13:03:41 DONE gpt|compiled {'params': 14260608, 'steps': 1500, 'train_s': 251.36067485809326, 'tok_s': 97771.85716848701, 'peak_mem_mb': 2407.873024, 'val_bpb': 1.101406810357761, 'val_bpb_len2048': 2.0244029247962336, 'val_bpb_len4096': 3.3220618575292122}
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+13:04:54 hybrid compiled (300, 2.3082, 60.84)
+13:05:55 hybrid compiled (600, 2.1216, 121.61)
+13:06:56 hybrid compiled (900, 1.6876, 182.41)
+13:07:57 hybrid compiled (1200, 1.6112, 243.19)
+13:08:57 hybrid compiled (1500, 1.6139, 303.88)
+13:09:00 DONE hybrid|compiled {'params': 14468592, 'steps': 1500, 'train_s': 303.8796875476837, 'tok_s': 80874.11237759556, 'peak_mem_mb': 2866.161664, 'val_bpb': 1.0305428209222731, 'val_bpb_len2048': 1.0142726064667948, 'val_bpb_len4096': 1.0980703146842754}
+13:09:00 ALL DONE
+=== 3. CLEAN WIDTH-128 CROSSOVER (3 fresh subprocesses) ===
+13:09:42 gpt 300 3.6807 39.6
+13:10:21 gpt 600 3.1451 79.0
+13:11:01 gpt 900 2.7913 118.4
+13:11:40 gpt 1200 2.6862 157.8
+13:12:19 gpt 1500 2.4698 197.2
+13:12:59 gpt 1800 2.4202 236.6
+13:13:38 gpt 2100 2.2569 276.1
+13:14:18 gpt 2400 2.2828 315.5
+13:14:57 gpt 2700 2.5929 354.8
+13:15:36 gpt 3000 2.0707 394.2
+RESULT gpt {'params': 1607808, 'steps': 3000, 'train_s': 394.2077157497406, 'tok_s': 124685.5351537658, 'peak_mem_mb': 978.349056, 'val_bpb': 2.2131723077596397}
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+13:16:22 hsn-fused 300 2.5709 40.6
+13:16:55 hsn-fused 600 2.2504 73.8
+13:17:28 hsn-fused 900 2.1826 107.0
+13:18:01 hsn-fused 1200 2.2637 140.1
+13:18:35 hsn-fused 1500 2.08 173.3
+13:19:08 hsn-fused 1800 2.1554 206.5
+13:19:41 hsn-fused 2100 1.9291 239.7
+13:20:14 hsn-fused 2400 1.9209 272.9
+13:20:47 hsn-fused 2700 2.1805 306.1
+13:21:21 hsn-fused 3000 1.7822 339.4
+RESULT hsn-fused {'params': 1620576, 'steps': 3000, 'train_s': 339.41900753974915, 'tok_s': 144812.16109926856, 'peak_mem_mb': 1638.36672, 'val_bpb': 1.9165033099128628}
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+13:22:09 hybrid 300 2.6117 42.8
+13:22:44 hybrid 600 2.3101 78.1
+13:23:19 hybrid 900 2.2261 113.3
+13:23:55 hybrid 1200 2.274 148.6
+13:24:30 hybrid 1500 2.0912 183.8
+13:25:05 hybrid 1800 2.1497 219.1
+13:25:40 hybrid 2100 1.9447 254.3
+13:26:16 hybrid 2400 1.9382 289.6
+13:26:51 hybrid 2700 2.2218 324.9
+13:27:26 hybrid 3000 1.824 360.1
+RESULT hybrid {'params': 1642728, 'steps': 3000, 'train_s': 360.1189694404602, 'tok_s': 136488.227977467, 'peak_mem_mb': 1413.030912, 'val_bpb': 1.9313335458794136}
+=== 4. NoPE recheck (residual fix + nwin=64) ===
+13:27:32 nope lr 0.001 (10, 6.0726, 2.3)
+13:27:34 nope lr 0.001 (20, 5.2591, 4.3)
+13:27:36 nope lr 0.001 (30, 4.7142, 6.3)
+13:27:38 nope lr 0.001 (40, 4.2002, 8.4)
+13:27:40 nope lr 0.001 (50, 3.996, 10.4)
+13:27:42 nope lr 0.001 (60, 4.1854, 12.4)
+13:27:44 nope lr 0.001 (70, 4.0157, 14.5)
+13:27:46 nope lr 0.001 (80, 3.859, 16.5)
+13:27:48 nope lr 0.001 (90, 3.9097, 18.5)
+13:27:50 nope lr 0.001 (100, 3.85, 20.5)
+13:27:50 sweep sweep|nope|0.001 4.140369756877129
+13:27:52 nope lr 0.002 (10, 5.8829, 2.0)
+13:27:54 nope lr 0.002 (20, 4.7502, 4.0)
+13:27:56 nope lr 0.002 (30, 4.3461, 6.1)
+13:27:58 nope lr 0.002 (40, 3.9829, 8.1)
+13:28:00 nope lr 0.002 (50, 3.9429, 10.1)
+13:28:02 nope lr 0.002 (60, 4.1051, 12.2)
+13:28:04 nope lr 0.002 (70, 3.9526, 14.2)
+13:28:06 nope lr 0.002 (80, 3.8152, 16.2)
+13:28:08 nope lr 0.002 (90, 3.8805, 18.3)
+13:28:10 nope lr 0.002 (100, 3.8162, 20.3)
+13:28:11 sweep sweep|nope|0.002 4.088491405222675
+13:28:11 best lr {'nope': 0.002, 'alibi': 0.001}
+13:28:41 nope lr 0.002 (150, 3.8576, 30.5)
+13:29:12 nope lr 0.002 (300, 3.8404, 61.0)
+13:29:42 nope lr 0.002 (450, 3.7533, 91.5)
+13:30:13 nope lr 0.002 (600, 3.7152, 122.0)
+13:30:43 nope lr 0.002 (750, 3.4866, 152.6)
+13:31:14 nope lr 0.002 (900, 3.1225, 183.1)
+13:31:44 nope lr 0.002 (1050, 2.9551, 213.6)
+13:32:15 nope lr 0.002 (1200, 2.8168, 244.1)
+13:32:45 nope lr 0.002 (1350, 2.7937, 274.6)
+13:33:16 nope lr 0.002 (1500, 2.7818, 305.1)
+13:33:17 DONE lm|nope {'params': 14260608, 'steps': 1500, 'train_s': 305.119193315506, 'tok_s': 80545.57215149488, 'val_bpb': 2.3437752448942533, 'val_bpb_len2048': 2.7298707711385997, 'val_bpb_len4096': 3.6776382239625303}
+13:33:17 ALL DONE
+=== 5. 4:1 ratio dilution rerun (residual fix + nwin=64) ===
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+13:33:34 alibi-hybrid lr 0.001 (10, 6.2192, 13.0)
+13:33:40 alibi-hybrid lr 0.001 (20, 4.9331, 18.3)
+13:33:45 alibi-hybrid lr 0.001 (30, 4.3849, 23.7)
+13:33:51 alibi-hybrid lr 0.001 (40, 3.8632, 29.0)
+13:33:56 alibi-hybrid lr 0.001 (50, 3.6959, 34.4)
+13:34:01 alibi-hybrid lr 0.001 (60, 3.6317, 39.7)
+13:34:07 alibi-hybrid lr 0.001 (70, 3.3426, 45.0)
+13:34:12 alibi-hybrid lr 0.001 (80, 3.2279, 50.4)
+13:34:17 alibi-hybrid lr 0.001 (90, 3.2369, 55.7)
+13:34:23 alibi-hybrid lr 0.001 (100, 3.0393, 61.1)
+13:34:23 sweep sweep|0.001 3.4674792082264974
+13:34:29 alibi-hybrid lr 0.002 (10, 5.6615, 5.3)
+13:34:34 alibi-hybrid lr 0.002 (20, 4.4066, 10.7)
+13:34:40 alibi-hybrid lr 0.002 (30, 3.9851, 16.0)
+13:34:45 alibi-hybrid lr 0.002 (40, 3.5625, 21.4)
+13:34:50 alibi-hybrid lr 0.002 (50, 3.4327, 26.7)
+13:34:56 alibi-hybrid lr 0.002 (60, 3.362, 32.1)
+13:35:01 alibi-hybrid lr 0.002 (70, 3.0478, 37.4)
+13:35:06 alibi-hybrid lr 0.002 (80, 2.9372, 42.7)
+13:35:12 alibi-hybrid lr 0.002 (90, 2.9412, 48.1)
+13:35:17 alibi-hybrid lr 0.002 (100, 2.7292, 53.4)
+13:35:18 sweep sweep|0.002 3.0959183657631937
+13:36:38 alibi-hybrid lr 0.002 (150, 2.4209, 80.2)
+13:37:58 alibi-hybrid lr 0.002 (300, 2.3234, 160.4)
+13:39:18 alibi-hybrid lr 0.002 (450, 2.0243, 240.7)
+13:40:39 alibi-hybrid lr 0.002 (600, 2.1251, 321.0)
+13:41:59 alibi-hybrid lr 0.002 (750, 1.9168, 401.3)
+13:43:19 alibi-hybrid lr 0.002 (900, 1.6782, 481.7)
+13:44:40 alibi-hybrid lr 0.002 (1050, 1.648, 561.9)
+13:46:00 alibi-hybrid lr 0.002 (1200, 1.6014, 642.2)
+13:47:20 alibi-hybrid lr 0.002 (1350, 1.6288, 722.4)
+13:48:40 alibi-hybrid lr 0.002 (1500, 1.5988, 802.7)
+13:48:43 DONE {'params': 18147520, 'steps': 1500, 'train_s': 802.733963727951, 'tok_s': 30615.37334968037, 'peak_mem_mb': 5126.35392, 'val_bpb': 1.0417176086403976, 'val_bpb_len2048': 1.0230119048703885, 'val_bpb_len4096': 1.1006444865088958}
+13:48:43 ALL DONE
+=== 6. SWA sliding-window rerun (residual fix + nwin=64) ===
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+13:48:49 decode_o1 ctx 256 {'step_ms': 4.693, 'state_mb': 3.08}
+13:48:49 decode_o1 ctx 1024 {'step_ms': 4.656, 'state_mb': 5.177}
+13:48:49 decode_o1 ctx 4096 {'step_ms': 4.622, 'state_mb': 5.177}
+13:48:49 decode_o1 ctx 16384 {'step_ms': 4.616, 'state_mb': 5.177}
+13:48:50 decode_o1 ctx 65536 {'step_ms': 4.879, 'state_mb': 5.177}
+13:49:54 swa512-alibi-hybrid lr 0.002 (150, 2.4593, 55.0)
+13:50:49 swa512-alibi-hybrid lr 0.002 (300, 2.3405, 109.9)
+13:51:44 swa512-alibi-hybrid lr 0.002 (450, 2.0624, 164.9)
+13:52:39 swa512-alibi-hybrid lr 0.002 (600, 2.1286, 219.9)
+13:53:34 swa512-alibi-hybrid lr 0.002 (750, 1.9537, 274.9)
+13:54:29 swa512-alibi-hybrid lr 0.002 (900, 1.6971, 329.9)
+13:55:24 swa512-alibi-hybrid lr 0.002 (1050, 1.6426, 384.9)
+13:56:19 swa512-alibi-hybrid lr 0.002 (1200, 1.6113, 439.9)
+13:57:14 swa512-alibi-hybrid lr 0.002 (1350, 1.639, 494.9)
+13:58:09 swa512-alibi-hybrid lr 0.002 (1500, 1.6224, 550.0)
+13:58:16 DONE lm_swa512 {'window': 512, 'compiled': True, 'params': 14468592, 'steps': 1500, 'train_s': 549.9768674373627, 'tok_s': 44685.515800896814, 'peak_mem_mb': 4115.671552, 'val_bpb': 1.0610884660615343, 'val_bpb_len2048': 1.041847251312401, 'val_bpb_len2048_evalw1024': 1.0410655901642296, 'val_bpb_len4096': 1.120032370212468, 'val_bpb_len4096_evalw1024': 1.1190403312866286}
+13:59:12 swa1024-alibi-hybrid lr 0.002 (150, 2.4471, 55.0)
+14:00:07 swa1024-alibi-hybrid lr 0.002 (300, 2.3292, 110.0)
+14:01:02 swa1024-alibi-hybrid lr 0.002 (450, 2.0513, 165.0)
+14:01:57 swa1024-alibi-hybrid lr 0.002 (600, 2.1178, 220.0)
+14:02:52 swa1024-alibi-hybrid lr 0.002 (750, 1.9178, 275.0)
+14:03:47 swa1024-alibi-hybrid lr 0.002 (900, 1.6647, 330.1)
+14:04:42 swa1024-alibi-hybrid lr 0.002 (1050, 1.6323, 385.1)
+14:05:37 swa1024-alibi-hybrid lr 0.002 (1200, 1.5929, 440.2)
+14:06:32 swa1024-alibi-hybrid lr 0.002 (1350, 1.6213, 495.3)
+14:07:27 swa1024-alibi-hybrid lr 0.002 (1500, 1.6037, 550.3)
+14:07:33 DONE lm_swa1024 {'window': 1024, 'compiled': True, 'params': 14468592, 'steps': 1500, 'train_s': 550.3255727291107, 'tok_s': 44657.201514597175, 'peak_mem_mb': 4157.274624, 'val_bpb': 1.0298211279746743, 'val_bpb_len2048': 1.011787736633635, 'val_bpb_len2048_evalw512': 1.0125291538415044, 'val_bpb_len2048_evalw_inf': 1.011787736633635, 'val_bpb_len4096': 1.089615002632919, 'val_bpb_len4096_evalw512': 1.0909258114021327, 'val_bpb_len4096_evalw_inf': 1.089615002632919}
+14:07:33 ALL DONE
+=== QUEUE ALL DONE ===

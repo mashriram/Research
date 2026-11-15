@@ -93,7 +93,7 @@ def train_lm(lr, steps, seed, final_eval=False):
             log("alibi-hybrid lr", lr, curve[-1])
     train_s = time.time() - t0
     res = dict(params=m.n_params(), steps=steps, train_s=train_s, tok_s=steps * B * CTX / train_s,
-               peak_mem_mb=torch.cuda.max_memory_allocated() / 1e6, val_bpb=eval_len(m, CTX))
+               peak_mem_mb=torch.cuda.max_memory_allocated() / 1e6, val_bpb=eval_len(m, CTX, nwin=64))
     if final_eval:
         for L in (2048, 4096): res[f"val_bpb_len{L}"] = eval_len(m, L)
     return res

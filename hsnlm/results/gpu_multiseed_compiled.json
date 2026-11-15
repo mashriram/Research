@@ -1,0 +1,110 @@
+{
+ "rope-hybrid|seed0": {
+  "kind": "rope-hybrid",
+  "seed": 0,
+  "params": 14468592,
+  "steps": 1500,
+  "train_s": 300.93100357055664,
+  "tok_s": 81666.56046869521,
+  "peak_mem_mb": 2873.972736,
+  "val_bpb": 1.0288810815539737,
+  "val_bpb_len2048": 1.0121988611605226,
+  "val_bpb_len4096": 1.1004979357925295
+ },
+ "rope-hybrid|seed1": {
+  "kind": "rope-hybrid",
+  "seed": 1,
+  "params": 14468592,
+  "steps": 1500,
+  "train_s": 301.9208381175995,
+  "tok_s": 81398.8201451254,
+  "peak_mem_mb": 2872.553472,
+  "val_bpb": 1.0078830532773615,
+  "val_bpb_len2048": 0.9896644473702586,
+  "val_bpb_len4096": 1.0741389933102097
+ },
+ "rope-hybrid|seed2": {
+  "kind": "rope-hybrid",
+  "seed": 2,
+  "params": 14468592,
+  "steps": 1500,
+  "train_s": 302.3692817687988,
+  "tok_s": 81278.09761704429,
+  "peak_mem_mb": 2872.553472,
+  "val_bpb": 1.072372720736933,
+  "val_bpb_len2048": 1.0590251794502175,
+  "val_bpb_len4096": 1.146227391730684
+ },
+ "alibi-pure|seed0": {
+  "kind": "alibi-pure",
+  "seed": 0,
+  "params": 14260608,
+  "steps": 1500,
+  "train_s": 286.75624680519104,
+  "tok_s": 85703.45118478204,
+  "peak_mem_mb": 2152.640512,
+  "val_bpb": 1.035873079220464,
+  "val_bpb_len2048": 1.0117422902181445,
+  "val_bpb_len4096": 1.0877370810724853
+ },
+ "alibi-pure|seed1": {
+  "kind": "alibi-pure",
+  "seed": 1,
+  "params": 14260608,
+  "steps": 1500,
+  "train_s": 288.2817807197571,
+  "tok_s": 85249.92435748372,
+  "peak_mem_mb": 2152.640512,
+  "val_bpb": 1.0363516209464898,
+  "val_bpb_len2048": 1.008836320864347,
+  "val_bpb_len4096": 1.0855491177882086
+ },
+ "alibi-pure|seed2": {
+  "kind": "alibi-pure",
+  "seed": 2,
+  "params": 14260608,
+  "steps": 1500,
+  "train_s": 287.5015592575073,
+  "tok_s": 85481.27552236315,
+  "peak_mem_mb": 2152.640512,
+  "val_bpb": 1.0385367787637743,
+  "val_bpb_len2048": 1.0082431741993525,
+  "val_bpb_len4096": 1.0831723820467787
+ },
+ "alibi-hybrid|seed0": {
+  "kind": "alibi-hybrid",
+  "seed": 0,
+  "params": 14468592,
+  "steps": 1500,
+  "train_s": 313.1378858089447,
+  "tok_s": 78482.99779029163,
+  "peak_mem_mb": 2828.733952,
+  "val_bpb": 1.0200959497739253,
+  "val_bpb_len2048": 1.0003225777073599,
+  "val_bpb_len4096": 1.0816146491865888
+ },
+ "alibi-hybrid|seed1": {
+  "kind": "alibi-hybrid",
+  "seed": 1,
+  "params": 14468592,
+  "steps": 1500,
+  "train_s": 312.9107892513275,
+  "tok_s": 78539.95721528397,
+  "peak_mem_mb": 2828.733952,
+  "val_bpb": 1.0241239876865302,
+  "val_bpb_len2048": 1.004068789799779,
+  "val_bpb_len4096": 1.0777730297186037
+ },
+ "alibi-hybrid|seed2": {
+  "kind": "alibi-hybrid",
+  "seed": 2,
+  "params": 14468592,
+  "steps": 1500,
+  "train_s": 312.94293761253357,
+  "tok_s": 78531.8888724323,
+  "peak_mem_mb": 2828.733952,
+  "val_bpb": 1.0377707035433372,
+  "val_bpb_len2048": 1.0157521517143362,
+  "val_bpb_len4096": 1.0897901669628227
+ }
+}

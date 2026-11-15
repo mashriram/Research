@@ -1,9 +1,14 @@
-"""Isolated-process re-measurement of gpu_reconcile.py's hsn-fused and hybrid-fused main training runs,
-to check whether their reported speed (50,979 / 94,346 tok/s) was deflated by CUDA-allocator pollution
-from running gpt's sweep+training in the same long-lived process first (gpu_reconcile.py ran gpt, then
-hsn-fused, then hybrid-fused, all sequentially in one process). Each arch here gets its own fresh
-process (run this script once per arch via argv). Same recipe, same best_lr=0.002, same seed=0."""
-import sys, os, copy, json, time, math, torch, torch.nn.functional as F; sys.path.insert(0, ".")
+"""Isolated-process re-measurement of gpu_reconcile.py's gpt, hsn-fused and hybrid-fused main training
+runs, to check whether their reported speed was deflated by CUDA-allocator pollution from running all
+three sequentially in one long-lived process (gpu_reconcile.py's own structure). Each arch here gets
+its own fresh process -- run this script once per arch via argv, e.g.:
+  python3 benchmarks/gpu_reconcile_clean.py gpt
+  python3 benchmarks/gpu_reconcile_clean.py hsn-fused
+  python3 benchmarks/gpu_reconcile_clean.py hybrid
+Same recipe, same best_lr=0.002, same seed=0, same width/context as gpu_reconcile.py (D=128, ctx=16384).
+Adds a real val_bpb eval (gpu_reconcile.py's original run had one; this fresh-process version keeps it
+so quality isn't silently dropped) and saves to a per-arch JSON file rather than only printing."""
+import sys, os, json, copy, time, math, torch, torch.nn.functional as F; sys.path.insert(0, ".")
 from hsnlm import GPT, Config, ByteData
 from hsnlm.models import LM, HBlock, TBlock
 assert torch.cuda.is_available()
@@ -11,6 +16,7 @@ torch.backends.cudnn.benchmark = True
 DIM, HEADS, LAYERS, CTX, B, VOCAB = 128, 4, 8, 16384, 1, 256
 STEPS = 3000
 ARCH = sys.argv[1]
+OUT = f"results/gpu_reconcile_clean_{ARCH}.json"; os.makedirs("results", exist_ok=True)
 
 class HybridFusedLM(LM):
     use_pos = False
@@ -25,6 +31,18 @@ def build(arch):
     return HybridFusedLM(Config(vocab=VOCAB, dim=DIM, layers=LAYERS, ctx=CTX, heads=HEADS, mlp_mult=3.65, pattern="dddaddda")).cuda()
 
 data = ByteData("data/enwik8", ctx=CTX, n_train=60_000_000, n_val=2_000_000)
+
+@torch.no_grad()
+def eval_len(m, L, nwin=16, Bv=1):
+    m.eval(); v = data.val; n = min(nwin, (len(v) - 1) // L); tot = cnt = 0
+    for i in range(0, n, Bv):
+        xs = torch.stack([v[j * L:(j + 1) * L] for j in range(i, min(i + Bv, n))]).cuda()
+        ys = torch.stack([v[j * L + 1:(j + 1) * L + 1] for j in range(i, min(i + Bv, n))]).cuda()
+        with torch.autocast("cuda", dtype=torch.bfloat16):
+            tot += F.cross_entropy(m(xs).reshape(-1, VOCAB), ys.reshape(-1), reduction="sum").item()
+        cnt += ys.numel()
+    m.train(); return tot / cnt / math.log(2)
+
 lr = 0.002
 torch.manual_seed(0); gen = torch.Generator().manual_seed(0)
 m = build(ARCH)
@@ -40,4 +58,7 @@ for s in range(STEPS):
     if (s + 1) % 300 == 0:
         torch.cuda.synchronize(); print(time.strftime("%H:%M:%S"), ARCH, s + 1, round(loss.item() / math.log(2), 4), round(time.time() - t0, 1), flush=True)
 torch.cuda.synchronize(); train_s = time.time() - t0
-print("RESULT", ARCH, dict(train_s=train_s, tok_s=STEPS * B * CTX / train_s, peak_mem_mb=torch.cuda.max_memory_allocated() / 1e6), flush=True)
+result = dict(params=m.n_params(), steps=STEPS, train_s=train_s, tok_s=STEPS * B * CTX / train_s,
+              peak_mem_mb=torch.cuda.max_memory_allocated() / 1e6, val_bpb=eval_len(m, CTX))
+print("RESULT", ARCH, result, flush=True)
+json.dump(result, open(OUT, "w"), indent=1)
