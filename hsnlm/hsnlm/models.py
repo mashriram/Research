@@ -24,7 +24,9 @@ class Config:
     mixer: str = "sheaf"    # 'sheaf' (diag gated) | 'delta' (Householder delta-rule matrix memory)
     mixer_heads: int = 0     # DEEPA v2 ablation: head count for SheafDeltaMixer only, independent of `heads` (0 = fall back to `heads`, v1 behavior)
     decay_init: str = "flat"  # DEEPA v2 ablation: 'flat' (v1, all heads biased to 3.0) | 'multiscale' (linspace(-1.0, 4.5, H) per head)
-    postnorm: bool = False   # DEEPA v2 ablation: apply SheafDeltaMixer's onorm after summing delta+dyadic instead of before (v1 = False)
+    postnorm: bool = False   # DEEPA v2 ablation: apply SheafDeltaMixer's onorm after summing delta+dyadic instead of before (v1 = False) -- uncompensated, measured as a regression, kept only for exact reproducibility of that recorded result
+    postnorm_scaled: bool = False  # DEEPA v2 ablation: postnorm, but undoing chunk_gated_delta_rule's implicit dh**-0.5 readout scale first so both branches enter onorm at matched amplitude
+    token_shift: bool = False  # DEEPA v2 ablation: mix x_t/x_t-1 into q,k (learnable per-head alpha) before F.normalize in SheafDeltaMixer, so delta-rule keys see 2-gram context
 
 class RMSNorm(nn.Module):
     def __init__(s, d, eps=1e-6):

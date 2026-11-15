@@ -42,9 +42,28 @@ Raw data: `results/gpu_v2_ablation.json`, reproducible via `benchmarks/gpu_v2_ab
 
 **`combined` tracks `postnorm` almost exactly** (1.0716 vs postnorm's 1.0715 at @1024) — confirms `postnorm`'s damage dominates and that `decay`'s extra harm doesn't meaningfully compound on top of it at this scale, while `combined` keeps roughly `h6`'s efficiency profile (train_s/mem closer to `h6` than to `postnorm`/`decay`, since `h6`'s savings are structural and independent of the other two flags).
 
+## Round 2 (layered on top of `h6`, the only round-1 win): both rejected too
+
+Two follow-ups were proposed to fix the round-1 failures directly, both implemented as additive `Config` flags (`postnorm_scaled`, `token_shift`) with full `step()`/`forward()` bit-exactness re-verified before trusting any number (eager and fused mixers, every flag individually and combined — diffs at ordinary float-noise level, same as the round-1 checks). Also fixed, independently of this ablation: `FusedSheafDeltaMixer.step()` was missing a `dh**-0.5` readout scale that `chunk_gated_delta_rule` applies by default in `forward()` — a real, pre-existing train/decode mismatch (confirmed via `git stash` to predate any of this ablation's changes), fixed in `step()` only since `forward()` is what every real training run has already learned under.
+
+| variant | @1024 mean ± std | @2048 mean ± std | @4096 mean ± std | train_s | tok/s | peak mem |
+|---|---|---|---|---|---|---|
+| **h6 (still the best)** | **1.0291 ± 0.0016** | **1.0092 ± 0.0022** | **1.0869 ± 0.0057** | 304.4 | 80,736 | 2,720.2 MB |
+| h6 + postnorm_scaled | 1.0587 ± 0.0069 | 1.0401 ± 0.0069 | 1.1173 ± 0.0083 | 299.7 | 81,994 | 2,644.9 MB |
+| h6 + token_shift | 1.0751 ± 0.0103 | 1.0566 ± 0.0099 | 1.1317 ± 0.0059 | 316.8 | 77,565 | 3,169.6 MB |
+| h6 + both | 1.0539 ± 0.0183 | 1.0352 ± 0.0185 | 1.1136 ± 0.0143 | 312.3 | 78,694 | 3,097.3 MB |
+
+**`postnorm_scaled` (`onorm((o * dh**0.5) + dy)`, undoing the kernel's implicit readout scale before summing): reject.** The amplitude-mismatch fix was real and correctly applied (verified bit-exact), but fixing it didn't rescue the idea — still 0.030 bpb worse than `h6` alone. So the problem was never purely the `dh**-0.5` bug; forcing the *combined* delta+dyadic signal through one normalization appears to genuinely suppress useful signal that v1's design (normalize the delta branch independently, then add the dyadic branch on top) doesn't. It is cheaper and faster (299.7s/2,645MB, both better than `h6` alone) — just not worth it at this quality cost.
+
+**`token_shift` (learnable per-head `alpha_q`/`alpha_k` mixing `x_t` with raw `q_{t-1}`/`k_{t-1}` before `F.normalize`, 1-token state added to `.step()`): reject, and the worst result of this whole ablation.** Worse on every length (+0.046 bpb @1024) *and* costs real speed/memory (+4.1% slower, +16.5% more memory) — a clean negative on every axis, not just a quality/efficiency tradeoff. Plausible reason: this was applied uniformly to all 6 sheaf-delta layers, but the "single-byte key collision" problem it was meant to fix is specific to Layer 1 (only there does `x_t` represent a single raw byte; by layer 2+, `x_t` is already a rich contextual representation, where blending in `t-1` just adds redundant noise instead of resolving a collision that no longer exists). A layer-1-only version is a different, untested experiment.
+
+**`h6 + both` partially but not fully cancels the two regressions** (1.0539, vs a naive additive prediction of ~1.105) — some positive interaction between the two changes, but still clearly worse than `h6` alone, and the noisiest variant in the whole ablation (std 0.0183; one seed ties `h6`'s own level almost exactly, the other two don't) — not a combination to trust even if its mean looked better.
+
+**Verdict, unchanged after two rounds: `h6` alone is still the best known configuration.** Final recommended config: `Config(dim=384, layers=8, heads=8, mixer_heads=6, mlp_mult=3.65, pattern="dddaddda", mixer="sheafdelta-fused")` with ALiBi attention in the 2 `a` layers — quality-tied with the un-modified v1 hybrid, 2.8% faster, 3.8% leaner, 4.7x tighter seed variance.
+
 ## What's not yet tried
 
-- Item 4 from `improvements-scope.md` (causal token-shift / short conv on `q`,`k` before `F.normalize`) — deferred as originally planned, since it's the one item that adds new `.step()` state and needs its own bit-exact derivation effort, not a quick flag flip.
-- A corrected `postnorm` that accounts for the `dh**-0.5` readout scale.
+- A layer-1-only version of the token-shift (only the first sheaf-delta layer gets it) — the round-2 result suggests this narrower form is where any real benefit, if there is one, would have to live.
 - A re-tuned `decay_init` range informed by the actual `0.8 + 0.2*sigmoid(...)` gate formula (e.g. targeting longer, not shorter, half-lives than v1's flat 73-token baseline).
 - `h6` has not been tested combined with pure ALiBi or GPT baselines, nor at the width-128/ctx-16,384 configuration from `findings_report_gpu.md` §5j.
+- Nothing in this document has been tested past 14M params or beyond this single 8GB GPU.

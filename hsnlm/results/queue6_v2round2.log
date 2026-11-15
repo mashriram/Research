@@ -1,0 +1,56 @@
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+16:24:29 h6_postnorm_scaled seed 0 300 2.2891 59.8
+16:25:29 h6_postnorm_scaled seed 0 600 2.0946 119.6
+16:26:29 h6_postnorm_scaled seed 0 900 1.6876 179.6
+16:27:29 h6_postnorm_scaled seed 0 1200 1.6278 239.6
+16:28:29 h6_postnorm_scaled seed 0 1500 1.6184 299.5
+16:28:32 DONE h6_postnorm_scaled|seed0 {'variant': 'h6_postnorm_scaled', 'seed': 0, 'params': 14436348, 'steps': 1500, 'train_s': 299.52197265625, 'tok_s': 82050.7416602953, 'peak_mem_mb': 2645.245952, 'val_bpb': 1.0597305447949, 'val_bpb_len2048': 1.0421814136030276, 'val_bpb_len4096': 1.125658008713516}
+16:29:32 h6_postnorm_scaled seed 1 300 2.1362 59.9
+16:30:32 h6_postnorm_scaled seed 1 600 1.9192 119.9
+16:31:32 h6_postnorm_scaled seed 1 900 1.7954 179.9
+16:32:32 h6_postnorm_scaled seed 1 1200 1.7138 239.9
+16:33:32 h6_postnorm_scaled seed 1 1500 1.5137 299.8
+16:33:34 DONE h6_postnorm_scaled|seed1 {'variant': 'h6_postnorm_scaled', 'seed': 1, 'params': 14436348, 'steps': 1500, 'train_s': 299.8405866622925, 'tok_s': 81963.55361217228, 'peak_mem_mb': 2644.676608, 'val_bpb': 1.0665790336881606, 'val_bpb_len2048': 1.04743696693725, 'val_bpb_len4096': 1.1202283229452947}
+16:34:34 h6_postnorm_scaled seed 2 300 2.1816 59.9
+16:35:34 h6_postnorm_scaled seed 2 600 1.9708 119.9
+16:36:34 h6_postnorm_scaled seed 2 900 1.7123 179.9
+16:37:34 h6_postnorm_scaled seed 2 1200 1.6269 239.8
+16:38:34 h6_postnorm_scaled seed 2 1500 1.645 299.8
+16:38:37 DONE h6_postnorm_scaled|seed2 {'variant': 'h6_postnorm_scaled', 'seed': 2, 'params': 14436348, 'steps': 1500, 'train_s': 299.82317662239075, 'tok_s': 81968.3130465661, 'peak_mem_mb': 2644.676608, 'val_bpb': 1.0496652386553227, 'val_bpb_len2048': 1.0308232923790832, 'val_bpb_len4096': 1.1060394962751368}
+16:39:42 h6_token_shift seed 0 300 2.3065 63.3
+16:40:45 h6_token_shift seed 0 600 2.1226 126.7
+16:41:48 h6_token_shift seed 0 900 1.7242 190.1
+16:42:52 h6_token_shift seed 0 1200 1.6281 253.5
+16:43:55 h6_token_shift seed 0 1500 1.6226 316.9
+16:43:57 DONE h6_token_shift|seed0 {'variant': 'h6_token_shift', 'seed': 0, 'params': 14436420, 'steps': 1500, 'train_s': 316.896347284317, 'tok_s': 77552.17190291751, 'peak_mem_mb': 3169.647616, 'val_bpb': 1.0608559132708206, 'val_bpb_len2048': 1.0434050916617479, 'val_bpb_len4096': 1.123610125298367}
+16:45:01 h6_token_shift seed 1 300 2.1495 63.3
+16:46:04 h6_token_shift seed 1 600 1.9265 126.6
+16:47:08 h6_token_shift seed 1 900 1.7785 190.0
+16:48:11 h6_token_shift seed 1 1200 1.7145 253.4
+16:49:14 h6_token_shift seed 1 1500 1.5229 316.7
+16:49:17 DONE h6_token_shift|seed1 {'variant': 'h6_token_shift', 'seed': 1, 'params': 14436420, 'steps': 1500, 'train_s': 316.70901703834534, 'tok_s': 77598.043244296, 'peak_mem_mb': 3169.647616, 'val_bpb': 1.0851562234223127, 'val_bpb_len2048': 1.0670363463057206, 'val_bpb_len4096': 1.1374563195323435}
+16:50:20 h6_token_shift seed 2 300 2.2016 63.3
+16:51:24 h6_token_shift seed 2 600 1.9908 126.7
+16:52:27 h6_token_shift seed 2 900 1.7385 190.1
+16:53:31 h6_token_shift seed 2 1200 1.6465 253.5
+16:54:34 h6_token_shift seed 2 1500 1.6769 316.9
+16:54:36 DONE h6_token_shift|seed2 {'variant': 'h6_token_shift', 'seed': 2, 'params': 14436420, 'steps': 1500, 'train_s': 316.92295956611633, 'tok_s': 77545.65978320345, 'peak_mem_mb': 3169.647616, 'val_bpb': 1.0792293250615315, 'val_bpb_len2048': 1.0594932517323719, 'val_bpb_len4096': 1.1340635317874475}
+16:55:40 h6_both seed 0 300 2.3034 62.5
+16:56:43 h6_both seed 0 600 2.101 124.9
+16:57:45 h6_both seed 0 900 1.7022 187.5
+16:58:48 h6_both seed 0 1200 1.6062 250.0
+16:59:50 h6_both seed 0 1500 1.6034 312.5
+16:59:53 DONE h6_both|seed0 {'variant': 'h6_both', 'seed': 0, 'params': 14436420, 'steps': 1500, 'train_s': 312.47807598114014, 'tok_s': 78648.71774710782, 'peak_mem_mb': 3097.317376, 'val_bpb': 1.0291883285597403, 'val_bpb_len2048': 1.0102833613908753, 'val_bpb_len4096': 1.0950719906469646}
+17:00:55 h6_both seed 1 300 2.1447 62.4
+17:01:58 h6_both seed 1 600 1.9228 124.9
+17:03:00 h6_both seed 1 900 1.7846 187.3
+17:04:03 h6_both seed 1 1200 1.7062 249.7
+17:05:05 h6_both seed 1 1500 1.5175 312.2
+17:05:07 DONE h6_both|seed1 {'variant': 'h6_both', 'seed': 1, 'params': 14436420, 'steps': 1500, 'train_s': 312.1776294708252, 'tok_s': 78724.41097608107, 'peak_mem_mb': 3097.317376, 'val_bpb': 1.0592868080578426, 'val_bpb_len2048': 1.0408023277214213, 'val_bpb_len4096': 1.1160192410459098}
+17:06:10 h6_both seed 2 300 2.1813 62.4
+17:07:13 h6_both seed 2 600 1.9901 124.8
+17:08:15 h6_both seed 2 900 1.7255 187.3
+17:09:18 h6_both seed 2 1200 1.6342 249.7
+17:10:20 h6_both seed 2 1500 1.667 312.2
+17:10:22 DONE h6_both|seed2 {'variant': 'h6_both', 'seed': 2, 'params': 14436420, 'steps': 1500, 'train_s': 312.23723244667053, 'tok_s': 78709.38327061149, 'peak_mem_mb': 3097.317376, 'val_bpb': 1.0730844709375287, 'val_bpb_len2048': 1.0545618856950258, 'val_bpb_len4096': 1.1297374801876443}
+17:10:22 ALL DONE

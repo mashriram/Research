@@ -8,8 +8,15 @@ hybrid 3:1, gpu_multiseed_compiled.py's "baseline" entry is reused rather than r
                decoupled via Config.mixer_heads so the 2 ALiBi attention layers are NOT changed
                (a confound in the original proposal, which assumed a single shared `heads` field).
   decay     -- multi-scale decay-bias init (linspace(-1.0, 4.5, H)) instead of flat 3.0.
-  postnorm  -- SheafDeltaMixer's onorm applied after summing delta+dyadic instead of before.
+  postnorm  -- SheafDeltaMixer's onorm applied after summing delta+dyadic instead of before (uncompensated,
+               later found to be a regression caused by chunk_gated_delta_rule's implicit dh**-0.5 readout
+               scale -- see DEEPA_V2_ABLATION.md).
   combined  -- all three together.
+Round 2 (layered on top of h6, the only round-1 win, per the corrected proposals):
+  h6_postnorm_scaled -- postnorm with the dh**-0.5 scale compensated first (Config.postnorm_scaled).
+  h6_token_shift     -- causal token-shift on q,k before F.normalize, learnable per-head alpha, with a
+                        1-token raw-q/k state added to .step() (Config.token_shift).
+  h6_both            -- both together.
 Same 14.5M-param/width-384/8-layer/ctx-1024/dddaddda recipe as gpu_multiseed_compiled.py, 3
 seeds, compiled, full eval (nwin=64 @1024, nwin=32 @2048/@4096), so directly comparable to the
 "alibi-hybrid" row there."""
@@ -24,10 +31,14 @@ STEPS = 1500
 PATTERN = "dddaddda"
 SEEDS = (0, 1, 2)
 VARIANTS = {
-    "h6":       dict(mixer_heads=6),
-    "decay":    dict(decay_init="multiscale"),
-    "postnorm": dict(postnorm=True),
-    "combined": dict(mixer_heads=6, decay_init="multiscale", postnorm=True),
+    "h6":                dict(mixer_heads=6),
+    "decay":             dict(decay_init="multiscale"),
+    "postnorm":          dict(postnorm=True),
+    "combined":          dict(mixer_heads=6, decay_init="multiscale", postnorm=True),
+    # round 2, layered on top of h6 (the only round-1 winner), per the corrected/new proposals:
+    "h6_postnorm_scaled": dict(mixer_heads=6, postnorm_scaled=True),  # fixes postnorm's dh**-0.5 amplitude mismatch
+    "h6_token_shift":     dict(mixer_heads=6, token_shift=True),      # causal shift on q,k before F.normalize (item 4)
+    "h6_both":            dict(mixer_heads=6, postnorm_scaled=True, token_shift=True),
 }
 OUT = "results/gpu_v2_ablation.json"; os.makedirs("results", exist_ok=True)
 R = json.load(open(OUT)) if os.path.exists(OUT) else {}

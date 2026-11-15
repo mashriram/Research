@@ -30,22 +30,32 @@ class FusedSheafDeltaMixer(SheafDeltaMixer):
         o, _ = chunk_gated_delta_rule(q, k, v, g=g, beta=b)
         g = torch.sigmoid(s.edge(x)).view(B, T, s.K, s.H)
         dy = s.dyadic(v.reshape(B, T, D), g)
-        if s.postnorm: y = s.onorm((o.reshape(B, T, D) + dy).view(B, T, s.H, s.dh)).reshape(B, T, D)
+        if s.postnorm_scaled:  # undo chunk_gated_delta_rule's implicit dh**-0.5 readout scale before summing with the (unscaled) dyadic branch
+            y = s.onorm(((o * s.dh ** 0.5).reshape(B, T, D) + dy).view(B, T, s.H, s.dh)).reshape(B, T, D)
+        elif s.postnorm: y = s.onorm((o.reshape(B, T, D) + dy).view(B, T, s.H, s.dh)).reshape(B, T, D)
         else: y = s.onorm(o).reshape(B, T, D) + dy
         return s.out(y * F.silu(s.g(x)))
 
     def step(s, x, st):
-        B = x.shape[0]; S, buf = st if st is not None else (x.new_zeros(B, s.H, s.dh, s.dh), x.new_zeros(B, s.offsets[-1], s.D))
-        q, k, v, b, a = s._proj(x)
+        B = x.shape[0]
+        if s.token_shift:
+            if st is None: S, buf, qprev, kprev = x.new_zeros(B, s.H, s.dh, s.dh), x.new_zeros(B, s.offsets[-1], s.D), x.new_zeros(B, s.H, s.dh), x.new_zeros(B, s.H, s.dh)
+            else: S, buf, qprev, kprev = st
+            q, k, v, b, a, qraw, kraw = s._proj_step(x, qprev, kprev)
+        else:
+            S, buf = st if st is not None else (x.new_zeros(B, s.H, s.dh, s.dh), x.new_zeros(B, s.offsets[-1], s.D))
+            q, k, v, b, a = s._proj(x)
         Sk = torch.einsum("bhvk,bhk->bhv", S, k)
         S = a[..., None, None] * (S - b[..., None, None] * Sk[..., None] * k[..., None, :]) + b[..., None, None] * v[..., None] * k[..., None, :]
-        o = torch.einsum("bhvk,bhk->bhv", S, q) * s.dh ** -0.5; vf = v.reshape(B, s.D); V, G = s._VG()
+        o_raw = torch.einsum("bhvk,bhk->bhv", S, q); vf = v.reshape(B, s.D); V, G = s._VG()
         g = torch.sigmoid(s.edge(x)).view(B, s.K, s.H)
         u = buf[:, [d - 1 for d in s.offsets]]                                       # [B,K,D]
         c = hh_coef(torch.einsum("bkd,kmd->bkm", u, V), G)                           # [B,K,M]
         tr = (u - 2 * torch.einsum("bkm,kmd->bkd", c, V)).view(B, s.K, s.H, s.dh)
         acc = (g[..., None] * tr).sum(1) / s.K ** 0.5                                # [B,H,dh]
         buf = torch.cat([vf[:, None], buf[:, :-1]], 1)
-        if s.postnorm: y = s.onorm(o + acc).reshape(B, s.D)
-        else: y = s.onorm(o).reshape(B, s.D) + acc.reshape(B, s.D)
-        return s.out(y * F.silu(s.g(x))), (S, buf)
+        if s.postnorm_scaled: y = s.onorm(o_raw + acc).reshape(B, s.D)               # o_raw is already unscaled S@q -- matches forward()'s compensated o
+        elif s.postnorm: y = s.onorm(o_raw * s.dh ** -0.5 + acc).reshape(B, s.D)
+        else: y = s.onorm(o_raw * s.dh ** -0.5).reshape(B, s.D) + acc.reshape(B, s.D)
+        out = s.out(y * F.silu(s.g(x)))
+        return out, ((S, buf, qraw, kraw) if s.token_shift else (S, buf))
