@@ -61,9 +61,17 @@ Two follow-ups were proposed to fix the round-1 failures directly, both implemen
 
 **Verdict, unchanged after two rounds: `h6` alone is still the best known configuration.** Final recommended config: `Config(dim=384, layers=8, heads=8, mixer_heads=6, mlp_mult=3.65, pattern="dddaddda", mixer="sheafdelta-fused")` with ALiBi attention in the 2 `a` layers — quality-tied with the un-modified v1 hybrid, 2.8% faster, 3.8% leaner, 4.7x tighter seed variance.
 
-## Does `h6`'s edge survive much more training? Yes — checked separately (`gpu_chinchilla_15m.py`)
+## Does `h6`'s edge survive much more training? Yes, but smaller than the first seed suggested — checked with 3 seeds (`gpu_chinchilla_15m.py`)
 
-Every number above is at 1,500 steps (~1.73 "tokens"/param), the same recipe as every other result in this project — leaving open whether the win is an early-training artifact (the CPU report's own standing warning). Reran `h6` vs pure ALiBi at 18,000 steps (~20.5 "tokens"/param, in practice ~7.4 repeated epochs over the fixed 40M-byte enwik8 slice): `h6` 0.7820/0.7637/0.8276 bpb @1024/2048/4096 vs pure ALiBi's 0.7924/0.7720/0.8307 — the gap held at @1024 (0.0078→0.0104) and widened at @2048 (0.0004→0.0083) and @4096 (a noise-level disadvantage → +0.0031). One seed, not three, but the central risk this checks for (vanishing with real training) didn't materialize. See `TRAINING_ADVANTAGE.md` open question #5 for the full writeup.
+Every number above is at 1,500 steps (~1.73 "tokens"/param), the same recipe as every other result in this project — leaving open whether the win is an early-training artifact (the CPU report's own standing warning). Reran `h6` vs pure ALiBi at 18,000 steps (~20.5 "tokens"/param, in practice ~7.4 repeated epochs over the fixed 40M-byte enwik8 slice), 3 seeds each:
+
+| | @1024 mean | @2048 mean | @4096 mean |
+|---|---|---|---|
+| h6 | 0.7794 | 0.7620 | 0.8246 |
+| pure ALiBi | 0.7863 | 0.7664 | 0.8258 |
+| gap (pure − h6) | +0.0069 | +0.0044 | +0.0012 |
+
+**h6 still wins on the mean at all three lengths, but the margin shrank from what seed 0 alone suggested** (seed 0: 0.0104/0.0083/0.0031 — reported first, before seeds 1-2 landed). Per-seed, `h6` wins all 3 seeds at @1024 (0.0104, 0.0100, a near-tie 0.0002) but **seed 2 is a genuine outlier that flips to favor pure ALiBi at @2048 (−0.0026) and @4096 (−0.0058)**. The central risk this check existed for — does the win vanish with much more training — did not materialize; but the exact size is smaller and noisier than a single seed implied, which is exactly why the second and third seeds mattered rather than stopping at one. See `TRAINING_ADVANTAGE.md` open question #5 for the full writeup.
 
 ## Does split weight-decay (excluding 1D params + `.V` from decay) help? No — checked and rejected (`gpu_splitwd_3seed.py`)
 
