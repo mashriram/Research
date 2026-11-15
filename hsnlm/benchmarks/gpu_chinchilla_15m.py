@@ -17,7 +17,7 @@ DIM, HEADS, LAYERS, CTX, B, VOCAB = 384, 8, 8, 1024, 16, 256
 LR = 0.002
 STEPS = int(sys.argv[1]) if len(sys.argv) > 1 else 18000
 PATTERN = "dddaddda"
-SEED = 0
+SEEDS = tuple(int(s) for s in sys.argv[2].split(",")) if len(sys.argv) > 2 else (0,)
 OUT = f"results/gpu_chinchilla_15m_{STEPS}.json"; os.makedirs("results", exist_ok=True)
 R = json.load(open(OUT)) if os.path.exists(OUT) else {}
 def save(): json.dump(R, open(OUT, "w"), indent=1)
@@ -104,7 +104,8 @@ def train_lm(kind, lr, steps, seed):
     return res
 
 for kind in ("alibi-hybrid-h6", "alibi-pure"):
-    k = f"{kind}|seed{SEED}"
-    if k not in R:
-        R[k] = train_lm(kind, LR, STEPS, SEED); save(); log("DONE", k, {a: b for a, b in R[k].items() if a != "curve"})
+    for seed in SEEDS:
+        k = f"{kind}|seed{seed}"
+        if k not in R:
+            R[k] = train_lm(kind, LR, STEPS, seed); save(); log("DONE", k, {a: b for a, b in R[k].items() if a != "curve"})
 log("ALL DONE")
