@@ -1,0 +1,38 @@
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+21:17:14 alibi-hybrid-h6 seed 0 300 2.3266 60.3
+21:18:14 alibi-hybrid-h6 seed 0 600 2.1286 120.6
+21:19:15 alibi-hybrid-h6 seed 0 900 1.666 180.9
+21:20:15 alibi-hybrid-h6 seed 0 1200 1.5859 241.4
+21:21:16 alibi-hybrid-h6 seed 0 1500 1.595 301.9
+21:21:18 DONE alibi-hybrid-h6|seed0 {'kind': 'alibi-hybrid-h6', 'seed': 0, 'params': 14436348, 'steps': 1500, 'train_s': 301.88538789749146, 'tok_s': 81408.37875977308, 'peak_mem_mb': 2719.96928, 'val_bpb': 1.0320650071183126, 'val_bpb_len2048': 1.0115103501156246, 'val_bpb_len4096': 1.0882045514153618}
+21:22:19 alibi-hybrid-h6 seed 1 300 2.1719 60.4
+21:23:20 alibi-hybrid-h6 seed 1 600 1.92 120.8
+21:24:20 alibi-hybrid-h6 seed 1 900 1.7798 181.3
+21:25:21 alibi-hybrid-h6 seed 1 1200 1.6991 241.9
+21:26:21 alibi-hybrid-h6 seed 1 1500 1.4899 302.4
+21:26:23 DONE alibi-hybrid-h6|seed1 {'kind': 'alibi-hybrid-h6', 'seed': 1, 'params': 14436348, 'steps': 1500, 'train_s': 302.35878014564514, 'tok_s': 81280.92059427488, 'peak_mem_mb': 2720.384512, 'val_bpb': 1.0285946551978775, 'val_bpb_len2048': 1.0100598914339105, 'val_bpb_len4096': 1.0897340576229788}
+21:27:24 alibi-hybrid-h6 seed 2 300 2.2116 60.4
+21:28:24 alibi-hybrid-h6 seed 2 600 1.9884 120.8
+21:29:25 alibi-hybrid-h6 seed 2 900 1.7104 181.3
+21:30:25 alibi-hybrid-h6 seed 2 1200 1.593 241.8
+21:31:26 alibi-hybrid-h6 seed 2 1500 1.6496 302.3
+21:31:28 DONE alibi-hybrid-h6|seed2 {'kind': 'alibi-hybrid-h6', 'seed': 2, 'params': 14436348, 'steps': 1500, 'train_s': 302.29059886932373, 'tok_s': 81299.25340689765, 'peak_mem_mb': 2720.384512, 'val_bpb': 1.0364169528559863, 'val_bpb_len2048': 1.0148764375539743, 'val_bpb_len4096': 1.0881349199395938}
+21:32:26 alibi-pure seed 0 300 2.716 56.7
+21:33:22 alibi-pure seed 0 600 2.1586 113.5
+21:34:19 alibi-pure seed 0 900 1.7034 170.3
+21:35:16 alibi-pure seed 0 1200 1.6535 227.1
+21:36:13 alibi-pure seed 0 1500 1.6452 283.9
+21:36:16 DONE alibi-pure|seed0 {'kind': 'alibi-pure', 'seed': 0, 'params': 14260608, 'steps': 1500, 'train_s': 283.86188650131226, 'tok_s': 86577.31512640527, 'peak_mem_mb': 2152.505344, 'val_bpb': 1.0313719922777453, 'val_bpb_len2048': 1.0065933016339628, 'val_bpb_len4096': 1.0853920546323081}
+21:37:12 alibi-pure seed 1 300 2.547 56.6
+21:38:09 alibi-pure seed 1 600 1.9833 113.3
+21:39:06 alibi-pure seed 1 900 1.7285 170.1
+21:40:03 alibi-pure seed 1 1200 1.7283 226.9
+21:41:00 alibi-pure seed 1 1500 1.4928 283.7
+21:41:02 DONE alibi-pure|seed1 {'kind': 'alibi-pure', 'seed': 1, 'params': 14260608, 'steps': 1500, 'train_s': 283.6707344055176, 'tok_s': 86635.65542460125, 'peak_mem_mb': 2152.505344, 'val_bpb': 1.0529766248617822, 'val_bpb_len2048': 1.025331606865226, 'val_bpb_len4096': 1.0972507743572515}
+21:41:59 alibi-pure seed 2 300 2.5866 56.7
+21:42:56 alibi-pure seed 2 600 2.031 113.5
+21:43:53 alibi-pure seed 2 900 1.7566 170.3
+21:44:50 alibi-pure seed 2 1200 1.601 227.1
+21:45:47 alibi-pure seed 2 1500 1.6757 284.0
+21:45:49 DONE alibi-pure|seed2 {'kind': 'alibi-pure', 'seed': 2, 'params': 14260608, 'steps': 1500, 'train_s': 283.9735815525055, 'tok_s': 86543.2617556926, 'peak_mem_mb': 2152.505344, 'val_bpb': 1.0376861203258598, 'val_bpb_len2048': 1.007955447224459, 'val_bpb_len4096': 1.0836351013689252}
+21:45:49 ALL DONE

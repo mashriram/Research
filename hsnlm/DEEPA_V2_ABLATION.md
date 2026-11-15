@@ -65,6 +65,10 @@ Two follow-ups were proposed to fix the round-1 failures directly, both implemen
 
 Every number above is at 1,500 steps (~1.73 "tokens"/param), the same recipe as every other result in this project — leaving open whether the win is an early-training artifact (the CPU report's own standing warning). Reran `h6` vs pure ALiBi at 18,000 steps (~20.5 "tokens"/param, in practice ~7.4 repeated epochs over the fixed 40M-byte enwik8 slice): `h6` 0.7820/0.7637/0.8276 bpb @1024/2048/4096 vs pure ALiBi's 0.7924/0.7720/0.8307 — the gap held at @1024 (0.0078→0.0104) and widened at @2048 (0.0004→0.0083) and @4096 (a noise-level disadvantage → +0.0031). One seed, not three, but the central risk this checks for (vanishing with real training) didn't materialize. See `TRAINING_ADVANTAGE.md` open question #5 for the full writeup.
 
+## Does split weight-decay (excluding 1D params + `.V` from decay) help? No — checked and rejected (`gpu_splitwd_3seed.py`)
+
+`train_deepa_phase1.py`'s optimizer splits parameters into decay/no-decay groups (no decay on 1D params or the Householder `.V`) instead of this project's uniform `weight_decay=0.05` on everything. A single run under it looked promising (`h6` at 1.0149 bpb @1024, notably better than `h6`'s uniform-WD 3-seed mean of 1.0291) — but checked properly with 3 seeds each, giving *both* `h6` and pure ALiBi the identical split-WD optimizer for a fair comparison: `h6` split-WD lands at 1.0324±0.0032 (nominally *worse* than uniform-WD's 1.0291±0.0016), and pure-ALiBi split-WD lands at 1.0407±0.0091 (also worse, and 8x noisier than uniform-WD's 1.0369±0.0012). **Rejected** — the single-run result was favorable noise. The core `h6`-beats-pure-ALiBi margin is unaffected either way (0.0078 bpb under uniform-WD, 0.0083 under split-WD) — the ranking is robust to this choice, just not improved by it.
+
 ## What's not yet tried
 
 - A layer-1-only version of the token-shift (only the first sheaf-delta layer gets it) — the round-2 result suggests this narrower form is where any real benefit, if there is one, would have to live.
