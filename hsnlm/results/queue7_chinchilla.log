@@ -1,0 +1,202 @@
+=== STAGE 1: train_deepa_phase1.py 15m/alibi/compile, 1500 steps ===
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+W1115 17:44:51.001000 633314 .venv/lib/python3.12/site-packages/torch/_inductor/utils.py:1137] [3/0_1] Not enough SMs to use max_autotune_gemm mode
+=== DEEPA Trainer (15M, posenc=ALIBI) ===
+Acronym      : Dyadic-Delta Enhanced-sheaf, Efficient Pairing with ALiBi
+Device       : NVIDIA RTX 2000 Ada Generation Laptop GPU (8.18 GB)
+Architecture : 8 layers, pattern='dddaddda' (3:1 Sheaf-Delta : ALIBI Attention)
+Dimensions   : dim=384, attn_heads=8 (dh=48), mixer_heads=6 (dh=64), params=14,436,348 (14.44M)
+Batch Config : micro_batch=16, ctx=1024, grad_accum=1 -> 16,384 tok/step
+Optimization : lr=0.002, wd=0.05, compile=True, grad_ckpt=False
+Warming up model forward/backward...
+step    25/1500 | loss 4.0503 bpb | lr 5.00e-04 | gnorm 1.67 | 82,111 tok/s | peak 2,715 MB | 5.0s
+step    50/1500 | loss 3.4271 bpb | lr 9.98e-04 | gnorm 1.30 | 82,609 tok/s | peak 2,715 MB | 9.9s
+step    75/1500 | loss 2.9223 bpb | lr 1.49e-03 | gnorm 0.88 | 82,781 tok/s | peak 2,715 MB | 14.8s
+step   100/1500 | loss 2.6610 bpb | lr 1.98e-03 | gnorm 0.69 | 82,853 tok/s | peak 2,715 MB | 19.8s
+step   125/1500 | loss 2.4425 bpb | lr 1.97e-03 | gnorm 0.49 | 82,892 tok/s | peak 2,715 MB | 24.7s
+step   150/1500 | loss 2.4338 bpb | lr 1.96e-03 | gnorm 0.52 | 82,924 tok/s | peak 2,715 MB | 29.6s
+step   175/1500 | loss 2.1826 bpb | lr 1.94e-03 | gnorm 0.52 | 82,944 tok/s | peak 2,715 MB | 34.6s
+step   200/1500 | loss 2.2854 bpb | lr 1.92e-03 | gnorm 0.46 | 82,947 tok/s | peak 2,715 MB | 39.5s
+step   225/1500 | loss 2.2334 bpb | lr 1.90e-03 | gnorm 0.40 | 82,948 tok/s | peak 2,715 MB | 44.4s
+step   250/1500 | loss 2.0640 bpb | lr 1.88e-03 | gnorm 0.39 | 82,941 tok/s | peak 2,715 MB | 49.4s
+step   275/1500 | loss 2.1337 bpb | lr 1.86e-03 | gnorm 0.35 | 82,932 tok/s | peak 2,715 MB | 54.3s
+step   300/1500 | loss 2.3191 bpb | lr 1.83e-03 | gnorm 0.41 | 82,923 tok/s | peak 2,715 MB | 59.3s
+  --> EVAL @ step 300: val@1024=1.9035 bpb | val@2048=1.8979 bpb
+step   325/1500 | loss 2.1378 bpb | lr 1.80e-03 | gnorm 0.37 | 80,763 tok/s | peak 2,715 MB | 65.9s
+step   350/1500 | loss 1.8973 bpb | lr 1.77e-03 | gnorm 0.34 | 80,908 tok/s | peak 2,715 MB | 70.9s
+step   375/1500 | loss 2.0796 bpb | lr 1.74e-03 | gnorm 0.37 | 81,038 tok/s | peak 2,715 MB | 75.8s
+step   400/1500 | loss 2.0970 bpb | lr 1.70e-03 | gnorm 0.33 | 81,146 tok/s | peak 2,715 MB | 80.8s
+step   425/1500 | loss 2.0864 bpb | lr 1.67e-03 | gnorm 0.35 | 81,250 tok/s | peak 2,715 MB | 85.7s
+step   450/1500 | loss 2.0462 bpb | lr 1.63e-03 | gnorm 0.28 | 81,334 tok/s | peak 2,715 MB | 90.6s
+step   475/1500 | loss 2.0291 bpb | lr 1.59e-03 | gnorm 0.32 | 81,412 tok/s | peak 2,715 MB | 95.6s
+step   500/1500 | loss 2.0153 bpb | lr 1.55e-03 | gnorm 0.28 | 81,481 tok/s | peak 2,715 MB | 100.5s
+step   525/1500 | loss 1.9393 bpb | lr 1.51e-03 | gnorm 0.28 | 81,541 tok/s | peak 2,715 MB | 105.5s
+step   550/1500 | loss 1.9927 bpb | lr 1.47e-03 | gnorm 0.28 | 81,591 tok/s | peak 2,715 MB | 110.4s
+step   575/1500 | loss 1.8985 bpb | lr 1.42e-03 | gnorm 0.32 | 81,643 tok/s | peak 2,715 MB | 115.4s
+step   600/1500 | loss 2.1193 bpb | lr 1.38e-03 | gnorm 0.33 | 81,688 tok/s | peak 2,715 MB | 120.3s
+  --> EVAL @ step 600: val@1024=1.4240 bpb | val@2048=1.4130 bpb
+step   625/1500 | loss 1.9000 bpb | lr 1.33e-03 | gnorm 0.28 | 81,018 tok/s | peak 2,715 MB | 126.4s
+step   650/1500 | loss 1.9567 bpb | lr 1.29e-03 | gnorm 0.27 | 81,083 tok/s | peak 2,715 MB | 131.3s
+step   675/1500 | loss 1.7786 bpb | lr 1.24e-03 | gnorm 0.29 | 81,145 tok/s | peak 2,715 MB | 136.3s
+step   700/1500 | loss 1.8227 bpb | lr 1.20e-03 | gnorm 0.32 | 81,196 tok/s | peak 2,715 MB | 141.2s
+step   725/1500 | loss 1.7860 bpb | lr 1.15e-03 | gnorm 0.31 | 81,251 tok/s | peak 2,715 MB | 146.2s
+step   750/1500 | loss 1.8946 bpb | lr 1.10e-03 | gnorm 0.32 | 81,300 tok/s | peak 2,715 MB | 151.1s
+step   775/1500 | loss 1.7253 bpb | lr 1.05e-03 | gnorm 0.28 | 81,346 tok/s | peak 2,715 MB | 156.1s
+step   800/1500 | loss 1.8673 bpb | lr 1.01e-03 | gnorm 0.24 | 81,383 tok/s | peak 2,715 MB | 161.1s
+step   825/1500 | loss 1.7475 bpb | lr 9.61e-04 | gnorm 0.25 | 81,423 tok/s | peak 2,715 MB | 166.0s
+step   850/1500 | loss 1.7028 bpb | lr 9.15e-04 | gnorm 0.24 | 81,460 tok/s | peak 2,715 MB | 171.0s
+step   875/1500 | loss 1.7671 bpb | lr 8.69e-04 | gnorm 0.26 | 81,497 tok/s | peak 2,715 MB | 175.9s
+step   900/1500 | loss 1.6676 bpb | lr 8.24e-04 | gnorm 0.25 | 81,529 tok/s | peak 2,715 MB | 180.9s
+  --> EVAL @ step 900: val@1024=1.2152 bpb | val@2048=1.1977 bpb
+step   925/1500 | loss 1.6604 bpb | lr 7.79e-04 | gnorm 0.23 | 81,066 tok/s | peak 2,715 MB | 186.9s
+step   950/1500 | loss 1.8710 bpb | lr 7.36e-04 | gnorm 0.26 | 81,104 tok/s | peak 2,715 MB | 191.9s
+step   975/1500 | loss 1.5561 bpb | lr 6.93e-04 | gnorm 0.23 | 81,144 tok/s | peak 2,715 MB | 196.9s
+step  1000/1500 | loss 1.6707 bpb | lr 6.52e-04 | gnorm 0.24 | 81,177 tok/s | peak 2,715 MB | 201.8s
+step  1025/1500 | loss 1.6582 bpb | lr 6.11e-04 | gnorm 0.24 | 81,213 tok/s | peak 2,715 MB | 206.8s
+step  1050/1500 | loss 1.6391 bpb | lr 5.73e-04 | gnorm 0.27 | 81,248 tok/s | peak 2,715 MB | 211.7s
+step  1075/1500 | loss 1.5540 bpb | lr 5.35e-04 | gnorm 0.22 | 81,278 tok/s | peak 2,715 MB | 216.7s
+step  1100/1500 | loss 1.6931 bpb | lr 4.99e-04 | gnorm 0.23 | 81,309 tok/s | peak 2,715 MB | 221.7s
+step  1125/1500 | loss 1.5151 bpb | lr 4.65e-04 | gnorm 0.22 | 81,335 tok/s | peak 2,715 MB | 226.6s
+step  1150/1500 | loss 1.4423 bpb | lr 4.32e-04 | gnorm 0.22 | 81,365 tok/s | peak 2,715 MB | 231.6s
+step  1175/1500 | loss 1.5606 bpb | lr 4.02e-04 | gnorm 0.20 | 81,391 tok/s | peak 2,715 MB | 236.5s
+step  1200/1500 | loss 1.5929 bpb | lr 3.73e-04 | gnorm 0.23 | 81,414 tok/s | peak 2,715 MB | 241.5s
+  --> EVAL @ step 1200: val@1024=1.0549 bpb | val@2048=1.0341 bpb
+step  1225/1500 | loss 1.6299 bpb | lr 3.46e-04 | gnorm 0.26 | 81,075 tok/s | peak 2,715 MB | 247.6s
+step  1250/1500 | loss 1.5839 bpb | lr 3.22e-04 | gnorm 0.23 | 81,105 tok/s | peak 2,715 MB | 252.5s
+step  1275/1500 | loss 1.6197 bpb | lr 2.99e-04 | gnorm 0.22 | 81,133 tok/s | peak 2,715 MB | 257.5s
+step  1300/1500 | loss 1.6266 bpb | lr 2.79e-04 | gnorm 0.22 | 81,162 tok/s | peak 2,715 MB | 262.4s
+step  1325/1500 | loss 1.5733 bpb | lr 2.60e-04 | gnorm 0.23 | 81,189 tok/s | peak 2,715 MB | 267.4s
+step  1350/1500 | loss 1.6178 bpb | lr 2.45e-04 | gnorm 0.24 | 81,215 tok/s | peak 2,715 MB | 272.3s
+step  1375/1500 | loss 1.5639 bpb | lr 2.31e-04 | gnorm 0.22 | 81,239 tok/s | peak 2,715 MB | 277.3s
+step  1400/1500 | loss 1.5690 bpb | lr 2.20e-04 | gnorm 0.21 | 81,262 tok/s | peak 2,715 MB | 282.3s
+step  1425/1500 | loss 1.5306 bpb | lr 2.11e-04 | gnorm 0.21 | 81,284 tok/s | peak 2,715 MB | 287.2s
+step  1450/1500 | loss 1.6025 bpb | lr 2.05e-04 | gnorm 0.25 | 81,304 tok/s | peak 2,715 MB | 292.2s
+step  1475/1500 | loss 1.4721 bpb | lr 2.01e-04 | gnorm 0.22 | 81,327 tok/s | peak 2,715 MB | 297.2s
+step  1500/1500 | loss 1.5966 bpb | lr 2.00e-04 | gnorm 0.23 | 81,347 tok/s | peak 2,715 MB | 302.1s
+  --> EVAL @ step 1500: val@1024=1.0149 bpb | val@2048=0.9937 bpb
+=== STAGE 2: Chinchilla-ratio convergence check, 18000 steps (~20.5 tok/param), h6 vs pure ALiBi ===
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+17:51:46 alibi-hybrid-h6 300 (300, 2.331, 60.8)
+17:52:47 alibi-hybrid-h6 600 (600, 2.1602, 121.7)
+17:53:47 alibi-hybrid-h6 900 (900, 1.7284, 182.5)
+17:54:48 alibi-hybrid-h6 1200 (1200, 1.6687, 243.4)
+17:55:49 alibi-hybrid-h6 1500 (1500, 1.6701, 304.3)
+17:56:50 alibi-hybrid-h6 1800 (1800, 1.5267, 365.3)
+17:57:51 alibi-hybrid-h6 2100 (2100, 1.5105, 426.2)
+17:58:52 alibi-hybrid-h6 2400 (2400, 1.3791, 487.2)
+17:59:53 alibi-hybrid-h6 2700 (2700, 1.3978, 548.2)
+18:00:54 alibi-hybrid-h6 3000 (3000, 1.4297, 609.1)
+18:01:55 alibi-hybrid-h6 3300 (3300, 1.4804, 670.0)
+18:02:56 alibi-hybrid-h6 3600 (3600, 1.5405, 731.0)
+18:03:57 alibi-hybrid-h6 3900 (3900, 1.4983, 791.9)
+18:04:58 alibi-hybrid-h6 4200 (4200, 1.3701, 852.8)
+18:05:59 alibi-hybrid-h6 4500 (4500, 1.3673, 913.8)
+18:07:00 alibi-hybrid-h6 4800 (4800, 1.3984, 974.7)
+18:08:01 alibi-hybrid-h6 5100 (5100, 1.4713, 1035.7)
+18:09:02 alibi-hybrid-h6 5400 (5400, 1.3424, 1096.7)
+18:10:03 alibi-hybrid-h6 5700 (5700, 1.2753, 1157.6)
+18:11:04 alibi-hybrid-h6 6000 (6000, 1.2238, 1218.6)
+18:12:04 alibi-hybrid-h6 6300 (6300, 1.2779, 1279.6)
+18:13:05 alibi-hybrid-h6 6600 (6600, 1.4309, 1340.5)
+18:14:06 alibi-hybrid-h6 6900 (6900, 1.3816, 1401.4)
+18:15:07 alibi-hybrid-h6 7200 (7200, 1.2515, 1462.3)
+18:16:08 alibi-hybrid-h6 7500 (7500, 1.2506, 1523.2)
+18:17:09 alibi-hybrid-h6 7800 (7800, 1.2931, 1584.2)
+18:18:10 alibi-hybrid-h6 8100 (8100, 1.0382, 1645.1)
+18:19:11 alibi-hybrid-h6 8400 (8400, 1.2967, 1706.0)
+18:20:12 alibi-hybrid-h6 8700 (8700, 1.313, 1766.9)
+18:21:13 alibi-hybrid-h6 9000 (9000, 1.1572, 1827.9)
+18:22:14 alibi-hybrid-h6 9300 (9300, 1.2111, 1888.8)
+18:23:15 alibi-hybrid-h6 9600 (9600, 1.259, 1949.7)
+18:24:15 alibi-hybrid-h6 9900 (9900, 1.1677, 2010.6)
+18:25:16 alibi-hybrid-h6 10200 (10200, 1.1634, 2071.5)
+18:26:17 alibi-hybrid-h6 10500 (10500, 1.1397, 2132.4)
+18:27:18 alibi-hybrid-h6 10800 (10800, 1.19, 2193.3)
+18:28:19 alibi-hybrid-h6 11100 (11100, 1.1494, 2254.2)
+18:29:20 alibi-hybrid-h6 11400 (11400, 1.1436, 2315.1)
+18:30:21 alibi-hybrid-h6 11700 (11700, 1.2291, 2375.9)
+18:31:22 alibi-hybrid-h6 12000 (12000, 1.1706, 2436.8)
+18:32:23 alibi-hybrid-h6 12300 (12300, 1.1052, 2497.7)
+18:33:24 alibi-hybrid-h6 12600 (12600, 1.1844, 2558.7)
+18:34:25 alibi-hybrid-h6 12900 (12900, 1.1351, 2619.6)
+18:35:25 alibi-hybrid-h6 13200 (13200, 1.2352, 2680.6)
+18:36:26 alibi-hybrid-h6 13500 (13500, 1.2411, 2741.5)
+18:37:27 alibi-hybrid-h6 13800 (13800, 1.0688, 2802.5)
+18:38:28 alibi-hybrid-h6 14100 (14100, 1.1988, 2863.4)
+18:39:29 alibi-hybrid-h6 14400 (14400, 1.1415, 2924.3)
+18:40:30 alibi-hybrid-h6 14700 (14700, 1.0841, 2985.2)
+18:41:31 alibi-hybrid-h6 15000 (15000, 1.1454, 3046.1)
+18:42:32 alibi-hybrid-h6 15300 (15300, 1.0607, 3107.0)
+18:43:33 alibi-hybrid-h6 15600 (15600, 0.9619, 3167.9)
+18:44:34 alibi-hybrid-h6 15900 (15900, 1.1825, 3228.8)
+18:45:35 alibi-hybrid-h6 16200 (16200, 1.0555, 3289.7)
+18:46:36 alibi-hybrid-h6 16500 (16500, 1.0417, 3350.6)
+18:47:36 alibi-hybrid-h6 16800 (16800, 1.2209, 3411.5)
+18:48:37 alibi-hybrid-h6 17100 (17100, 1.0464, 3472.4)
+18:49:38 alibi-hybrid-h6 17400 (17400, 1.0767, 3533.3)
+18:50:39 alibi-hybrid-h6 17700 (17700, 1.1513, 3594.2)
+18:51:40 alibi-hybrid-h6 18000 (18000, 1.161, 3655.0)
+18:51:43 DONE alibi-hybrid-h6|seed0 {'kind': 'alibi-hybrid-h6', 'seed': 0, 'params': 14436348, 'steps': 18000, 'train_s': 3655.044090270996, 'tok_s': 80686.30438275625, 'peak_mem_mb': 2719.921664, 'val_bpb': 0.7820060163821079, 'val_bpb_len2048': 0.7637275497635891, 'val_bpb_len4096': 0.8276482233716967}
+18:52:41 alibi-pure 300 (300, 2.7139, 57.3)
+18:53:38 alibi-pure 600 (600, 2.1877, 114.8)
+18:54:36 alibi-pure 900 (900, 1.7865, 172.3)
+18:55:33 alibi-pure 1200 (1200, 1.7525, 229.8)
+18:56:31 alibi-pure 1500 (1500, 1.7434, 287.2)
+18:57:28 alibi-pure 1800 (1800, 1.5939, 344.6)
+18:58:25 alibi-pure 2100 (2100, 1.5459, 402.1)
+18:59:23 alibi-pure 2400 (2400, 1.4354, 459.5)
+19:00:20 alibi-pure 2700 (2700, 1.4427, 516.9)
+19:01:18 alibi-pure 3000 (3000, 1.4747, 574.3)
+19:02:15 alibi-pure 3300 (3300, 1.5459, 631.7)
+19:03:12 alibi-pure 3600 (3600, 1.5992, 689.1)
+19:04:10 alibi-pure 3900 (3900, 1.5662, 746.5)
+19:05:07 alibi-pure 4200 (4200, 1.4194, 803.9)
+19:06:05 alibi-pure 4500 (4500, 1.4276, 861.3)
+19:07:02 alibi-pure 4800 (4800, 1.4487, 918.7)
+19:08:00 alibi-pure 5100 (5100, 1.5354, 976.1)
+19:08:57 alibi-pure 5400 (5400, 1.3868, 1033.5)
+19:09:54 alibi-pure 5700 (5700, 1.3319, 1091.0)
+19:10:52 alibi-pure 6000 (6000, 1.2771, 1148.4)
+19:11:49 alibi-pure 6300 (6300, 1.345, 1205.7)
+19:12:47 alibi-pure 6600 (6600, 1.4876, 1263.1)
+19:13:44 alibi-pure 6900 (6900, 1.4372, 1320.5)
+19:14:41 alibi-pure 7200 (7200, 1.2991, 1378.0)
+19:15:39 alibi-pure 7500 (7500, 1.2977, 1435.4)
+19:16:36 alibi-pure 7800 (7800, 1.3554, 1492.8)
+19:17:34 alibi-pure 8100 (8100, 1.0794, 1550.2)
+19:18:31 alibi-pure 8400 (8400, 1.3526, 1607.6)
+19:19:28 alibi-pure 8700 (8700, 1.3634, 1665.0)
+19:20:26 alibi-pure 9000 (9000, 1.2055, 1722.4)
+19:21:23 alibi-pure 9300 (9300, 1.2639, 1779.8)
+19:22:21 alibi-pure 9600 (9600, 1.3061, 1837.2)
+19:23:18 alibi-pure 9900 (9900, 1.2055, 1894.7)
+19:24:16 alibi-pure 10200 (10200, 1.2051, 1952.1)
+19:25:13 alibi-pure 10500 (10500, 1.1969, 2009.6)
+19:26:10 alibi-pure 10800 (10800, 1.2273, 2067.0)
+19:27:08 alibi-pure 11100 (11100, 1.2096, 2124.4)
+19:28:05 alibi-pure 11400 (11400, 1.1994, 2181.8)
+19:29:03 alibi-pure 11700 (11700, 1.267, 2239.1)
+19:30:00 alibi-pure 12000 (12000, 1.213, 2296.5)
+19:30:57 alibi-pure 12300 (12300, 1.1495, 2353.9)
+19:31:55 alibi-pure 12600 (12600, 1.243, 2411.3)
+19:32:52 alibi-pure 12900 (12900, 1.1738, 2468.7)
+19:33:50 alibi-pure 13200 (13200, 1.2884, 2526.2)
+19:34:47 alibi-pure 13500 (13500, 1.2864, 2583.6)
+19:35:44 alibi-pure 13800 (13800, 1.1217, 2641.0)
+19:36:42 alibi-pure 14100 (14100, 1.2542, 2698.4)
+19:37:39 alibi-pure 14400 (14400, 1.1911, 2755.8)
+19:38:37 alibi-pure 14700 (14700, 1.1174, 2813.1)
+19:39:34 alibi-pure 15000 (15000, 1.1929, 2870.5)
+19:40:31 alibi-pure 15300 (15300, 1.1311, 2927.9)
+19:41:29 alibi-pure 15600 (15600, 1.0113, 2985.3)
+19:42:26 alibi-pure 15900 (15900, 1.2281, 3042.7)
+19:43:24 alibi-pure 16200 (16200, 1.1144, 3100.1)
+19:44:21 alibi-pure 16500 (16500, 1.103, 3157.5)
+19:45:18 alibi-pure 16800 (16800, 1.2726, 3214.9)
+19:46:16 alibi-pure 17100 (17100, 1.0975, 3272.2)
+19:47:13 alibi-pure 17400 (17400, 1.1324, 3329.5)
+19:48:10 alibi-pure 17700 (17700, 1.2096, 3386.9)
+19:49:08 alibi-pure 18000 (18000, 1.217, 3444.2)
+19:49:10 DONE alibi-pure|seed0 {'kind': 'alibi-pure', 'seed': 0, 'params': 14260608, 'steps': 18000, 'train_s': 3444.2044353485107, 'tok_s': 85625.57929873827, 'peak_mem_mb': 2152.479744, 'val_bpb': 0.7924094296643658, 'val_bpb_len2048': 0.7720323662465248, 'val_bpb_len4096': 0.8306908221926891}
+19:49:10 ALL DONE
+=== QUEUE7 ALL DONE ===

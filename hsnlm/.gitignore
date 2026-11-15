@@ -4,3 +4,4 @@ __pycache__/
 experiments/teacher.pt
 results/*smoke*
 benchmarks/results_smoke.json
+checkpoints/

@@ -61,6 +61,10 @@ Two follow-ups were proposed to fix the round-1 failures directly, both implemen
 
 **Verdict, unchanged after two rounds: `h6` alone is still the best known configuration.** Final recommended config: `Config(dim=384, layers=8, heads=8, mixer_heads=6, mlp_mult=3.65, pattern="dddaddda", mixer="sheafdelta-fused")` with ALiBi attention in the 2 `a` layers — quality-tied with the un-modified v1 hybrid, 2.8% faster, 3.8% leaner, 4.7x tighter seed variance.
 
+## Does `h6`'s edge survive much more training? Yes — checked separately (`gpu_chinchilla_15m.py`)
+
+Every number above is at 1,500 steps (~1.73 "tokens"/param), the same recipe as every other result in this project — leaving open whether the win is an early-training artifact (the CPU report's own standing warning). Reran `h6` vs pure ALiBi at 18,000 steps (~20.5 "tokens"/param, in practice ~7.4 repeated epochs over the fixed 40M-byte enwik8 slice): `h6` 0.7820/0.7637/0.8276 bpb @1024/2048/4096 vs pure ALiBi's 0.7924/0.7720/0.8307 — the gap held at @1024 (0.0078→0.0104) and widened at @2048 (0.0004→0.0083) and @4096 (a noise-level disadvantage → +0.0031). One seed, not three, but the central risk this checks for (vanishing with real training) didn't materialize. See `TRAINING_ADVANTAGE.md` open question #5 for the full writeup.
+
 ## What's not yet tried
 
 - A layer-1-only version of the token-shift (only the first sheaf-delta layer gets it) — the round-2 result suggests this narrower form is where any real benefit, if there is one, would have to live.
