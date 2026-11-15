@@ -150,7 +150,9 @@ PRESETS = {
 }
 
 
-def build_optimizer(model: nn.Module, lr: float, weight_decay: float):
+def build_optimizer(model: nn.Module, lr: float, weight_decay: float, split_wd: bool = False):
+    if not split_wd:
+        return torch.optim.AdamW(model.parameters(), lr=lr, betas=(0.9, 0.95), weight_decay=weight_decay)
     decay, no_decay = [], []
     for name, p in model.named_parameters():
         if not p.requires_grad:
@@ -204,6 +206,7 @@ def main():
     p.add_argument("--steps", type=int, default=1500)
     p.add_argument("--lr", type=float, default=2e-3)
     p.add_argument("--wd", type=float, default=0.05)
+    p.add_argument("--split-wd", action="store_true", help="Exclude 1D params and Householder .V from weight decay (default: uniform wd=0.05)")
     p.add_argument("--warmup", type=int, default=100)
     p.add_argument("--eval-every", type=int, default=300)
     p.add_argument("--compile", action="store_true", help="Compile whole model with torch.compile")
@@ -249,7 +252,7 @@ def main():
     print(f"Optimization : lr={args.lr}, wd={args.wd}, compile={args.compile}, grad_ckpt={args.ckpt}")
 
     data = ByteData(args.data, ctx=args.ctx, n_train=40_000_000, n_val=1_000_000)
-    opt = build_optimizer(raw_model, lr=args.lr, weight_decay=args.wd)
+    opt = build_optimizer(raw_model, lr=args.lr, weight_decay=args.wd, split_wd=args.split_wd)
 
     os.makedirs(args.out_dir, exist_ok=True)
     ckpt_path = os.path.join(args.out_dir, f"deepa_{args.preset}_{args.posenc}_latest.pt")
