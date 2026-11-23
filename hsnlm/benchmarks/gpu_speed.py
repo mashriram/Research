@@ -9,7 +9,7 @@ assert torch.cuda.is_available()
 SMOKE = len(sys.argv) > 1 and sys.argv[1] == "smoke"
 DIM, HEADS, LAYERS, VOCAB, B = 256, 8, 4, 256, 16
 NS = (256, 512, 1024) if SMOKE else (256, 512, 1024, 2048, 4096, 8192)
-OUT = "results/gpu_speed.json"; os.makedirs("results", exist_ok=True)
+OUT = "benchmark_results/development/speed_vs_length/gpu_speed.json"; os.makedirs("benchmark_results", exist_ok=True)
 R = json.load(open(OUT)) if os.path.exists(OUT) else {}
 def save(): json.dump(R, open(OUT, "w"), indent=1)
 def log(*a): print(time.strftime("%H:%M:%S"), *a, flush=True)

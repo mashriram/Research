@@ -1,0 +1,84 @@
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+20:40:30 listops alibi-hybrid-h6 0 1000 2.2629
+20:49:00 listops alibi-hybrid-h6 0 2000 2.2931
+20:57:30 listops alibi-hybrid-h6 0 3000 2.3641
+21:06:02 listops alibi-hybrid-h6 0 4000 2.0683
+21:14:34 listops alibi-hybrid-h6 0 5000 2.1542
+21:14:44 DONE listops|alibi-hybrid-h6|seed0 0.202 119129
+21:19:27 listops alibi-pure 0 1000 2.2647
+21:24:09 listops alibi-pure 0 2000 2.3088
+21:28:52 listops alibi-pure 0 3000 2.344
+21:33:36 listops alibi-pure 0 4000 2.2301
+21:38:24 listops alibi-pure 0 5000 2.2244
+21:38:30 DONE listops|alibi-pure|seed0 0.188 216672
+21:43:44 listops rope-gpt 0 1000 2.2403
+21:48:58 listops rope-gpt 0 2000 2.2568
+21:54:11 listops rope-gpt 0 3000 2.2953
+21:59:25 listops rope-gpt 0 4000 2.2222
+22:04:39 listops rope-gpt 0 5000 2.2088
+22:04:45 DONE listops|rope-gpt|seed0 0.1795 196271
+22:13:18 listops alibi-hybrid-h6 1 1000 2.267
+22:21:51 listops alibi-hybrid-h6 1 2000 2.2882
+22:30:24 listops alibi-hybrid-h6 1 3000 2.2481
+22:38:59 listops alibi-hybrid-h6 1 4000 2.0959
+22:47:31 listops alibi-hybrid-h6 1 5000 2.332
+22:47:40 DONE listops|alibi-hybrid-h6|seed1 0.1965 119985
+22:52:23 listops alibi-pure 1 1000 2.218
+22:57:06 listops alibi-pure 1 2000 2.3573
+23:01:49 listops alibi-pure 1 3000 2.2807
+23:06:32 listops alibi-pure 1 4000 2.1338
+23:11:15 listops alibi-pure 1 5000 2.3467
+23:11:20 DONE listops|alibi-pure|seed1 0.199 217683
+23:16:33 listops rope-gpt 1 1000 2.2545
+23:21:46 listops rope-gpt 1 2000 2.343
+23:27:00 listops rope-gpt 1 3000 2.2539
+23:32:13 listops rope-gpt 1 4000 2.1774
+23:37:26 listops rope-gpt 1 5000 2.3599
+23:37:32 DONE listops|rope-gpt|seed1 0.1845 196725
+Traceback (most recent call last):
+  File "/home/mukundan/learning/llm/Research/Research/hsnlm/benchmarks/gpu_lra_subset.py", line 107, in <module>
+    for seed in SEEDS:
+                       
+  File "/home/mukundan/learning/llm/Research/Research/hsnlm/benchmarks/gpu_lra_subset.py", line 93, in run
+    items = rng.sample(d["train"], B); opt.zero_grad(set_to_none=True); mb = MICRO.get(task, B); loss = 0.0
+                           ^^^^^^^^^^^^^^^^^
+  File "/home/mukundan/learning/llm/Research/Research/hsnlm/benchmarks/gpu_lra_subset.py", line 76, in forward_cls
+    def forward_cls(m, x):
+                           
+  File "/home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mukundan/learning/llm/Research/Research/hsnlm/benchmarks/deepa_common.py", line 108, in forward
+    h = checkpoint(b, h, use_reentrant=False) if (s.ckpt and s.training) else b(h)
+                                                                              ^^^^
+  File "/home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py", line 161, in forward
+    super().__init__(); s.n1 = RMSNorm(c.dim); s.n2 = RMSNorm(c.dim); s.mix = make_mixer(c); s.mlp = MLP(c.dim, c.mlp_mult, True)
+                           ^^^^^^^^^^^^^^
+  File "/home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/fastmixer_fused.py", line 37, in forward
+    return s.out(y * F.silu(s.g(x)))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/torch/nn/modules/linear.py", line 125, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 64.00 MiB. GPU 0 has a total capacity of 7.62 GiB of which 63.75 MiB is free. Including non-PyTorch memory, this process has 7.53 GiB memory in use. Of the allocated memory 6.87 GiB is allocated by PyTorch, and 545.41 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

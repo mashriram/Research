@@ -13,7 +13,7 @@ assert torch.cuda.is_available()
 torch.backends.cudnn.benchmark = True
 DIM, HEADS, LAYERS, VOCAB = 1024, 16, 8, 256
 BLOCKS = (1, 8, 32, 128, 512, 2048)
-OUT = "results/gpu_blockdecode.json"; os.makedirs("results", exist_ok=True)
+OUT = "benchmark_results/development/block_decode/gpu_blockdecode.json"; os.makedirs("benchmark_results", exist_ok=True)
 R = json.load(open(OUT)) if os.path.exists(OUT) else {}
 def save(): json.dump(R, open(OUT, "w"), indent=1)
 def log(*a): print(time.strftime("%H:%M:%S"), *a, flush=True)

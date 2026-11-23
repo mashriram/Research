@@ -13,7 +13,7 @@ assert torch.cuda.is_available()
 torch.backends.cudnn.benchmark = True
 WIDTH, HEADSN, LAYERSN, CTX, B, VOCAB = 1024, 16, 16, 1024, 16, 256
 SWEEP_STEPS, MAIN_STEPS = 40, 300
-OUT = "results/gpu_scale_ckpt_31.json"; os.makedirs("results", exist_ok=True)
+OUT = "benchmark_results/development/gpu_scale_ckpt/gpu_scale_ckpt_31.json"; os.makedirs("benchmark_results", exist_ok=True)
 R = json.load(open(OUT)) if os.path.exists(OUT) else {}
 def save(): json.dump(R, open(OUT, "w"), indent=1)
 def log(*a): print(time.strftime("%H:%M:%S"), *a, flush=True)

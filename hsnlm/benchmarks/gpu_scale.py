@@ -1,7 +1,7 @@
 """Larger-than-CPU-suite LM quality/speed run on enwik8, scaled to what one 8GB GPU can hold comfortably
 (dim 384, 8 layers, ctx 1024) -- the GPU analogue of cpu_suite's LM stage, but ~15x the parameters and
 4x the context. Compares GPT vs HSN-fused (pure fla-fused sheaf-delta) vs Hybrid-fused (7 sheaf-delta + 1
-attention). bf16 autocast. Resumable: results/gpu_scale.json. usage: gpu_scale.py [smoke]"""
+attention). bf16 autocast. Resumable: benchmark_results/development/gpu_scale/gpu_scale.json. usage: gpu_scale.py [smoke]"""
 import sys, os, copy, json, time, math, torch, torch.nn.functional as F; sys.path.insert(0, ".")
 from hsnlm import GPT, Config, ByteData
 from hsnlm.models import LM, HBlock, TBlock
@@ -9,7 +9,7 @@ assert torch.cuda.is_available()
 torch.backends.cudnn.benchmark = True
 SMOKE = len(sys.argv) > 1 and sys.argv[1] == "smoke"
 DIM, HEADS, LAYERS, CTX, B, VOCAB = 384, 8, 8, 1024, 16, 256
-OUT = "results/gpu_scale_smoke.json" if SMOKE else "results/gpu_scale.json"; os.makedirs("results", exist_ok=True)
+OUT = "benchmark_results/development/gpu_scale/gpu_scale_smoke.json" if SMOKE else "benchmark_results/development/gpu_scale/gpu_scale.json"; os.makedirs("benchmark_results", exist_ok=True)
 R = json.load(open(OUT)) if os.path.exists(OUT) else {}
 def save(): json.dump(R, open(OUT, "w"), indent=1)
 def log(*a): print(time.strftime("%H:%M:%S"), *a, flush=True)

@@ -30,7 +30,7 @@ While bit-exactness-checking `FusedSheafDeltaMixer`, `step()` and `forward()` tu
 | postnorm | 1.0715 ± 0.0148 | 1.0539 ± 0.0163 | 1.1306 ± 0.0217 | 329.7 | 74,534 | 2,753.4 MB |
 | combined (all three) | 1.0716 ± 0.0197 | 1.0545 ± 0.0214 | 1.1329 ± 0.0171 | 324.4 | 75,757 | 2,718.2 MB |
 
-Raw data: `results/gpu_v2_ablation.json`, reproducible via `benchmarks/gpu_v2_ablation.py [h6] [decay] [postnorm] [combined]`.
+Raw data: `benchmark_results/paper/mixer_ablation_v2/gpu_v2_ablation.json`, reproducible via `benchmarks/gpu_v2_ablation.py [h6] [decay] [postnorm] [combined]`.
 
 ## Verdict: only one of the three "free" upgrades actually delivers
 

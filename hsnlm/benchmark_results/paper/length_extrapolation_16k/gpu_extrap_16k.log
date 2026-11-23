@@ -1,0 +1,37 @@
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+W1120 22:26:57.381000 41789 torch/_inductor/utils.py:1137] [3/0_1] Not enough SMs to use max_autotune_gemm mode
+22:28:22 alibi-hybrid-h6|seed0 (300, 2.3412, 60.5)
+22:29:23 alibi-hybrid-h6|seed0 (600, 2.1259, 121.0)
+22:30:23 alibi-hybrid-h6|seed0 (900, 1.6621, 181.7)
+22:31:24 alibi-hybrid-h6|seed0 (1200, 1.5893, 242.3)
+22:32:25 alibi-hybrid-h6|seed0 (1500, 1.598, 303.1)
+22:32:28 alibi-hybrid-h6|seed0 L 1024 windows 512 bpb 1.5
+22:32:32 alibi-hybrid-h6|seed0 L 2048 windows 256 bpb 1.4794
+22:32:39 alibi-hybrid-h6|seed0 L 4096 windows 128 bpb 1.4687
+22:32:49 alibi-hybrid-h6|seed0 L 8192 windows 64 bpb 1.4636
+22:33:06 alibi-hybrid-h6|seed0 L 16384 windows 32 bpb 1.4605
+22:33:23 DONE alibi-hybrid-h6|seed0 {'kind': 'alibi-hybrid-h6', 'seed': 0, 'params': 14436348, 'steps': 1500, 'lr': 0.002, 'batch': 16, 'ctx': 1024, 'tokens': 24576000, 'train_s': 303.06511306762695, 'tok_s': 81091.48476788231, 'peak_mem_mb': 2717.10464, 'val_bpb_len1024': 1.500042521457721, 'eval_peak_mem_mb_len1024': 469.471744, 'val_bpb_len2048': 1.4793910704693443, 'eval_peak_mem_mb_len2048': 543.065088, 'val_bpb_len4096': 1.4686824981581905, 'eval_peak_mem_mb_len4096': 1411.3024, 'val_bpb_len8192': 1.463617366567871, 'eval_peak_mem_mb_len8192': 794.081792, 'val_bpb_len16384': 1.4605296847790994, 'eval_peak_mem_mb_len16384': 1423.204864, 'position_bpb_16k': [1.4624, 1.3891, 1.4848, 1.5049, 1.4653, 1.3997, 1.3954, 1.4529, 1.4663, 1.5485, 1.5148, 1.4395, 1.4394, 1.4253, 1.4623, 1.5179]}
+22:34:33 alibi-pure|seed0 (300, 2.7034, 62.6)
+22:35:30 alibi-pure|seed0 (600, 2.1611, 119.9)
+22:36:27 alibi-pure|seed0 (900, 1.7018, 177.2)
+22:37:25 alibi-pure|seed0 (1200, 1.6518, 234.5)
+22:38:22 alibi-pure|seed0 (1500, 1.6506, 291.8)
+22:38:24 alibi-pure|seed0 L 1024 windows 512 bpb 1.5329
+22:38:29 alibi-pure|seed0 L 2048 windows 256 bpb 1.506
+22:38:40 alibi-pure|seed0 L 4096 windows 128 bpb 1.4917
+22:39:10 alibi-pure|seed0 L 8192 windows 64 bpb 1.485
+22:40:07 alibi-pure|seed0 L 16384 windows 32 bpb 1.4814
+22:41:04 DONE alibi-pure|seed0 {'kind': 'alibi-pure', 'seed': 0, 'params': 14260608, 'steps': 1500, 'lr': 0.002, 'batch': 16, 'ctx': 1024, 'tokens': 24576000, 'train_s': 291.8351056575775, 'tok_s': 84211.93860356219, 'peak_mem_mb': 2241.547264, 'val_bpb_len1024': 1.5328546547411368, 'eval_peak_mem_mb_len1024': 279.085056, 'val_bpb_len2048': 1.5060407711207788, 'eval_peak_mem_mb_len2048': 540.319744, 'val_bpb_len4096': 1.4917043161554575, 'eval_peak_mem_mb_len4096': 1408.557056, 'val_bpb_len8192': 1.4850079398706197, 'eval_peak_mem_mb_len8192': 791.117312, 'val_bpb_len16384': 1.481393230684424, 'eval_peak_mem_mb_len16384': 1420.45952, 'position_bpb_16k': [1.4801, 1.4225, 1.499, 1.5281, 1.4996, 1.4234, 1.4106, 1.472, 1.492, 1.5803, 1.5448, 1.4622, 1.4611, 1.433, 1.4666, 1.527]}
+22:42:03 rope-gpt|seed0 (300, 2.8011, 50.0)
+22:42:53 rope-gpt|seed0 (600, 2.3238, 100.1)
+22:43:43 rope-gpt|seed0 (900, 1.7946, 150.2)
+22:44:34 rope-gpt|seed0 (1200, 1.6992, 200.4)
+22:45:24 rope-gpt|seed0 (1500, 1.697, 250.5)
+22:45:26 rope-gpt|seed0 L 1024 windows 512 bpb 1.5763
+22:45:28 rope-gpt|seed0 L 2048 windows 256 bpb 2.4197
+22:45:32 rope-gpt|seed0 L 4096 windows 128 bpb 3.5866
+22:45:35 rope-gpt|seed0 L 8192 windows 64 bpb 4.6504
+22:45:40 rope-gpt|seed0 L 16384 windows 32 bpb 5.4797
+22:45:45 DONE rope-gpt|seed0 {'kind': 'rope-gpt', 'seed': 0, 'params': 14260608, 'steps': 1500, 'lr': 0.002, 'batch': 16, 'ctx': 1024, 'tokens': 24576000, 'train_s': 250.4735016822815, 'tok_s': 98118.16353800952, 'peak_mem_mb': 2409.319424, 'val_bpb_len1024': 1.576337002830106, 'eval_peak_mem_mb_len1024': 258.268672, 'val_bpb_len2048': 2.4197206713533386, 'eval_peak_mem_mb_len2048': 352.771584, 'val_bpb_len4096': 3.5865953381186584, 'eval_peak_mem_mb_len4096': 352.771584, 'val_bpb_len8192': 4.650423321200244, 'eval_peak_mem_mb_len8192': 258.268672, 'val_bpb_len16384': 5.4797193802178095, 'eval_peak_mem_mb_len16384': 352.771584, 'position_bpb_16k': [1.5221, 3.1559, 4.5544, 5.0546, 5.4645, 5.6301, 5.8686, 5.8535, 5.9848, 6.0851, 6.2173, 6.3785, 6.5156, 6.4451, 6.3818, 6.5636]}
+22:45:45 ALL DONE
+22:45:58 ALL DONE

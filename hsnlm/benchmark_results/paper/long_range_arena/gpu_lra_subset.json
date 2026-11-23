@@ -1,0 +1,182 @@
+{
+ "listops|alibi-hybrid-h6|seed0": {
+  "task": "listops",
+  "arch": "alibi-hybrid-h6",
+  "seed": 0,
+  "params": 3256852,
+  "train_s": 2583.443109512329,
+  "tok_s": 119128.62136069857,
+  "peak_mem_mb": 5190.068736,
+  "test_acc": 0.202
+ },
+ "listops|alibi-pure|seed0": {
+  "task": "listops",
+  "arch": "alibi-pure",
+  "seed": 0,
+  "params": 3216640,
+  "train_s": 1420.4057350158691,
+  "tok_s": 216671.90466290366,
+  "peak_mem_mb": 3570.072064,
+  "test_acc": 0.188
+ },
+ "listops|rope-gpt|seed0": {
+  "task": "listops",
+  "arch": "rope-gpt",
+  "seed": 0,
+  "params": 3216640,
+  "train_s": 1568.0431866645813,
+  "tok_s": 196271.3901105283,
+  "peak_mem_mb": 3771.171328,
+  "test_acc": 0.1795
+ },
+ "listops|alibi-hybrid-h6|seed1": {
+  "task": "listops",
+  "arch": "alibi-hybrid-h6",
+  "seed": 1,
+  "params": 3256852,
+  "train_s": 2565.9217450618744,
+  "tok_s": 119984.54145863908,
+  "peak_mem_mb": 5194.095616,
+  "test_acc": 0.1965
+ },
+ "listops|alibi-pure|seed1": {
+  "task": "listops",
+  "arch": "alibi-pure",
+  "seed": 1,
+  "params": 3216640,
+  "train_s": 1414.3084347248077,
+  "tok_s": 217683.0289921199,
+  "peak_mem_mb": 3572.017664,
+  "test_acc": 0.199
+ },
+ "listops|rope-gpt|seed1": {
+  "task": "listops",
+  "arch": "rope-gpt",
+  "seed": 1,
+  "params": 3216640,
+  "train_s": 1564.97829246521,
+  "tok_s": 196725.3766280877,
+  "peak_mem_mb": 3772.023296,
+  "test_acc": 0.1845
+ },
+ "text|alibi-hybrid-h6|seed0": {
+  "task": "text",
+  "arch": "alibi-hybrid-h6",
+  "seed": 0,
+  "params": 3256852,
+  "train_s": 3498.8207716941833,
+  "tok_s": 130616.76656810039,
+  "peak_mem_mb": 2646.029824,
+  "test_acc": 0.7612
+ },
+ "text|alibi-pure|seed0": {
+  "task": "text",
+  "arch": "alibi-pure",
+  "seed": 0,
+  "params": 3216640,
+  "train_s": 2204.478064060211,
+  "tok_s": 207307.418227736,
+  "peak_mem_mb": 1817.54112,
+  "test_acc": 0.6356
+ },
+ "text|rope-gpt|seed0": {
+  "task": "text",
+  "arch": "rope-gpt",
+  "seed": 0,
+  "params": 3216640,
+  "train_s": 2250.674950838089,
+  "tok_s": 203052.26920032327,
+  "peak_mem_mb": 1923.632128,
+  "test_acc": 0.5774
+ },
+ "text|alibi-hybrid-h6|seed1": {
+  "task": "text",
+  "arch": "alibi-hybrid-h6",
+  "seed": 1,
+  "params": 3256852,
+  "train_s": 3530.352730035782,
+  "tok_s": 129641.07866789878,
+  "peak_mem_mb": 2664.555008,
+  "test_acc": 0.755
+ },
+ "text|alibi-pure|seed1": {
+  "task": "text",
+  "arch": "alibi-pure",
+  "seed": 1,
+  "params": 3216640,
+  "train_s": 2210.376116037369,
+  "tok_s": 207059.2116334026,
+  "peak_mem_mb": 1828.77696,
+  "test_acc": 0.6382
+ },
+ "text|rope-gpt|seed1": {
+  "task": "text",
+  "arch": "rope-gpt",
+  "seed": 1,
+  "params": 3216640,
+  "train_s": 2251.485735654831,
+  "tok_s": 203278.5412548425,
+  "peak_mem_mb": 1939.196928,
+  "test_acc": 0.5156
+ },
+ "image|alibi-hybrid-h6|seed0": {
+  "task": "image",
+  "arch": "alibi-hybrid-h6",
+  "seed": 0,
+  "params": 3256852,
+  "train_s": 1290.7970032691956,
+  "tok_s": 127053.28536139918,
+  "peak_mem_mb": 2682.005504,
+  "test_acc": 0.3953
+ },
+ "image|alibi-pure|seed0": {
+  "task": "image",
+  "arch": "alibi-pure",
+  "seed": 0,
+  "params": 3216640,
+  "train_s": 696.9148750305176,
+  "tok_s": 235322.85774904507,
+  "peak_mem_mb": 1845.744128,
+  "test_acc": 0.3736
+ },
+ "image|rope-gpt|seed0": {
+  "task": "image",
+  "arch": "rope-gpt",
+  "seed": 0,
+  "params": 3216640,
+  "train_s": 766.6382031440735,
+  "tok_s": 213920.98558018202,
+  "peak_mem_mb": 1948.611072,
+  "test_acc": 0.3395
+ },
+ "image|alibi-hybrid-h6|seed1": {
+  "task": "image",
+  "arch": "alibi-hybrid-h6",
+  "seed": 1,
+  "params": 3256852,
+  "train_s": 1291.717387676239,
+  "tok_s": 126962.75637740783,
+  "peak_mem_mb": 2682.005504,
+  "test_acc": 0.3963
+ },
+ "image|alibi-pure|seed1": {
+  "task": "image",
+  "arch": "alibi-pure",
+  "seed": 1,
+  "params": 3216640,
+  "train_s": 696.9753687381744,
+  "tok_s": 235302.43299259,
+  "peak_mem_mb": 1845.744128,
+  "test_acc": 0.3632
+ },
+ "image|rope-gpt|seed1": {
+  "task": "image",
+  "arch": "rope-gpt",
+  "seed": 1,
+  "params": 3216640,
+  "train_s": 767.2608480453491,
+  "tok_s": 213747.38515304346,
+  "peak_mem_mb": 1948.611072,
+  "test_acc": 0.3582
+ }
+}

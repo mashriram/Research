@@ -52,4 +52,4 @@ def layerwise(x, y):
     for i, b in enumerate(S.blocks): out = b(ts[i]); (F.mse_loss(out, ts[i + 1]) / ts[i + 1].var()).backward()
 res["layerwise teacher-target (no x-block grad)"] = run("lw", layerwise, S, params)
 
-json.dump(res, open("results/gpu_credit.json", "w"), indent=1); print(res)
+json.dump(res, open("benchmark_results/development/credit_assignment/gpu_credit.json", "w"), indent=1); print(res)

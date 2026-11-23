@@ -1,0 +1,33 @@
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+07:52:32 alibi-hybrid-h6|1024|train_ckpt {'ms': 70.12091249634977, 'tok_s': 14603.34675555321, 'peak_mem_mb': 315.653632, 'status': 'ok'}
+W1121 07:52:34.907000 327582 torch/_inductor/utils.py:1137] [6/0] Not enough SMs to use max_autotune_gemm mode
+07:52:37 alibi-hybrid-h6|1024|train_nockpt {'ms': 25.27798250230262, 'tok_s': 40509.5620232636, 'peak_mem_mb': 383.007232, 'status': 'ok'}
+07:52:40 alibi-hybrid-h6|1024|prefill {'ms': 5.105331998493057, 'tok_s': 200574.6149912003, 'peak_mem_mb': 87.745536, 'status': 'ok'}
+07:52:41 alibi-hybrid-h6|2048|train_ckpt {'ms': 70.11195749873878, 'tok_s': 29210.4239143065, 'peak_mem_mb': 326.793728, 'status': 'ok'}
+07:52:46 alibi-hybrid-h6|2048|train_nockpt {'ms': 31.81711599609116, 'tok_s': 64367.870433373144, 'peak_mem_mb': 543.077376, 'status': 'ok'}
+07:52:48 alibi-hybrid-h6|2048|prefill {'ms': 6.317327501164982, 'tok_s': 324187.72014310275, 'peak_mem_mb': 100.393984, 'status': 'ok'}
+07:52:50 alibi-hybrid-h6|4096|train_ckpt {'ms': 100.49138949761982, 'tok_s': 40759.71106058809, 'peak_mem_mb': 403.78112, 'status': 'ok'}
+07:52:55 alibi-hybrid-h6|4096|train_nockpt {'ms': 54.02092250005808, 'tok_s': 75822.47415333561, 'peak_mem_mb': 855.90272, 'status': 'ok'}
+07:52:58 alibi-hybrid-h6|4096|prefill {'ms': 14.496164996671723, 'tok_s': 282557.49027004244, 'peak_mem_mb': 125.69088, 'status': 'ok'}
+07:53:01 alibi-hybrid-h6|8192|train_ckpt {'ms': 226.09704900241923, 'tok_s': 36232.22875373462, 'peak_mem_mb': 579.945984, 'status': 'ok'}
+07:53:07 alibi-hybrid-h6|8192|train_nockpt {'ms': 115.24312899928191, 'tok_s': 71084.49823547437, 'peak_mem_mb': 1487.425024, 'status': 'ok'}
+07:53:10 alibi-hybrid-h6|8192|prefill {'ms': 31.24403350011562, 'tok_s': 262194.0601865532, 'peak_mem_mb': 176.284672, 'status': 'ok'}
+07:53:18 alibi-hybrid-h6|16384|train_ckpt {'ms': 577.5008015007188, 'tok_s': 28370.523395679837, 'peak_mem_mb': 953.882112, 'status': 'ok'}
+07:53:27 alibi-hybrid-h6|16384|train_nockpt {'ms': 281.2865054984286, 'tok_s': 58246.66196114953, 'peak_mem_mb': 2749.339648, 'status': 'ok'}
+07:53:30 alibi-hybrid-h6|16384|prefill {'ms': 76.62470400100574, 'tok_s': 213821.38063182536, 'peak_mem_mb': 277.472256, 'status': 'ok'}
+07:53:40 alibi-pure|1024|train_ckpt {'ms': 19.144186000630725, 'tok_s': 53488.824229260164, 'peak_mem_mb': 307.184128, 'status': 'ok'}
+07:53:46 alibi-pure|1024|train_nockpt {'ms': 17.043476000253577, 'tok_s': 60081.640622180865, 'peak_mem_mb': 349.404672, 'status': 'ok'}
+07:53:49 alibi-pure|1024|prefill {'ms': 2.8397410023899283, 'tok_s': 360596.26534187474, 'peak_mem_mb': 91.236352, 'status': 'ok'}
+07:53:58 alibi-pure|2048|train_ckpt {'ms': 34.4371474966465, 'tok_s': 59470.66319007504, 'peak_mem_mb': 320.395776, 'status': 'ok'}
+07:54:04 alibi-pure|2048|train_nockpt {'ms': 28.112538500863593, 'tok_s': 72850.05585451087, 'peak_mem_mb': 482.649088, 'status': 'ok'}
+07:54:07 alibi-pure|2048|prefill {'ms': 5.757111997809261, 'tok_s': 355733.9167241006, 'peak_mem_mb': 106.489856, 'status': 'ok'}
+07:54:17 alibi-pure|4096|train_ckpt {'ms': 66.47412149686716, 'tok_s': 61617.96361901585, 'peak_mem_mb': 398.303744, 'status': 'ok'}
+07:54:22 alibi-pure|4096|train_nockpt {'ms': 57.3946655022155, 'tok_s': 71365.51740756969, 'peak_mem_mb': 746.718208, 'status': 'ok'}
+07:54:27 alibi-pure|4096|prefill {'ms': 15.637066000635969, 'tok_s': 261941.72230477337, 'peak_mem_mb': 136.472576, 'status': 'ok'}
+07:54:38 alibi-pure|8192|train_ckpt {'ms': 174.8142629985523, 'tok_s': 46861.164869984554, 'peak_mem_mb': 585.452032, 'status': 'ok'}
+07:54:46 alibi-pure|8192|train_nockpt {'ms': 137.89419750173693, 'tok_s': 59407.865946620506, 'peak_mem_mb': 1263.19104, 'status': 'ok'}
+07:54:49 alibi-pure|8192|prefill {'ms': 42.82950500055449, 'tok_s': 191270.0135080698, 'peak_mem_mb': 196.438016, 'status': 'ok'}
+07:55:06 alibi-pure|16384|train_ckpt {'ms': 530.3878005033766, 'tok_s': 30890.60492049476, 'peak_mem_mb': 961.137152, 'status': 'ok'}
+07:55:17 alibi-pure|16384|train_nockpt {'ms': 410.4986150014156, 'tok_s': 39912.43673244427, 'peak_mem_mb': 2283.815936, 'status': 'ok'}
+07:55:22 alibi-pure|16384|prefill {'ms': 125.07111350350897, 'tok_s': 130997.4744851083, 'peak_mem_mb': 312.174592, 'status': 'ok'}
+07:55:22 ALL DONE

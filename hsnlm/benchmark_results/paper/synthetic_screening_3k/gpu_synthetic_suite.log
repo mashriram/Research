@@ -1,0 +1,122 @@
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+08:07:37 sweep|mqar32|alibi-hybrid-h6|0.001 {'final_loss': 0.1043430045247078, 'acc_T512': 0.96246337890625}
+08:13:10 sweep|mqar32|alibi-hybrid-h6|0.003 {'final_loss': 3.3860485553741455, 'acc_T512': 0.076995849609375}
+08:13:10 DONE mqar32|alibi-hybrid-h6|seed0 {'acc_T512': 0.9625}
+08:18:44 DONE mqar32|alibi-hybrid-h6|seed1 {'acc_T512': 0.1339}
+08:24:17 DONE mqar32|alibi-hybrid-h6|seed2 {'acc_T512': 0.0866}
+08:27:09 sweep|mqar32|alibi-pure|0.001 {'final_loss': 3.1911203861236572, 'acc_T512': 0.08404541015625}
+08:30:00 sweep|mqar32|alibi-pure|0.003 {'final_loss': 3.8502986431121826, 'acc_T512': 0.060699462890625}
+08:30:00 DONE mqar32|alibi-pure|seed0 {'acc_T512': 0.084}
+08:32:52 DONE mqar32|alibi-pure|seed1 {'acc_T512': 0.0815}
+08:35:43 DONE mqar32|alibi-pure|seed2 {'acc_T512': 0.0829}
+08:38:45 sweep|mqar32|rope-gpt|0.001 {'final_loss': 3.2236738204956055, 'acc_T512': 0.0821075439453125}
+08:41:47 sweep|mqar32|rope-gpt|0.003 {'final_loss': 3.5194175243377686, 'acc_T512': 0.0708160400390625}
+08:41:47 DONE mqar32|rope-gpt|seed0 {'acc_T512': 0.0821}
+08:44:49 DONE mqar32|rope-gpt|seed1 {'acc_T512': 0.0824}
+08:47:50 DONE mqar32|rope-gpt|seed2 {'acc_T512': 0.0836}
+08:54:14 sweep|mqar32|sheafdelta-pure|0.001 {'final_loss': 0.14701181650161743, 'acc_T512': 0.951690673828125}
+09:00:38 sweep|mqar32|sheafdelta-pure|0.003 {'final_loss': 3.1964986324310303, 'acc_T512': 0.1094818115234375}
+09:00:38 DONE mqar32|sheafdelta-pure|seed0 {'acc_T512': 0.9517}
+09:07:02 DONE mqar32|sheafdelta-pure|seed1 {'acc_T512': 0.0905}
+09:13:26 DONE mqar32|sheafdelta-pure|seed2 {'acc_T512': 0.8722}
+09:19:00 sweep|mqar64|alibi-hybrid-h6|0.001 {'final_loss': 3.5929970741271973, 'acc_T512': 0.06121063232421875}
+09:24:34 sweep|mqar64|alibi-hybrid-h6|0.003 {'final_loss': 4.037875652313232, 'acc_T512': 0.04399871826171875}
+09:24:34 DONE mqar64|alibi-hybrid-h6|seed0 {'acc_T512': 0.0612}
+09:30:07 DONE mqar64|alibi-hybrid-h6|seed1 {'acc_T512': 0.0601}
+09:35:41 DONE mqar64|alibi-hybrid-h6|seed2 {'acc_T512': 0.0619}
+09:38:33 sweep|mqar64|alibi-pure|0.001 {'final_loss': 3.68277907371521, 'acc_T512': 0.05918121337890625}
+09:41:24 sweep|mqar64|alibi-pure|0.003 {'final_loss': 4.045507907867432, 'acc_T512': 0.0447845458984375}
+09:41:24 DONE mqar64|alibi-pure|seed0 {'acc_T512': 0.0592}
+09:44:16 DONE mqar64|alibi-pure|seed1 {'acc_T512': 0.0522}
+09:47:07 DONE mqar64|alibi-pure|seed2 {'acc_T512': 0.0596}
+09:50:09 sweep|mqar64|rope-gpt|0.001 {'final_loss': 3.636286497116089, 'acc_T512': 0.06151580810546875}
+09:53:11 sweep|mqar64|rope-gpt|0.003 {'final_loss': 4.020659923553467, 'acc_T512': 0.0456085205078125}
+09:53:11 DONE mqar64|rope-gpt|seed0 {'acc_T512': 0.0615}
+09:56:12 DONE mqar64|rope-gpt|seed1 {'acc_T512': 0.0616}
+09:59:14 DONE mqar64|rope-gpt|seed2 {'acc_T512': 0.0606}
+10:05:37 sweep|mqar64|sheafdelta-pure|0.001 {'final_loss': 1.870975375175476, 'acc_T512': 0.37470245361328125}
+10:12:01 sweep|mqar64|sheafdelta-pure|0.003 {'final_loss': 4.086426258087158, 'acc_T512': 0.03922271728515625}
+10:12:01 DONE mqar64|sheafdelta-pure|seed0 {'acc_T512': 0.3747}
+10:18:24 DONE mqar64|sheafdelta-pure|seed1 {'acc_T512': 0.9164}
+10:24:47 DONE mqar64|sheafdelta-pure|seed2 {'acc_T512': 0.4832}
+10:25:48 sweep|s5|alibi-hybrid-h6|0.001 {'final_loss': 4.712094306945801, 'acc_T64': 0.0236358642578125, 'acc_T256': 0.012353897094726562}
+10:26:50 sweep|s5|alibi-hybrid-h6|0.003 {'final_loss': 4.7117085456848145, 'acc_T64': 0.02361297607421875, 'acc_T256': 0.012350082397460938}
+10:26:50 DONE s5|alibi-hybrid-h6|seed0 {'acc_T64': 0.0236, 'acc_T256': 0.0124}
+10:27:51 DONE s5|alibi-hybrid-h6|seed1 {'acc_T64': 0.0241, 'acc_T256': 0.0122}
+10:28:52 DONE s5|alibi-hybrid-h6|seed2 {'acc_T64': 0.0236, 'acc_T256': 0.0124}
+10:29:13 sweep|s5|alibi-pure|0.001 {'final_loss': 4.711702346801758, 'acc_T64': 0.02365875244140625, 'acc_T256': 0.01244354248046875}
+10:29:33 sweep|s5|alibi-pure|0.003 {'final_loss': 4.711963653564453, 'acc_T64': 0.02362060546875, 'acc_T256': 0.012334823608398438}
+10:29:33 DONE s5|alibi-pure|seed0 {'acc_T64': 0.0237, 'acc_T256': 0.0124}
+10:29:54 DONE s5|alibi-pure|seed1 {'acc_T64': 0.0238, 'acc_T256': 0.0122}
+10:30:16 DONE s5|alibi-pure|seed2 {'acc_T64': 0.0241, 'acc_T256': 0.0124}
+10:30:38 sweep|s5|rope-gpt|0.001 {'final_loss': 4.712066173553467, 'acc_T64': 0.02370452880859375, 'acc_T256': 0.012456893920898438}
+10:31:00 sweep|s5|rope-gpt|0.003 {'final_loss': 4.711850643157959, 'acc_T64': 0.02370452880859375, 'acc_T256': 0.01226806640625}
+10:31:00 DONE s5|rope-gpt|seed0 {'acc_T64': 0.0237, 'acc_T256': 0.0123}
+10:31:21 DONE s5|rope-gpt|seed1 {'acc_T64': 0.0236, 'acc_T256': 0.0124}
+10:31:47 DONE s5|rope-gpt|seed2 {'acc_T64': 0.0239, 'acc_T256': 0.0122}
+10:33:02 sweep|s5|sheafdelta-pure|0.001 {'final_loss': 4.713012218475342, 'acc_T64': 0.02347564697265625, 'acc_T256': 0.0123291015625}
+10:34:16 sweep|s5|sheafdelta-pure|0.003 {'final_loss': 4.712759017944336, 'acc_T64': 0.02346038818359375, 'acc_T256': 0.01232147216796875}
+10:34:16 DONE s5|sheafdelta-pure|seed0 {'acc_T64': 0.0235, 'acc_T256': 0.0123}
+10:35:30 DONE s5|sheafdelta-pure|seed1 {'acc_T64': 0.0235, 'acc_T256': 0.0123}
+10:36:45 DONE s5|sheafdelta-pure|seed2 {'acc_T64': 0.0238, 'acc_T256': 0.0125}
+10:37:43 sweep|parity|alibi-hybrid-h6|0.001 {'final_loss': 0.0, 'acc_T64': 1.0, 'acc_T256': 0.9970035552978516}
+10:38:43 sweep|parity|alibi-hybrid-h6|0.003 {'final_loss': 3.408809789107181e-05, 'acc_T64': 0.9999313354492188, 'acc_T256': 0.9404373168945312}
+10:38:43 DONE parity|alibi-hybrid-h6|seed0 {'acc_T64': 1.0, 'acc_T256': 0.997}
+10:39:40 DONE parity|alibi-hybrid-h6|seed1 {'acc_T64': 1.0, 'acc_T256': 0.9523}
+10:40:37 DONE parity|alibi-hybrid-h6|seed2 {'acc_T64': 1.0, 'acc_T256': 0.9889}
+10:40:54 sweep|parity|alibi-pure|0.001 {'final_loss': 0.5992873311042786, 'acc_T64': 0.582489013671875, 'acc_T256': 0.5191497802734375}
+10:41:11 sweep|parity|alibi-pure|0.003 {'final_loss': 0.5885176062583923, 'acc_T64': 0.5887832641601562, 'acc_T256': 0.5227851867675781}
+10:41:11 DONE parity|alibi-pure|seed0 {'acc_T64': 0.5888, 'acc_T256': 0.5228}
+10:41:30 DONE parity|alibi-pure|seed1 {'acc_T64': 0.5404, 'acc_T256': 0.5091}
+10:41:49 DONE parity|alibi-pure|seed2 {'acc_T64': 0.5526, 'acc_T256': 0.5135}
+10:42:10 sweep|parity|rope-gpt|0.001 {'final_loss': 0.3216898441314697, 'acc_T64': 0.7898178100585938, 'acc_T256': 0.5721092224121094}
+10:42:32 sweep|parity|rope-gpt|0.003 {'final_loss': 0.6552542448043823, 'acc_T64': 0.529144287109375, 'acc_T256': 0.5079345703125}
+10:42:32 DONE parity|rope-gpt|seed0 {'acc_T64': 0.7898, 'acc_T256': 0.5721}
+10:42:54 DONE parity|rope-gpt|seed1 {'acc_T64': 0.7001, 'acc_T256': 0.549}
+10:43:14 DONE parity|rope-gpt|seed2 {'acc_T64': 0.5879, 'acc_T256': 0.523}
+10:44:29 sweep|parity|sheafdelta-pure|0.001 {'final_loss': 0.0, 'acc_T64': 1.0, 'acc_T256': 1.0}
+10:45:56 sweep|parity|sheafdelta-pure|0.003 {'final_loss': 0.0, 'acc_T64': 1.0, 'acc_T256': 1.0}
+10:45:56 DONE parity|sheafdelta-pure|seed0 {'acc_T64': 1.0, 'acc_T256': 1.0}
+10:47:27 DONE parity|sheafdelta-pure|seed1 {'acc_T64': 1.0, 'acc_T256': 1.0}
+10:48:45 DONE parity|sheafdelta-pure|seed2 {'acc_T64': 1.0, 'acc_T256': 0.9927}
+10:51:45 sweep|copy|alibi-hybrid-h6|0.001 {'final_loss': 5.513339519500732, 'acc_L128': 0.00806427001953125, 'acc_L512': 0.004357337951660156}
+10:54:37 sweep|copy|alibi-hybrid-h6|0.003 {'final_loss': 5.505339622497559, 'acc_L128': 0.011211395263671875, 'acc_L512': 0.004857063293457031}
+10:54:37 DONE copy|alibi-hybrid-h6|seed0 {'acc_L128': 0.0112, 'acc_L512': 0.0049}
+10:56:58 DONE copy|alibi-hybrid-h6|seed1 {'acc_L128': 0.0075, 'acc_L512': 0.0042}
+10:59:19 DONE copy|alibi-hybrid-h6|seed2 {'acc_L128': 0.0077, 'acc_L512': 0.0044}
+11:00:31 sweep|copy|alibi-pure|0.001 {'final_loss': 0.0012102153850719333, 'acc_L128': 0.9996109008789062, 'acc_L512': 0.9916133880615234}
+11:01:43 sweep|copy|alibi-pure|0.003 {'final_loss': 0.00027560407761484385, 'acc_L128': 0.9995613098144531, 'acc_L512': 0.9922161102294922}
+11:01:43 DONE copy|alibi-pure|seed0 {'acc_L128': 0.9996, 'acc_L512': 0.9916}
+11:02:55 DONE copy|alibi-pure|seed1 {'acc_L128': 0.9996, 'acc_L512': 0.9931}
+11:04:06 DONE copy|alibi-pure|seed2 {'acc_L128': 0.9997, 'acc_L512': 0.9778}
+11:05:22 sweep|copy|rope-gpt|0.001 {'final_loss': 3.036984352888794e-08, 'acc_L128': 1.0, 'acc_L512': 0.003977775573730469}
+11:06:38 sweep|copy|rope-gpt|0.003 {'final_loss': 4.4499753215632154e-08, 'acc_L128': 1.0, 'acc_L512': 0.003947257995605469}
+11:06:38 DONE copy|rope-gpt|seed0 {'acc_L128': 1.0, 'acc_L512': 0.004}
+11:07:54 DONE copy|rope-gpt|seed1 {'acc_L128': 1.0, 'acc_L512': 0.0039}
+11:09:10 DONE copy|rope-gpt|seed2 {'acc_L128': 1.0, 'acc_L512': 0.004}
+11:11:52 sweep|copy|sheafdelta-pure|0.001 {'final_loss': 0.8998548984527588, 'acc_L128': 0.7602767944335938, 'acc_L512': 0.1282205581665039}
+11:14:34 sweep|copy|sheafdelta-pure|0.003 {'final_loss': 5.505736827850342, 'acc_L128': 0.008594512939453125, 'acc_L512': 0.0052700042724609375}
+11:14:34 DONE copy|sheafdelta-pure|seed0 {'acc_L128': 0.7603, 'acc_L512': 0.1282}
+11:17:15 DONE copy|sheafdelta-pure|seed1 {'acc_L128': 0.3239, 'acc_L512': 0.0726}
+11:19:57 DONE copy|sheafdelta-pure|seed2 {'acc_L128': 0.4462, 'acc_L512': 0.0949}
+11:22:26 sweep|selcopy|alibi-hybrid-h6|0.001 {'final_loss': 0.0487186573445797, 'acc_T256': 0.99407958984375}
+11:24:56 sweep|selcopy|alibi-hybrid-h6|0.003 {'final_loss': 0.09072539955377579, 'acc_T256': 0.990203857421875}
+11:24:56 DONE selcopy|alibi-hybrid-h6|seed0 {'acc_T256': 0.9941}
+11:27:25 DONE selcopy|alibi-hybrid-h6|seed1 {'acc_T256': 0.9915}
+11:29:55 DONE selcopy|alibi-hybrid-h6|seed2 {'acc_T256': 0.9898}
+11:31:13 sweep|selcopy|alibi-pure|0.001 {'final_loss': 0.19138610363006592, 'acc_T256': 0.93560791015625}
+11:32:33 sweep|selcopy|alibi-pure|0.003 {'final_loss': 0.3754328787326813, 'acc_T256': 0.907501220703125}
+11:32:33 DONE selcopy|alibi-pure|seed0 {'acc_T256': 0.9356}
+11:34:09 DONE selcopy|alibi-pure|seed1 {'acc_T256': 0.9631}
+11:35:53 DONE selcopy|alibi-pure|seed2 {'acc_T256': 0.9335}
+11:37:20 sweep|selcopy|rope-gpt|0.001 {'final_loss': 0.13142557442188263, 'acc_T256': 0.967193603515625}
+11:38:43 sweep|selcopy|rope-gpt|0.003 {'final_loss': 0.02511143870651722, 'acc_T256': 0.996826171875}
+11:38:43 DONE selcopy|rope-gpt|seed0 {'acc_T256': 0.9968}
+11:40:07 DONE selcopy|rope-gpt|seed1 {'acc_T256': 0.9939}
+11:41:33 DONE selcopy|rope-gpt|seed2 {'acc_T256': 0.997}
+11:45:22 sweep|selcopy|sheafdelta-pure|0.001 {'final_loss': 0.02420169673860073, 'acc_T256': 0.999114990234375}
+11:48:21 sweep|selcopy|sheafdelta-pure|0.003 {'final_loss': 0.007619449403136969, 'acc_T256': 0.998077392578125}
+11:48:21 DONE selcopy|sheafdelta-pure|seed0 {'acc_T256': 0.9991}
+11:51:12 DONE selcopy|sheafdelta-pure|seed1 {'acc_T256': 0.9954}
+11:54:04 DONE selcopy|sheafdelta-pure|seed2 {'acc_T256': 0.9996}
+11:54:04 ALL DONE

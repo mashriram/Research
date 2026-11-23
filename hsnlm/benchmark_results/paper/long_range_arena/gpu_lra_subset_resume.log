@@ -1,0 +1,74 @@
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+23:50:18 text alibi-hybrid-h6 0 1000 0.6329
+00:01:56 text alibi-hybrid-h6 0 2000 0.5795
+00:13:32 text alibi-hybrid-h6 0 3000 0.4595
+00:25:00 text alibi-hybrid-h6 0 4000 0.6839
+00:36:39 text alibi-hybrid-h6 0 5000 0.4429
+00:37:09 DONE text|alibi-hybrid-h6|seed0 0.7612 130617
+00:44:31 text alibi-pure 0 1000 0.6631
+00:51:49 text alibi-pure 0 2000 0.6395
+00:59:14 text alibi-pure 0 3000 0.6467
+01:06:30 text alibi-pure 0 4000 0.6803
+01:13:53 text alibi-pure 0 5000 0.6952
+01:14:15 DONE text|alibi-pure|seed0 0.6356 207307
+01:21:44 text rope-gpt 0 1000 0.6912
+01:29:12 text rope-gpt 0 2000 0.695
+01:36:46 text rope-gpt 0 3000 0.7097
+01:44:12 text rope-gpt 0 4000 0.6784
+01:51:46 text rope-gpt 0 5000 0.6858
+01:52:08 DONE text|rope-gpt|seed0 0.5774 203052
+02:03:51 text alibi-hybrid-h6 1 1000 0.7304
+02:15:36 text alibi-hybrid-h6 1 2000 0.4846
+02:27:30 text alibi-hybrid-h6 1 3000 0.533
+02:39:17 text alibi-hybrid-h6 1 4000 0.425
+02:50:58 text alibi-hybrid-h6 1 5000 0.591
+02:51:29 DONE text|alibi-hybrid-h6|seed1 0.755 129641
+02:58:48 text alibi-pure 1 1000 0.6851
+03:06:10 text alibi-pure 1 2000 0.6497
+03:13:37 text alibi-pure 1 3000 0.6413
+03:21:00 text alibi-pure 1 4000 0.6175
+03:28:19 text alibi-pure 1 5000 0.6385
+03:28:40 DONE text|alibi-pure|seed1 0.6382 207059
+03:36:08 text rope-gpt 1 1000 0.7034
+03:43:38 text rope-gpt 1 2000 0.7164
+03:51:13 text rope-gpt 1 3000 0.6872
+03:58:44 text rope-gpt 1 4000 0.685
+04:06:12 text rope-gpt 1 5000 0.6671
+04:06:34 DONE text|rope-gpt|seed1 0.5156 203279
+04:10:59 image alibi-hybrid-h6 0 1000 1.883
+04:15:17 image alibi-hybrid-h6 0 2000 1.5148
+04:19:36 image alibi-hybrid-h6 0 3000 1.596
+04:23:54 image alibi-hybrid-h6 0 4000 1.4984
+04:28:12 image alibi-hybrid-h6 0 5000 1.316
+04:28:35 DONE image|alibi-hybrid-h6|seed0 0.3953 127053
+04:30:54 image alibi-pure 0 1000 1.7392
+04:33:14 image alibi-pure 0 2000 1.9129
+04:35:33 image alibi-pure 0 3000 1.5513
+04:37:53 image alibi-pure 0 4000 1.6258
+04:40:12 image alibi-pure 0 5000 1.5148
+04:40:26 DONE image|alibi-pure|seed0 0.3736 235323
+04:42:59 image rope-gpt 0 1000 1.9329
+04:45:33 image rope-gpt 0 2000 2.0785
+04:48:06 image rope-gpt 0 3000 1.6024
+04:50:40 image rope-gpt 0 4000 1.8998
+04:53:13 image rope-gpt 0 5000 1.7745
+04:53:29 DONE image|rope-gpt|seed0 0.3395 213921
+04:57:47 image alibi-hybrid-h6 1 1000 1.7497
+05:02:05 image alibi-hybrid-h6 1 2000 1.6491
+05:06:24 image alibi-hybrid-h6 1 3000 1.7385
+05:10:42 image alibi-hybrid-h6 1 4000 1.343
+05:15:01 image alibi-hybrid-h6 1 5000 1.5536
+05:15:24 DONE image|alibi-hybrid-h6|seed1 0.3963 126963
+05:17:43 image alibi-pure 1 1000 1.7914
+05:20:03 image alibi-pure 1 2000 1.9143
+05:22:22 image alibi-pure 1 3000 1.7236
+05:24:41 image alibi-pure 1 4000 1.5985
+05:27:01 image alibi-pure 1 5000 1.7805
+05:27:15 DONE image|alibi-pure|seed1 0.3632 235302
+05:29:48 image rope-gpt 1 1000 1.7318
+05:32:22 image rope-gpt 1 2000 1.8344
+05:34:55 image rope-gpt 1 3000 1.6299
+05:37:29 image rope-gpt 1 4000 1.7864
+05:40:02 image rope-gpt 1 5000 1.6951
+05:40:18 DONE image|rope-gpt|seed1 0.3582 213747
+05:40:18 ALL DONE

@@ -13,7 +13,7 @@ torch.backends.cudnn.benchmark = True
 DIM, HEADS, LAYERS, CTX, B, VOCAB = 384, 8, 8, 1024, 16, 256
 STEPS = 1500
 LR = 0.002  # matches gpu_scale.py/gpu_ratio.py/gpu_posenc.py's best_lr for the same GPT architecture
-OUT = "results/gpu_yarn_recheck.json"; os.makedirs("results", exist_ok=True)
+OUT = "benchmark_results/development/yarn_rope_scaling/gpu_yarn_recheck.json"; os.makedirs("benchmark_results", exist_ok=True)
 R = json.load(open(OUT)) if os.path.exists(OUT) else {}
 def save(): json.dump(R, open(OUT, "w"), indent=1)
 def log(*a): print(time.strftime("%H:%M:%S"), *a, flush=True)

@@ -16,7 +16,7 @@ torch.backends.cudnn.benchmark = True
 DIM, HEADS, LAYERS, CTX, B, VOCAB = 128, 4, 8, 16384, 1, 256
 STEPS = 3000
 ARCH = sys.argv[1]
-OUT = f"results/gpu_reconcile_clean_{ARCH}.json"; os.makedirs("results", exist_ok=True)
+OUT = f"benchmark_results/development/reconcile_speed_quality/gpu_reconcile_clean_{ARCH}.json"; os.makedirs("benchmark_results", exist_ok=True)
 
 class HybridFusedLM(LM):
     use_pos = False

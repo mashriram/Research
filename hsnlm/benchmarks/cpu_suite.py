@@ -1,10 +1,10 @@
-"""Full CPU benchmark suite. Resumable: results/cpu_suite.json holds finished runs; rerun skips them.
+"""Full CPU benchmark suite. Resumable: benchmark_results/development/cpu_suite/cpu_suite.json holds finished runs; rerun skips them.
 Stages: sweep (lr per arch) -> lm seed0 -> synthetic (MQAR, parity) -> lm seed1.   usage: cpu_suite.py [smoke]"""
 import sys, os, json, time, math, torch, torch.nn.functional as F; sys.path.insert(0, ".")
 from hsnlm import GPT, HybridLM, Config, ByteData
 torch.set_num_threads(8)
 SMOKE = len(sys.argv) > 1 and sys.argv[1] == "smoke"
-OUT = "results/cpu_suite_smoke.json" if SMOKE else "results/cpu_suite.json"; os.makedirs("results", exist_ok=True)
+OUT = "benchmark_results/development/cpu_suite/cpu_suite_smoke.json" if SMOKE else "benchmark_results/development/cpu_suite/cpu_suite.json"; os.makedirs("benchmark_results", exist_ok=True)
 R = json.load(open(OUT)) if os.path.exists(OUT) else {}
 def save(): json.dump(R, open(OUT, "w"), indent=1)
 def log(*a): print(time.strftime("%H:%M:%S"), *a, flush=True)

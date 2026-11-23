@@ -257,7 +257,7 @@ experiments/decode_o1.py        per-layer decode cost vs context
 experiments/fwdgrad.py          forward-gradient alignment
 experiments/ngram.py            count-based (gradient-free) baseline
 tests/                          correctness tests
-results/cpu_suite.json|.log     raw suite results; results/BENCH_CPU.md summary
+benchmark_results/development/cpu_suite/cpu_suite.json|.log     raw suite results; benchmark_results/development/cpu_suite/BENCH_CPU.md summary
 RESULTS.md, RESEARCH_V2.md      running notes and design document
 ```
 Run: `python benchmarks/cpu_suite.py` (resumes automatically). Data: `data/enwik8` (100 MB, mattmahoney.net), `data/shakespeare.txt`.

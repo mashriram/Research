@@ -1,0 +1,69 @@
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+00:28:40 GRID grid|copy_paper|alibi-hybrid-h6|0.0003|seed1 {'steps_to_solve': 1500, 'acc_T128': 0.9991378784179688, 'acc_T512': 0.3833160400390625}
+00:36:38 GRID grid|copy_paper|alibi-hybrid-h6|0.0003|seed2 {'steps_to_solve': 2000, 'acc_T128': 0.9996490478515625, 'acc_T512': 0.37469959259033203}
+00:36:38 GRID grid|copy_paper|alibi-hybrid-h6|0.001|seed1 {'steps_to_solve': 2000, 'acc_T128': 0.9998092651367188, 'acc_T512': 0.9809036254882812}
+00:36:38 GRID grid|copy_paper|alibi-hybrid-h6|0.001|seed2 {'steps_to_solve': 4000, 'acc_T128': 0.9994621276855469, 'acc_T512': 0.3846588134765625}
+00:58:31 GRID grid|copy_paper|alibi-hybrid-h6|0.003|seed1 {'steps_to_solve': 6500, 'acc_T128': 0.9994316101074219, 'acc_T512': 0.8259763717651367}
+02:00:35 GRID grid|copy_paper|alibi-hybrid-h6|0.003|seed2 {'steps_to_solve': None, 'acc_T128': 0.7301521301269531, 'acc_T512': 0.2779712677001953}
+02:00:35 GRID grid|copy_paper|alibi-pure|0.0003|seed1 {'steps_to_solve': 500, 'acc_T128': 0.9985847473144531, 'acc_T512': 0.9517936706542969}
+02:00:35 GRID grid|copy_paper|alibi-pure|0.0003|seed2 {'steps_to_solve': 500, 'acc_T128': 0.9986343383789062, 'acc_T512': 0.8734817504882812}
+02:02:50 GRID grid|copy_paper|alibi-pure|0.001|seed1 {'steps_to_solve': 500, 'acc_T128': 0.9969825744628906, 'acc_T512': 0.9965667724609375}
+02:05:06 GRID grid|copy_paper|alibi-pure|0.001|seed2 {'steps_to_solve': 500, 'acc_T128': 0.997802734375, 'acc_T512': 0.9972496032714844}
+02:46:30 GRID grid|copy_paper|alibi-pure|0.003|seed1 {'steps_to_solve': None, 'acc_T128': 0.02962493896484375, 'acc_T512': 0.004315376281738281}
+02:48:46 GRID grid|copy_paper|alibi-pure|0.003|seed2 {'steps_to_solve': 500, 'acc_T128': 0.995697021484375, 'acc_T512': 0.9918441772460938}
+02:48:46 GRID grid|copy_paper|rope-gpt|0.0003|seed1 {'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.0040302276611328125}
+02:48:46 GRID grid|copy_paper|rope-gpt|0.0003|seed2 {'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.0038747787475585938}
+02:51:30 GRID grid|copy_paper|rope-gpt|0.001|seed1 {'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.00380706787109375}
+02:54:15 GRID grid|copy_paper|rope-gpt|0.001|seed2 {'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.003920555114746094}
+02:57:00 GRID grid|copy_paper|rope-gpt|0.003|seed1 {'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.0039014816284179688}
+02:59:46 GRID grid|copy_paper|rope-gpt|0.003|seed2 {'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.003993034362792969}
+02:59:46 GRID grid|copy_paper|sheafdelta-pure|0.0003|seed1 {'steps_to_solve': 2500, 'acc_T128': 0.9973220825195312, 'acc_T512': 0.17590618133544922}
+02:59:46 GRID grid|copy_paper|sheafdelta-pure|0.0003|seed2 {'steps_to_solve': 3500, 'acc_T128': 0.9944572448730469, 'acc_T512': 0.14917278289794922}
+03:24:01 GRID grid|copy_paper|sheafdelta-pure|0.001|seed1 {'steps_to_solve': 6500, 'acc_T128': 0.99578857421875, 'acc_T512': 0.1668987274169922}
+03:34:32 GRID grid|copy_paper|sheafdelta-pure|0.001|seed2 {'steps_to_solve': 2500, 'acc_T128': 0.99444580078125, 'acc_T512': 0.1353311538696289}
+04:43:19 GRID grid|copy_paper|sheafdelta-pure|0.003|seed1 {'steps_to_solve': None, 'acc_T128': 0.004032135009765625, 'acc_T512': 0.0040435791015625}
+04:58:58 GRID grid|copy_paper|sheafdelta-pure|0.003|seed2 {'steps_to_solve': 4000, 'acc_T128': 0.9942779541015625, 'acc_T512': 0.09412860870361328}
+05:01:02 GRID grid|copy|alibi-hybrid-h6|0.0003|seed1 {'steps_to_solve': 4500, 'acc_T128': 0.9968757629394531, 'acc_T512': 0.2858390808105469}
+05:02:46 GRID grid|copy|alibi-hybrid-h6|0.0003|seed2 {'steps_to_solve': 4000, 'acc_T128': 0.9982528686523438, 'acc_T512': 0.37392711639404297}
+05:06:08 GRID grid|copy|alibi-hybrid-h6|0.001|seed1 {'steps_to_solve': 8500, 'acc_T128': 0.9980125427246094, 'acc_T512': 0.33244800567626953}
+05:12:04 GRID grid|copy|alibi-hybrid-h6|0.001|seed2 {'steps_to_solve': 15500, 'acc_T128': 0.9986839294433594, 'acc_T512': 0.1796722412109375}
+05:12:04 GRID grid|copy|alibi-hybrid-h6|0.003|seed1 {'steps_to_solve': None, 'acc_T128': 0.015087127685546875, 'acc_T512': 0.004426002502441406}
+05:12:04 GRID grid|copy|alibi-hybrid-h6|0.003|seed2 {'steps_to_solve': 6000, 'acc_T128': 0.9977569580078125, 'acc_T512': 0.587031364440918}
+05:12:04 GRID grid|copy|alibi-pure|0.0003|seed1 {'steps_to_solve': 1000, 'acc_T128': 0.9981727600097656, 'acc_T512': 0.9810686111450195}
+05:12:04 GRID grid|copy|alibi-pure|0.0003|seed2 {'steps_to_solve': 1000, 'acc_T128': 0.9987411499023438, 'acc_T512': 0.9857702255249023}
+05:12:31 GRID grid|copy|alibi-pure|0.001|seed1 {'steps_to_solve': 1000, 'acc_T128': 0.9967727661132812, 'acc_T512': 0.9800004959106445}
+05:12:56 GRID grid|copy|alibi-pure|0.001|seed2 {'steps_to_solve': 1000, 'acc_T128': 0.9952316284179688, 'acc_T512': 0.9688014984130859}
+05:13:30 GRID grid|copy|alibi-pure|0.003|seed1 {'steps_to_solve': 1500, 'acc_T128': 0.9971809387207031, 'acc_T512': 0.9687528610229492}
+05:13:56 GRID grid|copy|alibi-pure|0.003|seed2 {'steps_to_solve': 1000, 'acc_T128': 0.9972343444824219, 'acc_T512': 0.8183698654174805}
+05:13:56 GRID grid|copy|rope-gpt|0.0003|seed1 {'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.003952980041503906}
+05:13:56 GRID grid|copy|rope-gpt|0.0003|seed2 {'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.0038900375366210938}
+05:14:17 GRID grid|copy|rope-gpt|0.001|seed1 {'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.004014015197753906}
+05:14:38 GRID grid|copy|rope-gpt|0.001|seed2 {'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.0038709640502929688}
+05:15:00 GRID grid|copy|rope-gpt|0.003|seed1 {'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.0039825439453125}
+05:15:21 GRID grid|copy|rope-gpt|0.003|seed2 {'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.0039463043212890625}
+05:23:22 GRID grid|copy|sheafdelta-pure|0.0003|seed1 {'steps_to_solve': None, 'acc_T128': 0.988983154296875, 'acc_T512': 0.11824417114257812}
+05:31:23 GRID grid|copy|sheafdelta-pure|0.0003|seed2 {'steps_to_solve': None, 'acc_T128': 0.9877281188964844, 'acc_T512': 0.22072219848632812}
+05:31:23 GRID grid|copy|sheafdelta-pure|0.001|seed1 {'steps_to_solve': 4500, 'acc_T128': 0.9944534301757812, 'acc_T512': 0.2592172622680664}
+05:31:23 GRID grid|copy|sheafdelta-pure|0.001|seed2 {'steps_to_solve': 4000, 'acc_T128': 0.9921112060546875, 'acc_T512': 0.19079303741455078}
+05:35:50 GRID grid|copy|sheafdelta-pure|0.003|seed1 {'steps_to_solve': 10500, 'acc_T128': 0.9901657104492188, 'acc_T512': 0.10933494567871094}
+05:43:51 GRID grid|copy|sheafdelta-pure|0.003|seed2 {'steps_to_solve': None, 'acc_T128': 0.03079986572265625, 'acc_T512': 0.007103919982910156}
+05:47:22 GRID grid|mqar64_T512|alibi-hybrid-h6|0.0003|seed1 {'steps_to_solve': 3500, 'acc_T512': 0.996124267578125}
+05:51:42 GRID grid|mqar64_T512|alibi-hybrid-h6|0.0003|seed2 {'steps_to_solve': 4500, 'acc_T512': 0.9999313354492188}
+06:08:56 GRID grid|mqar64_T512|alibi-hybrid-h6|0.001|seed1 {'steps_to_solve': None, 'acc_T512': 0.9402694702148438}
+06:12:25 GRID grid|mqar64_T512|alibi-hybrid-h6|0.001|seed2 {'steps_to_solve': 3500, 'acc_T512': 0.99993896484375}
+06:12:25 GRID grid|mqar64_T512|alibi-hybrid-h6|0.003|seed1 {'steps_to_solve': 6000, 'acc_T512': 0.9966201782226562}
+06:12:25 GRID grid|mqar64_T512|alibi-hybrid-h6|0.003|seed2 {'steps_to_solve': None, 'acc_T512': 0.06189727783203125}
+06:13:36 GRID grid|mqar64_T512|alibi-pure|0.0003|seed1 {'steps_to_solve': 1500, 'acc_T512': 0.9982757568359375}
+06:15:40 GRID grid|mqar64_T512|alibi-pure|0.0003|seed2 {'steps_to_solve': 3000, 'acc_T512': 0.998626708984375}
+06:15:40 GRID grid|mqar64_T512|alibi-pure|0.001|seed1 {'steps_to_solve': None, 'acc_T512': 0.0622711181640625}
+06:15:40 GRID grid|mqar64_T512|alibi-pure|0.001|seed2 {'steps_to_solve': 3500, 'acc_T512': 0.9983749389648438}
+06:27:12 GRID grid|mqar64_T512|alibi-pure|0.003|seed1 {'steps_to_solve': None, 'acc_T512': 0.0618743896484375}
+06:38:44 GRID grid|mqar64_T512|alibi-pure|0.003|seed2 {'steps_to_solve': None, 'acc_T512': 0.06197357177734375}
+06:38:44 skip (unsolved at every LR on seed 0) mqar64_T512 rope-gpt
+06:38:44 GRID grid|mqar64_T512|sheafdelta-pure|0.0003|seed1 {'steps_to_solve': None, 'acc_T512': 0.06214141845703125}
+06:38:44 GRID grid|mqar64_T512|sheafdelta-pure|0.0003|seed2 {'steps_to_solve': 10000, 'acc_T512': 0.9975357055664062}
+06:52:21 GRID grid|mqar64_T512|sheafdelta-pure|0.001|seed1 {'steps_to_solve': 14000, 'acc_T512': 0.9935531616210938}
+06:58:00 GRID grid|mqar64_T512|sheafdelta-pure|0.001|seed2 {'steps_to_solve': 5500, 'acc_T512': 0.9968032836914062}
+07:03:11 GRID grid|mqar64_T512|sheafdelta-pure|0.003|seed1 {'steps_to_solve': 5000, 'acc_T512': 0.9978790283203125}
+07:13:04 GRID grid|mqar64_T512|sheafdelta-pure|0.003|seed2 {'steps_to_solve': 10000, 'acc_T512': 0.9978408813476562}
+07:13:04 ALL DONE

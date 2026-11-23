@@ -17,6 +17,7 @@ class Config:
     heads: int = 4
     ctx: int = 128
     householder: int = 2     # reflections per transport map
+    beta_max: float = 2.0    # delta-rule step size b_t = beta_max*sigmoid(.): 2.0 (paper) allows eigenvalues in [-1,1]; 1.0 = [0,1] control ablation
     chunk: int = 16          # scan chunk
     mlp_mult: float = 4.0
     rope: bool = True        # RoPE in attention (GPT / hybrid attention layers)

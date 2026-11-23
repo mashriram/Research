@@ -1,0 +1,69 @@
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+W1121 19:53:42.597000 764283 torch/_inductor/utils.py:1137] [6/0] Not enough SMs to use max_autotune_gemm mode
+19:54:48 alibi-hybrid-h6|seed1 (300, 2.1605, 60.8)
+19:55:49 alibi-hybrid-h6|seed1 (600, 1.9161, 121.7)
+19:56:50 alibi-hybrid-h6|seed1 (900, 1.7637, 182.5)
+19:57:51 alibi-hybrid-h6|seed1 (1200, 1.6758, 243.3)
+19:58:51 alibi-hybrid-h6|seed1 (1500, 1.4783, 304.1)
+19:58:55 alibi-hybrid-h6|seed1 L 1024 windows 512 bpb 1.5021
+19:58:59 alibi-hybrid-h6|seed1 L 2048 windows 256 bpb 1.4819
+19:59:05 alibi-hybrid-h6|seed1 L 4096 windows 128 bpb 1.4713
+19:59:15 alibi-hybrid-h6|seed1 L 8192 windows 64 bpb 1.4663
+19:59:32 alibi-hybrid-h6|seed1 L 16384 windows 32 bpb 1.4636
+19:59:50 DONE alibi-hybrid-h6|seed1 {'kind': 'alibi-hybrid-h6', 'seed': 1, 'params': 14436348, 'steps': 1500, 'lr': 0.002, 'batch': 16, 'ctx': 1024, 'tokens': 24576000, 'train_s': 304.1283583641052, 'tok_s': 80807.98558935235, 'peak_mem_mb': 2717.10464, 'val_bpb_len1024': 1.5021340280035385, 'eval_peak_mem_mb_len1024': 469.697024, 'val_bpb_len2048': 1.4818923821126495, 'eval_peak_mem_mb_len2048': 542.090752, 'val_bpb_len4096': 1.4713483447974076, 'eval_peak_mem_mb_len4096': 1410.328064, 'val_bpb_len8192': 1.4663160545035232, 'eval_peak_mem_mb_len8192': 792.888832, 'val_bpb_len16384': 1.4635971794324185, 'eval_peak_mem_mb_len16384': 1422.23104, 'position_bpb_16k': [1.4712, 1.3988, 1.4941, 1.5057, 1.4546, 1.3993, 1.3901, 1.4607, 1.4645, 1.5524, 1.5278, 1.4374, 1.4433, 1.4264, 1.4672, 1.5241]}
+20:00:51 alibi-pure|seed1 (300, 2.5509, 57.1)
+20:01:49 alibi-pure|seed1 (600, 1.9824, 114.3)
+20:02:46 alibi-pure|seed1 (900, 1.7406, 171.6)
+20:03:43 alibi-pure|seed1 (1200, 1.7295, 228.9)
+20:04:41 alibi-pure|seed1 (1500, 1.5047, 286.2)
+20:04:43 alibi-pure|seed1 L 1024 windows 512 bpb 1.5254
+20:04:48 alibi-pure|seed1 L 2048 windows 256 bpb 1.4975
+20:04:59 alibi-pure|seed1 L 4096 windows 128 bpb 1.4845
+20:05:28 alibi-pure|seed1 L 8192 windows 64 bpb 1.4778
+20:06:26 alibi-pure|seed1 L 16384 windows 32 bpb 1.4744
+20:07:23 DONE alibi-pure|seed1 {'kind': 'alibi-pure', 'seed': 1, 'params': 14260608, 'steps': 1500, 'lr': 0.002, 'batch': 16, 'ctx': 1024, 'tokens': 24576000, 'train_s': 286.2115783691406, 'tok_s': 85866.54718874849, 'peak_mem_mb': 2242.722816, 'val_bpb_len1024': 1.5254187470113239, 'eval_peak_mem_mb_len1024': 279.277056, 'val_bpb_len2048': 1.4974708353198514, 'eval_peak_mem_mb_len2048': 540.511744, 'val_bpb_len4096': 1.4844780700568054, 'eval_peak_mem_mb_len4096': 1408.749056, 'val_bpb_len8192': 1.4778264630057705, 'eval_peak_mem_mb_len8192': 791.309824, 'val_bpb_len16384': 1.474411363870961, 'eval_peak_mem_mb_len16384': 1420.652032, 'position_bpb_16k': [1.4693, 1.4123, 1.5012, 1.5193, 1.4789, 1.4227, 1.407, 1.4653, 1.484, 1.577, 1.5485, 1.4551, 1.45, 1.4207, 1.46, 1.5193]}
+20:08:16 rope-gpt|seed1 (300, 2.6256, 49.9)
+20:09:06 rope-gpt|seed1 (600, 2.1717, 99.9)
+20:09:56 rope-gpt|seed1 (900, 1.8635, 149.9)
+20:10:46 rope-gpt|seed1 (1200, 1.804, 199.9)
+20:11:36 rope-gpt|seed1 (1500, 1.592, 249.9)
+20:11:38 rope-gpt|seed1 L 1024 windows 512 bpb 1.5843
+20:11:41 rope-gpt|seed1 L 2048 windows 256 bpb 2.3808
+20:11:44 rope-gpt|seed1 L 4096 windows 128 bpb 3.5853
+20:11:47 rope-gpt|seed1 L 8192 windows 64 bpb 4.6412
+20:11:52 rope-gpt|seed1 L 16384 windows 32 bpb 5.3191
+20:11:57 DONE rope-gpt|seed1 {'kind': 'rope-gpt', 'seed': 1, 'params': 14260608, 'steps': 1500, 'lr': 0.002, 'batch': 16, 'ctx': 1024, 'tokens': 24576000, 'train_s': 249.88276624679565, 'tok_s': 98350.11981469589, 'peak_mem_mb': 2408.659968, 'val_bpb_len1024': 1.5843084094465127, 'eval_peak_mem_mb_len1024': 258.002432, 'val_bpb_len2048': 2.380821560138779, 'eval_peak_mem_mb_len2048': 352.505344, 'val_bpb_len4096': 3.585271867126775, 'eval_peak_mem_mb_len4096': 352.505344, 'val_bpb_len8192': 4.641238136276457, 'eval_peak_mem_mb_len8192': 258.002432, 'val_bpb_len16384': 5.319112167082103, 'eval_peak_mem_mb_len16384': 352.505344, 'position_bpb_16k': [1.5467, 3.0782, 4.5504, 5.1295, 5.4795, 5.6989, 5.7156, 5.7962, 5.921, 5.8552, 5.9483, 6.0816, 6.1672, 6.081, 5.9051, 6.1513]}
+20:13:01 alibi-hybrid-h6|seed2 (300, 2.2072, 60.7)
+20:14:01 alibi-hybrid-h6|seed2 (600, 1.994, 121.5)
+20:15:02 alibi-hybrid-h6|seed2 (900, 1.7228, 182.3)
+20:16:03 alibi-hybrid-h6|seed2 (1200, 1.612, 243.1)
+20:17:04 alibi-hybrid-h6|seed2 (1500, 1.6575, 303.9)
+20:17:07 alibi-hybrid-h6|seed2 L 1024 windows 512 bpb 1.5176
+20:17:11 alibi-hybrid-h6|seed2 L 2048 windows 256 bpb 1.4998
+20:17:17 alibi-hybrid-h6|seed2 L 4096 windows 128 bpb 1.4907
+20:17:26 alibi-hybrid-h6|seed2 L 8192 windows 64 bpb 1.4862
+20:17:44 alibi-hybrid-h6|seed2 L 16384 windows 32 bpb 1.4838
+20:18:01 DONE alibi-hybrid-h6|seed2 {'kind': 'alibi-hybrid-h6', 'seed': 2, 'params': 14436348, 'steps': 1500, 'lr': 0.002, 'batch': 16, 'ctx': 1024, 'tokens': 24576000, 'train_s': 303.88709688186646, 'tok_s': 80872.14051590256, 'peak_mem_mb': 2718.331392, 'val_bpb_len1024': 1.5176486030920893, 'eval_peak_mem_mb_len1024': 279.404032, 'val_bpb_len2048': 1.4998492908877898, 'eval_peak_mem_mb_len2048': 540.63872, 'val_bpb_len4096': 1.490665551693162, 'eval_peak_mem_mb_len4096': 1408.876032, 'val_bpb_len8192': 1.4862341298165727, 'eval_peak_mem_mb_len8192': 791.4368, 'val_bpb_len16384': 1.4837921118793813, 'eval_peak_mem_mb_len16384': 1420.779008, 'position_bpb_16k': [1.4786, 1.4082, 1.5186, 1.5358, 1.4786, 1.4161, 1.4148, 1.4872, 1.4804, 1.5781, 1.5422, 1.46, 1.4682, 1.4535, 1.4868, 1.5336]}
+20:19:01 alibi-pure|seed2 (300, 2.5726, 57.2)
+20:19:58 alibi-pure|seed2 (600, 2.0246, 114.5)
+20:20:55 alibi-pure|seed2 (900, 1.7594, 171.7)
+20:21:53 alibi-pure|seed2 (1200, 1.5888, 229.0)
+20:22:50 alibi-pure|seed2 (1500, 1.67, 286.3)
+20:22:52 alibi-pure|seed2 L 1024 windows 512 bpb 1.5256
+20:22:57 alibi-pure|seed2 L 2048 windows 256 bpb 1.4963
+20:23:08 alibi-pure|seed2 L 4096 windows 128 bpb 1.4812
+20:23:37 alibi-pure|seed2 L 8192 windows 64 bpb 1.4742
+20:24:35 alibi-pure|seed2 L 16384 windows 32 bpb 1.4706
+20:25:32 DONE alibi-pure|seed2 {'kind': 'alibi-pure', 'seed': 2, 'params': 14260608, 'steps': 1500, 'lr': 0.002, 'batch': 16, 'ctx': 1024, 'tokens': 24576000, 'train_s': 286.2678406238556, 'tok_s': 85849.67122552852, 'peak_mem_mb': 2241.34656, 'val_bpb_len1024': 1.5255693030423951, 'eval_peak_mem_mb_len1024': 277.704192, 'val_bpb_len2048': 1.4962838244997407, 'eval_peak_mem_mb_len2048': 538.93888, 'val_bpb_len4096': 1.4812042916190775, 'eval_peak_mem_mb_len4096': 1407.176192, 'val_bpb_len8192': 1.4741851388325462, 'eval_peak_mem_mb_len8192': 789.73696, 'val_bpb_len16384': 1.47059344038759, 'eval_peak_mem_mb_len16384': 1419.079168, 'position_bpb_16k': [1.4678, 1.4141, 1.4931, 1.5171, 1.4881, 1.4145, 1.4013, 1.4641, 1.4802, 1.578, 1.5372, 1.4507, 1.4471, 1.4232, 1.4532, 1.4998]}
+20:26:25 rope-gpt|seed2 (300, 2.6647, 49.8)
+20:27:15 rope-gpt|seed2 (600, 2.2308, 99.8)
+20:28:05 rope-gpt|seed2 (900, 1.8692, 149.8)
+20:28:55 rope-gpt|seed2 (1200, 1.7192, 199.8)
+20:29:45 rope-gpt|seed2 (1500, 1.7877, 249.8)
+20:29:47 rope-gpt|seed2 L 1024 windows 512 bpb 1.604
+20:29:50 rope-gpt|seed2 L 2048 windows 256 bpb 2.2557
+20:29:53 rope-gpt|seed2 L 4096 windows 128 bpb 3.1891
+20:29:56 rope-gpt|seed2 L 8192 windows 64 bpb 4.2658
+20:30:01 rope-gpt|seed2 L 16384 windows 32 bpb 5.0983
+20:30:06 DONE rope-gpt|seed2 {'kind': 'rope-gpt', 'seed': 2, 'params': 14260608, 'steps': 1500, 'lr': 0.002, 'batch': 16, 'ctx': 1024, 'tokens': 24576000, 'train_s': 249.76934337615967, 'tok_s': 98394.78163253947, 'peak_mem_mb': 2408.659968, 'val_bpb_len1024': 1.6040475166571226, 'eval_peak_mem_mb_len1024': 258.002432, 'val_bpb_len2048': 2.255660202447585, 'eval_peak_mem_mb_len2048': 352.505344, 'val_bpb_len4096': 3.1890527003774616, 'eval_peak_mem_mb_len4096': 352.505344, 'val_bpb_len8192': 4.265775475042909, 'eval_peak_mem_mb_len8192': 258.002432, 'val_bpb_len16384': 5.0982674822869996, 'eval_peak_mem_mb_len16384': 352.505344, 'position_bpb_16k': [1.5676, 2.81, 3.8914, 4.4171, 4.9619, 5.2975, 5.3916, 5.5224, 5.6879, 5.7346, 5.8602, 6.0773, 6.1907, 6.1309, 5.9242, 6.1071]}
+20:30:06 ALL DONE

@@ -1,0 +1,468 @@
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmp1yr37zqc/main.c:5:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmp1yr37zqc/main.c:1:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmplkvilh4v/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmplkvilh4v/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmp7ye5lm12/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmp7ye5lm12/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmpk8dy937j/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmpk8dy937j/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmpijduh562/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmpijduh562/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmp5k99ejv7/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmp5k99ejv7/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmp9myb42vp/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmp9myb42vp/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+W1120 22:16:29.353000 26869 torch/_inductor/utils.py:1137] [2/0] Not enough SMs to use max_autotune_gemm mode
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmp7qm_5jjx/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmp7qm_5jjx/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmpo3x5gn5j/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmpo3x5gn5j/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmpdi3jacdz/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmpdi3jacdz/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmppinu3uy0/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmppinu3uy0/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmpxq3w8qyj/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmpxq3w8qyj/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmpao3skmio/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmpao3skmio/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmpikyrhbum/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmpikyrhbum/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmpwwfc89n0/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmpwwfc89n0/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmp457hzver/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmp457hzver/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+22:16:49 alibi-hybrid-h6|1024|train_ckpt {'ms': 59.781932000078086, 'tok_s': 17128.92115963503, 'peak_mem_mb': 316.463616, 'status': 'ok'}
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmpd5m8cb40/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmpd5m8cb40/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmptn0ptn7w/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmptn0ptn7w/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmpg3aub3hg/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmpg3aub3hg/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmprs4fa2jo/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmprs4fa2jo/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmpomtnag_g/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmpomtnag_g/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmpid77q078/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmpid77q078/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmp6a6x3vg0/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmp6a6x3vg0/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmptvz1d9ap/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmptvz1d9ap/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmphly__4n7/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmphly__4n7/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmpsuh1rqmv/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmpsuh1rqmv/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+22:17:12 alibi-hybrid-h6|1024|train_nockpt {'ms': 22.791170499885993, 'tok_s': 44929.68011472347, 'peak_mem_mb': 414.82496, 'status': 'ok'}
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmpt38pzhok/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmpt38pzhok/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmppwze59i4/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmppwze59i4/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+22:17:19 alibi-hybrid-h6|1024|prefill {'ms': 4.96658349993595, 'tok_s': 206177.94908979294, 'peak_mem_mb': 97.468928, 'status': 'ok'}
+22:17:21 alibi-hybrid-h6|2048|train_ckpt {'ms': 78.91830449989357, 'tok_s': 25950.88697075039, 'peak_mem_mb': 544.478208, 'status': 'ok'}
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmpg9oh70jq/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmpg9oh70jq/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+22:17:41 alibi-hybrid-h6|2048|train_nockpt {'ms': 36.05309249996935, 'tok_s': 56805.11318139327, 'peak_mem_mb': 669.0048, 'status': 'ok'}
+22:17:47 alibi-hybrid-h6|2048|prefill {'ms': 6.3636469999437395, 'tok_s': 321828.0335188464, 'peak_mem_mb': 153.323008, 'status': 'ok'}
+22:17:50 alibi-hybrid-h6|4096|train_ckpt {'ms': 205.15438050006196, 'tok_s': 19965.45230969983, 'peak_mem_mb': 1444.540416, 'status': 'ok'}
+22:18:11 alibi-hybrid-h6|4096|train_nockpt {'ms': 74.67365999991671, 'tok_s': 54852.00537920023, 'peak_mem_mb': 1375.52384, 'status': 'ok'}
+22:18:17 alibi-hybrid-h6|4096|prefill {'ms': 22.31233849988712, 'tok_s': 183575.55843018077, 'peak_mem_mb': 365.69344, 'status': 'ok'}
+22:18:26 alibi-hybrid-h6|8192|train_ckpt {'ms': 568.2872214999861, 'tok_s': 14415.245830052858, 'peak_mem_mb': 951.308288, 'status': 'ok'}
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmpjtwiyp4u/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmpjtwiyp4u/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmpnj_ynu8n/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmpnj_ynu8n/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+22:18:52 alibi-hybrid-h6|8192|train_nockpt {'ms': 181.2446879998788, 'tok_s': 45198.56604021122, 'peak_mem_mb': 1529.428992, 'status': 'ok'}
+22:19:01 alibi-hybrid-h6|8192|prefill {'ms': 52.637881000009656, 'tok_s': 155629.3650954243, 'peak_mem_mb': 253.569536, 'status': 'ok'}
+22:19:29 alibi-hybrid-h6|16384|train_ckpt {'ms': 1936.5070235000985, 'tok_s': 8460.594152861417, 'peak_mem_mb': 1702.406144, 'status': 'ok'}
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmplw7s2z1i/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmplw7s2z1i/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+22:20:04 alibi-hybrid-h6|16384|train_nockpt {'ms': 530.5565915000443, 'tok_s': 30880.777399593633, 'peak_mem_mb': 2932.997632, 'status': 'ok'}
+22:20:16 alibi-hybrid-h6|16384|prefill {'ms': 136.84247349988254, 'tok_s': 119728.90858344549, 'peak_mem_mb': 431.974912, 'status': 'ok'}
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmprs9dkokf/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmprs9dkokf/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmplshfc9ks/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmplshfc9ks/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+22:20:24 alibi-pure|1024|train_ckpt {'ms': 25.642759499987733, 'tok_s': 39933.299690327396, 'peak_mem_mb': 308.984832, 'status': 'ok'}
+22:20:30 alibi-pure|1024|train_nockpt {'ms': 21.139569499837307, 'tok_s': 48439.964683664955, 'peak_mem_mb': 471.795712, 'status': 'ok'}
+22:20:33 alibi-pure|1024|prefill {'ms': 4.513264500019432, 'tok_s': 226886.76898852066, 'peak_mem_mb': 105.267712, 'status': 'ok'}
+22:20:42 alibi-pure|2048|train_ckpt {'ms': 64.11058599996977, 'tok_s': 31944.802376334006, 'peak_mem_mb': 495.362048, 'status': 'ok'}
+22:20:47 alibi-pure|2048|train_nockpt {'ms': 48.48082100011197, 'tok_s': 42243.50903618711, 'peak_mem_mb': 995.464192, 'status': 'ok'}
+22:20:51 alibi-pure|2048|prefill {'ms': 15.241543999991336, 'tok_s': 134369.5888028906, 'peak_mem_mb': 166.63808, 'status': 'ok'}
+22:21:01 alibi-pure|4096|train_ckpt {'ms': 179.09767750006722, 'tok_s': 22870.20165294138, 'peak_mem_mb': 1331.204096, 'status': 'ok'}
+22:21:09 alibi-pure|4096|train_nockpt {'ms': 135.0320295000529, 'tok_s': 30333.543938909665, 'peak_mem_mb': 2847.499264, 'status': 'ok'}
+22:21:13 alibi-pure|4096|prefill {'ms': 44.5913515002303, 'tok_s': 91856.37712682571, 'peak_mem_mb': 390.029824, 'status': 'ok'}
+22:21:41 alibi-pure|8192|train_ckpt {'ms': 416.4975174999199, 'tok_s': 19668.784700503227, 'peak_mem_mb': 1580.281856, 'status': 'ok'}
+22:22:04 alibi-pure|8192|train_nockpt {'ms': 404.40752049971707, 'tok_s': 20256.79440846534, 'peak_mem_mb': 2068.033536, 'status': 'ok'}
+22:22:13 alibi-pure|8192|prefill {'ms': 102.54566150001665, 'tok_s': 79886.36359811937, 'peak_mem_mb': 776.26624, 'status': 'ok'}
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmpz24p6d_t/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmpz24p6d_t/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+22:23:08 alibi-pure|16384|train_ckpt {'ms': 1506.1581785000726, 'tok_s': 10878.007525289424, 'peak_mem_mb': 3321.315328, 'status': 'ok'}
+22:23:57 alibi-pure|16384|train_nockpt {'ms': 1475.930070000004, 'tok_s': 11100.796936808772, 'peak_mem_mb': 4594.583552, 'status': 'ok'}
+22:24:17 alibi-pure|16384|prefill {'ms': 366.2245640000492, 'tok_s': 44737.57800691326, 'peak_mem_mb': 2498.159104, 'status': 'ok'}
+22:24:26 rope-gpt|1024|train_ckpt {'ms': 18.642958000100407, 'tok_s': 54926.905912381764, 'peak_mem_mb': 309.640192, 'status': 'ok'}
+22:24:34 rope-gpt|1024|train_nockpt {'ms': 18.269994000092993, 'tok_s': 56048.184799337534, 'peak_mem_mb': 359.200768, 'status': 'ok'}
+22:24:41 rope-gpt|1024|prefill {'ms': 3.609925499858946, 'tok_s': 283662.36368036177, 'peak_mem_mb': 92.774912, 'status': 'ok'}
+22:24:49 rope-gpt|2048|train_ckpt {'ms': 32.34976150019975, 'tok_s': 63308.04015316634, 'peak_mem_mb': 310.836224, 'status': 'ok'}
+22:24:57 rope-gpt|2048|train_nockpt {'ms': 31.139150999933918, 'tok_s': 65769.29473781562, 'peak_mem_mb': 494.88384, 'status': 'ok'}
+22:25:02 rope-gpt|2048|prefill {'ms': 8.56517499983056, 'tok_s': 239107.78239096273, 'peak_mem_mb': 107.766272, 'status': 'ok'}
+22:25:14 rope-gpt|4096|train_ckpt {'ms': 64.40127250016303, 'tok_s': 63601.227755082495, 'peak_mem_mb': 385.168384, 'status': 'ok'}
+22:25:22 rope-gpt|4096|train_nockpt {'ms': 62.4875000000884, 'tok_s': 65549.10982187167, 'peak_mem_mb': 774.697984, 'status': 'ok'}
+22:25:28 rope-gpt|4096|prefill {'ms': 18.727493499909542, 'tok_s': 218715.86819772676, 'peak_mem_mb': 132.637184, 'status': 'ok'}
+22:25:39 rope-gpt|8192|train_ckpt {'ms': 171.50265949999266, 'tok_s': 47766.023126891225, 'peak_mem_mb': 540.787712, 'status': 'ok'}
+22:25:49 rope-gpt|8192|train_nockpt {'ms': 150.86186099983934, 'tok_s': 54301.331998076865, 'peak_mem_mb': 1324.299264, 'status': 'ok'}
+22:25:54 rope-gpt|8192|prefill {'ms': 46.39788399981626, 'tok_s': 176559.77587323682, 'peak_mem_mb': 186.311168, 'status': 'ok'}
+22:26:14 rope-gpt|16384|train_ckpt {'ms': 525.7163764999859, 'tok_s': 31165.093446542916, 'peak_mem_mb': 872.891392, 'status': 'ok'}
+22:26:27 rope-gpt|16384|train_nockpt {'ms': 440.430621500127, 'tok_s': 37199.95658838466, 'peak_mem_mb': 2408.625152, 'status': 'ok'}
+22:26:34 rope-gpt|16384|prefill {'ms': 135.00113499981126, 'tok_s': 121361.94262383724, 'peak_mem_mb': 293.659136, 'status': 'ok'}
+22:26:34 ALL DONE

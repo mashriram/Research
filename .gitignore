@@ -9,3 +9,6 @@ wheels/
 # Virtual environments
 .venv
 data/
+
+# Standalone library repo (separate git repository)
+deepa/

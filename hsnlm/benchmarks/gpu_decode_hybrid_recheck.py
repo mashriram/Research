@@ -12,7 +12,7 @@ from hsnlm.models import LM, HBlock, TBlock
 assert torch.cuda.is_available()
 DIM, HEADS, LAYERS, VOCAB = 1024, 16, 8, 256
 PATTERN = "dddaddda"
-OUT = "results/gpu_decode_hybrid_recheck.json"
+OUT = "benchmark_results/development/decode_early/gpu_decode_hybrid_recheck.json"
 
 class HybridFusedLM(LM):
     use_pos = False

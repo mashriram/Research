@@ -18,7 +18,7 @@ LR = 0.002
 STEPS = int(sys.argv[1]) if len(sys.argv) > 1 else 18000
 PATTERN = "dddaddda"
 SEEDS = tuple(int(s) for s in sys.argv[2].split(",")) if len(sys.argv) > 2 else (0,)
-OUT = f"results/gpu_chinchilla_15m_{STEPS}.json"; os.makedirs("results", exist_ok=True)
+OUT = f"benchmark_results/paper/{'enwik8_18k_convergence' if STEPS == 18000 else 'enwik8_equal_wallclock'}/gpu_chinchilla_15m_{STEPS}.json"; os.makedirs("benchmark_results", exist_ok=True)
 R = json.load(open(OUT)) if os.path.exists(OUT) else {}
 def save(): json.dump(R, open(OUT, "w"), indent=1)
 def log(*a): print(time.strftime("%H:%M:%S"), *a, flush=True)
@@ -103,7 +103,7 @@ def train_lm(kind, lr, steps, seed):
     for L in (2048, 4096): res[f"val_bpb_len{L}"] = eval_len(m0, L, nwin=32)
     return res
 
-for kind in ("alibi-hybrid-h6", "alibi-pure"):
+for kind in os.environ.get("KINDS", "alibi-hybrid-h6,alibi-pure").split(","):  # KINDS=alibi-hybrid-h6 for the iso-wall-clock run
     for seed in SEEDS:
         k = f"{kind}|seed{seed}"
         if k not in R:

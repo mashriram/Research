@@ -2,6 +2,10 @@ __pycache__/
 *.pyc
 .pytest_cache/
 experiments/teacher.pt
-results/*smoke*
+benchmark_results/**/*smoke*
 benchmarks/results_smoke.json
 checkpoints/
+# LaTeX build artifacts
+paper/*.aux
+paper/*.log
+paper/*.out
