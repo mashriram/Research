@@ -71,7 +71,7 @@ Purely recurrent architectures—including linear attention (Katharopoulos et al
 | $m_h$ | $2^{-8h/H_{\text{attn}}}$ | Fixed geometric ALiBi slope for attention head $h \in \{1,\dots,H_{\text{attn}}\}$. |
 
 ### 3.1 Macro $3:1$ Topology, Delta Memory, Dyadic Sheaf, and Branch Fusion
-See [fig1_architecture.pdf](file:///home/mukundan/learning/llm/Research/Research/hsnlm/paper/figs/fig1_architecture.pdf). Every block applies pre-RMSNorm residual updates $h_\ell = x_{\ell-1} + \text{Mixer}_\ell(\text{RMSNorm}(x_{\ell-1}))$, $x_\ell = h_\ell + \text{MLP}_\ell(\text{RMSNorm}(h_\ell))$, where Sheaf-Delta blocks (`d`) use SwiGLU (`mlp_mult=3.65`) and ALiBi blocks (`a`) and baselines use GELU (`mlp_mult=4.0`).
+See [fig1_architecture.pdf](file:///home/mukundan/learning/llm/Research/Research/hsnlm/paper/figs/fig1_architecture.pdf). Every block applies pre-RMSNorm residual updates $h_\ell = x_{\ell-1} + \text{Mixer}_\ell(\text{RMSNorm}(x_{\ell-1}))$, $x_\ell = h_\ell + \text{MLP}_\ell(\text{RMSNorm}(h_\ell))$, where Sheaf-Delta blocks (`d`) use SwiGLU (`mlp_mult=3.65`), ALiBi blocks (`a`) inside DEEPA use GELU (`mlp_mult=3.65`), and the Pure ALiBi and RoPE GPT baselines use GELU (`mlp_mult=4.0`).
 
 - **Global Gated Delta-Rule:** $\hat{q}_t = q_t/(\|q_t\|_2+\epsilon)$, $\hat{k}_t = k_t/(\|k_t\|_2+\epsilon)$, $b_t = 2\sigma(z_{b,t}) \in (0,2)$, $a_t = 0.8 + 0.2\sigma(z_{a,t}) \in (0.8,1)$ ($z_{a,t}$ initialized at $+3.0 \Rightarrow a_0 \approx 0.9905$, $\sim 73$-token half-life):
 $$S_t = a_t S_{t-1}\!\left(I - b_t \hat{k}_t \hat{k}_t^\top\right) + b_t v_t \hat{k}_t^\top, \qquad o_t^{\text{delta}} = d_h^{-1/2}\, S_t \hat{q}_t.$$
@@ -108,13 +108,13 @@ All runs use a single RTX 2000 Ada Laptop GPU ($8\text{ GB}$ VRAM), `bfloat16`, 
 | **18k: ALiBi-DEEPA 3:1 (`h6`)** | 18,000 | **0.7794 ± .0025** | **.7820/.7761/.7801** | **0.7620 ± .0021** | **0.8246 ± .0034** | 80.6k |
 | **13.3k (Iso-Time): DEEPA (`h6`)** | 13,300 | **0.7770 ± .0010** | **.7776/.7756/.7779** | **0.7585 ± .0012** | **0.8183 ± .0021** | 80.9k |
 | **18k: Pure ALiBi** | 18,000 | 0.7863 ± .0049 | .7924/.7861/.7803 | 0.7664 ± .0047 | 0.8258 ± .0041 | 85.3k |
-| 13.3k (Equal-Steps): Pure ALiBi | 13,300 | *[Scheduled overnight control run; to be inserted upon completion]* | | | | |
+| **13.3k (Equal-Steps): Pure ALiBi** | 13,300 | 0.7888 ± .0029 | .7891/.7851/.7921 | 0.7688 ± .0021 | 0.8256 ± .0005 | 86.2k |
 | 1.5k Uniform-WD: DEEPA (`h6`) | 1,500 | **1.0291 ± .0016** | 1.029/1.031/1.027 | **1.0092 ± .0022** | 1.0869 ± .0057 | 80.7k |
 | 1.5k Split-WD: DEEPA (`h6`) | 1,500 | 1.0324 ± .0032 | 1.032/1.029/1.036 | 1.0121 ± .0020 | 1.0887 ± .0007 | 81.3k |
 | 1.5k Uniform-WD: Pure ALiBi | 1,500 | 1.0369 ± .0012 | 1.038/1.036/1.036 | 1.0096 ± .0015 | **1.0855 ± .0019** | 85.5k |
 | 1.5k Split-WD: Pure ALiBi | 1,500 | 1.0407 ± .0091 | 1.031/1.053/1.038 | 1.0133 ± .0085 | 1.0888 ± .0060 | 86.6k |
 
-*\*Measured with dense-mask ALiBi. With Flash-ALiBi folding at $B=16, T=1024$, Pure ALiBi reaches $\sim 117.0\text{k tok/s}$ vs. DEEPA's $86.5\text{k tok/s}$. Equal wall-clock under the folded kernel corresponds to $13,300$ vs. $18,000$ steps ($\approx 42\text{ min}$ each); on the dense-mask runs actually executed, DEEPA also used $22\%$ less time ($44.9$ vs. $57.6\text{ min}$). One hypothesis for DEEPA's 13.3k run beating its own 18k run is mild over-repetition of the 40 MB pool at 7.4 epochs (pending Pure ALiBi 13.3k control).*
+*\*Measured with dense-mask ALiBi. With Flash-ALiBi folding at $B=16, T=1024$, Pure ALiBi reaches $\sim 117.0\text{k tok/s}$ vs. DEEPA's $86.5\text{k tok/s}$. Equal wall-clock under the folded kernel corresponds to $13,300$ vs. $18,000$ steps ($\approx 42\text{ min}$ each; on the dense-mask runs executed, DEEPA also used $22\%$ less time: $44.9$ vs. $57.6\text{ min}$). DEEPA wins $3/3$ seeds at both equal wall-clock (`0.7770` vs. `0.7863`, `-0.0093 bpb`) and equal steps at `13,300` (`0.7770` vs. `0.7888`, `-0.0118 bpb`).*
 
 ### 5.2 Parameter Scalability ($1.85\text{M} \to 38.34\text{M}$ at Matched 5 Tokens/Param)
 
@@ -225,7 +225,7 @@ All runs use a single RTX 2000 Ada Laptop GPU ($8\text{ GB}$ VRAM), `bfloat16`, 
 | **Copy** (`128→512`) | 100/2/100→96/0/59 | **100→99/98/99 [1k]** | 100→0/0/0 [0.5k] | 99→24/26/19 |
 | **SelCopy** (`T256`) | 99/99/99 [3.5–10.5k] | 100/99/99 [7–10k] | 99/100/99 [4–6.5k] | **100/100/99 [3–4k]** |
 
-ALiBi-DEEPA achieves 2 clear LRA wins (IMDb $+12.1\%$ vs. Pure ALiBi, sCIFAR $+2.8\%$) and ties at chance on ListOps; capping $\beta \in (0,1)$ provides direct causal evidence that negative eigenvalues drive $4\times$ parity generalization; and ALiBi-DEEPA 3:1 is the only model with non-trivial success across all three synthetic families (recall, parity/$S_3$ state tracking, and length-general copying), while Pure ALiBi copies more reliably at $4\times$ ($87\text{--}96\%$) and $4\times$ faster. A learning-rate robustness grid for copying and MQAR-64 is scheduled to quantify seed sensitivity.
+ALiBi-DEEPA achieves 2 clear LRA wins (IMDb $+12.1\%$ vs. Pure ALiBi, sCIFAR $+2.8\%$) and ties at chance on ListOps; capping $\beta \in (0,1)$ provides direct causal evidence that negative eigenvalues drive $4\times$ parity generalization; and ALiBi-DEEPA 3:1 is the only model with non-trivial success across all three synthetic families (recall, parity/$S_3$ state tracking, and length-general copying). Under a full learning-rate robustness grid (LR selected by 3-seed mean), DEEPA solves both `Copy_paper` ($3/3$ at $10^{-3}$, $79\%$ mean at $4\times$) and small `Copy` ($3/3$ at $3\times 10^{-4}$, $33\%$ at $4\times$) on every seed, though Pure ALiBi copies much better at $4\times$ ($93\text{--}100\%$) and $4\times$ faster; on MQAR-64 at a single fixed LR, DEEPA solves $2/3$ seeds (the remaining seed reaches $94\%$) vs. $3/3$ for Pure ALiBi and Pure SheafDelta (RoPE $0/3$).
 
 ---
 
@@ -233,7 +233,7 @@ ALiBi-DEEPA achieves 2 clear LRA wins (IMDb $+12.1\%$ vs. Pure ALiBi, sCIFAR $+2
 
 1. **Short-Context Kernel Overhead ($T \le 1\text{k}$):** At $B=16, T=1024$, small-kernel launch overhead makes DEEPA $\sim 26\%$ slower than folded-kernel Pure ALiBi ($86.5\text{k}$ vs. $117.0\text{k tok/s}$) and $\sim 12\%$ slower than RoPE GPT ($98.5\text{k tok/s}$), while using $14\%$ more training VRAM at `16k` than RoPE GPT ($2,749$ vs. $2,409\text{ MB}$) and $20\%$ more than folded-kernel Pure ALiBi ($2,284\text{ MB}$). Fusing the Householder dyadic transport and output projection into a single Triton kernel is the primary systems next step.
 2. **Monotonic ALiBi Penalty on 2D Raster Strides:** As shown by the CIFAR-10 `RoPE-DEEPA` diagnostic ($3.947$ vs. `ALiBi-DEEPA` $4.438\text{ bpd}$), ALiBi's monotonic distance decay handicaps fixed long-stride 2D dependencies.
-3. **Copying Speed and Seed Sensitivity:** DEEPA learns exact string copying $4\times$ slower than Pure ALiBi ($2\text{--}4\text{k}$ vs. $0.5\text{k}$ steps) and exhibits seed/LR sensitivity on MQAR-64 and copying (failing one seed on each).
+3. **Copying Extrapolation and MQAR-64 Reliability:** Although DEEPA solves exact copying on $3/3$ seeds at trained length under its mean-optimal LR, it learns copying $4\times$ slower than Pure ALiBi and trails Pure ALiBi at $4\times$ length ($79\%$ paper / $33\%$ small vs. $93\text{--}100\%$). On MQAR-64 at a single LR, DEEPA solves $2/3$ seeds (the remaining seed reaches $94\%$) vs. $3/3$ for Pure ALiBi and Pure SheafDelta.
 4. **Unsolved $S_5$ and Chance-Level ListOps:** All four single-step models fail $NC^1$-complete $S_5$ (motivating multi-reflection products as future work), and all models remain near chance on LRA ListOps.
 5. **Byte-Level Scope Only:** All experiments are byte-level ($V=256$); subword (BPE) pretraining and downstream zero-shot benchmarks remain to be evaluated.
 6. **Scale Beyond $38\text{M}$ Converged Parameters:** While scaling is validated from $1.85\text{M}$ to $38.34\text{M}$ at $5\text{ tokens/param}$ (and VRAM fits $206\text{M}$ in $5.3\text{ GB}$), full Chinchilla training at $100\text{M}\text{--}1\text{B}$ scale remains future work.

@@ -8,6 +8,7 @@
 \usepackage{color}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \usepackage{fancyhdr}
+\usepackage{rotating}
 
 % Springer LNCS text-block geometry on A4
 \geometry{a4paper, textwidth=128mm, textheight=204mm, centering}
@@ -29,6 +30,17 @@
 \newcommand{\midrule}{\noalign{\smallskip}\hline\noalign{\smallskip}}
 \newcommand{\bottomrule}{\noalign{\smallskip}\hline}
 
+
+% Scale a table down ONLY if it is wider than the text block (never enlarge); log its natural width.
+\renewcommand{\topfraction}{0.85}\renewcommand{\bottomfraction}{0.6}\renewcommand{\textfraction}{0.12}
+\renewcommand{\floatpagefraction}{0.75}\setcounter{topnumber}{3}\setcounter{totalnumber}{4}
+\makeatletter
+\setlength{\@fptop}{0pt}\setlength{\@fpsep}{14pt plus 2fil}\setlength{\@fpbot}{0pt plus 1fil}
+\makeatother
+\newsavebox{\fitb}
+\newcommand{\fitwidth}[1]{\sbox{\fitb}{\setlength{\tabcolsep}{3pt}#1}\typeout{FITW \the\wd\fitb\space vs \the\textwidth}%
+  \ifdim\wd\fitb>\textwidth\resizebox{\textwidth}{!}{\usebox{\fitb}}\else\usebox{\fitb}\fi}
+
 \begin{document}
 \thispagestyle{plain}
 
@@ -39,7 +51,7 @@
   {\normalsize Dr.\ Deepa, Mr.\ J.\ V.\ K.\ Hem, and Mr.\ M.\ A.\ Shriram\par}
   \vspace{6pt}
   {\small\itshape Independent Researchers, Chennai, India\\
-  \texttt{\{deepa.rME, hemjvk2004, mashriram\}@gmail.com}\par}
+  \upshape\texttt{\char123 deepa.rME, hemjvk2004, mashriram\char125 @gmail.com}\par}
 \end{center}
 \vspace{6pt}
 
@@ -95,7 +107,7 @@ Table~\ref{tab:taxonomy} contrasts DEEPA against four representative families ac
 \centering
 \caption{Architectural taxonomy contrasting DEEPA against existing hybrid and recurrent backbones across six design axes.}
 \label{tab:taxonomy}
-\resizebox{\textwidth}{!}{%
+\fitwidth{%
 \begin{tabular}{>{\raggedright\arraybackslash}p{2.1cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{2.0cm}}
 \toprule
 \textbf{Architecture} & \textbf{Recurrent State Eigenvalues} & \textbf{Local Context Path} & \textbf{Attn Ratio / Type} & \textbf{Pos.\ Encoding} & \textbf{Decode State / $16\times$ Extrap.} \\
@@ -121,8 +133,8 @@ Table~\ref{tab:notation} defines every symbol and tensor shape used throughout t
 \centering
 \caption{Complete notation and symbol glossary for DEEPA (default $14.44\text{M}$ \texttt{h6} configuration: $D=384, L=8, H_{\text{mix}}=6, d_h=64, H_{\text{attn}}=8, d_a=48$).}
 \label{tab:notation}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{p{1.8cm}p{2.5cm}p{7.8cm}}
+\fitwidth{%
+\begin{tabular}{>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{2.5cm}>{\raggedright\arraybackslash}p{7.8cm}}
 \toprule
 \textbf{Symbol} & \textbf{Shape / Domain} & \textbf{Definition and Role} \\
 \midrule
@@ -210,7 +222,7 @@ Table~\ref{tab:complexity} summarizes the closed-form training and inference com
 \centering
 \caption{Analytical computational and memory complexity ($14.4\text{M}$ models, $D=384, L=8, H_{\text{mix}}=6, d_h=64$, bf16 cache).}
 \label{tab:complexity}
-\resizebox{\textwidth}{!}{%
+\fitwidth{%
 \begin{tabular}{lccccc}
 \toprule
 \textbf{Model} & \textbf{Train Time} & \textbf{Decode Step} & \textbf{Cache Formula (bf16 vals)} & \textbf{Cache @16k} & \textbf{Cache @65k} \\
@@ -241,7 +253,7 @@ To test whether DEEPA's early-training advantage persists at longer training hor
 \centering
 \caption{3-seed Chinchilla-ratio convergence \cite{hoffmann2022} ($18,000$ steps, $\approx 20.4$ tokens/param, $7.4$ repeated epochs over $40\text{ MB}$ \texttt{enwik8}), equal folded-kernel wall-clock ($13{,}300$ steps), and weight-decay ablation ($1,500$ steps; 64 KB validation slice, mean $\pm$ population std).}
 \label{tab:chinchilla}
-\resizebox{\textwidth}{!}{%
+\fitwidth{%
 \begin{tabular}{lcccccc}
 \toprule
 \textbf{Experiment / Model (3 seeds)} & \textbf{Steps} & \textbf{Val @1024} & \textbf{Per-Seed @1024} & \textbf{@2048} & \textbf{@4096} & \textbf{tok/s$^*$} \\
@@ -269,7 +281,7 @@ To evaluate scaling without an undertrained-regime confound, Table~\ref{tab:scal
 \centering
 \caption{Parameter scaling sweep on \texttt{enwik8} at matched $5$ tokens/param (seed 0, full 1 MB validation bpb and 64 KB slice; $\Delta = \text{DEEPA} - \text{Pure ALiBi}$, negative = DEEPA better). At $38\text{M}$, DEEPA used activation checkpointing to fit 8 GB VRAM (quality unaffected; speed not like-for-like).}
 \label{tab:scaling}
-\resizebox{\textwidth}{!}{%
+\fitwidth{%
 \begin{tabular}{lccccccc}
 \toprule
 \textbf{Scale ($D/L/H_a/H_m$)} & \textbf{Model} & \textbf{Params} & \textbf{Steps (Tok)} & \textbf{Full Val bpb} & \textbf{@1024 (64K)} & \textbf{$\Delta$ Full Val} & \textbf{Peak MB} \\
@@ -305,7 +317,7 @@ Table~\ref{tab:extrap} and Figure~\ref{fig:extrap_scale}(a) evaluate 1,500-step 
 \centering
 \caption{Zero-shot length extrapolation on \texttt{enwik8} (3 seeds, trained at $T=1024$, scored on the identical $512\text{ KB}$ validation budget at every length).}
 \label{tab:extrap}
-\resizebox{\textwidth}{!}{%
+\fitwidth{%
 \begin{tabular}{lccccc}
 \toprule
 \textbf{Model (3 seeds)} & \textbf{$L=1024$} & \textbf{$L=2048$} & \textbf{$L=4096$} & \textbf{$L=8192$} & \textbf{$L=16384$} \\
@@ -333,7 +345,7 @@ We evaluate DEEPA across six additional byte-level domains (each $40\text{ MB}$ 
 \centering
 \caption{Multi-domain and multi-modal full-validation bpb (mean $\pm$ population std, 3 seeds unless noted; lower is better), including the Pure SheafDelta ($14.77\text{M}$, zero-attention) component ablation.}
 \label{tab:domains}
-\resizebox{\textwidth}{!}{%
+\fitwidth{%
 \begin{tabular}{lcccc}
 \toprule
 \textbf{Domain (Metric)} & \textbf{ALiBi-DEEPA (h6)} & \textbf{Pure ALiBi} & \textbf{RoPE GPT} & \textbf{Pure SheafDelta} \\
@@ -374,7 +386,7 @@ Tables~\ref{tab:train_speed} and~\ref{tab:decode_serve} (and Figure~\ref{fig:sys
 \centering
 \caption{Compiled training step latency ($B=1$, no checkpointing), prefill latency, and peak training VRAM across sequence lengths ($14.4\text{M}$, FlashAttention-folded ALiBi for both DEEPA and Pure ALiBi vs.\ FlashAttention RoPE GPT).}
 \label{tab:train_speed}
-\resizebox{\textwidth}{!}{%
+\fitwidth{%
 \begin{tabular}{rcccccccc}
 \toprule
 \textbf{Length $T$} & \textbf{DEEPA Tr.} & \textbf{ALiBi Tr.} & \textbf{RoPE Tr.} & \textbf{DEEPA Pre.} & \textbf{ALiBi Pre.} & \textbf{RoPE Pre.} & \textbf{DEEPA MB} & \textbf{ALiBi / RoPE MB} \\
@@ -392,7 +404,7 @@ Tables~\ref{tab:train_speed} and~\ref{tab:decode_serve} (and Figure~\ref{fig:sys
 \centering
 \caption{CUDA-graph autoregressive decoding latency (ms/token, best ALiBi implementation per regime: folded kernel at $B=1$, dense-mask path at $B=32$) and maximum 8 GB GPU serving capacity.}
 \label{tab:decode_serve}
-\resizebox{\textwidth}{!}{%
+\fitwidth{%
 \begin{tabular}{rrcccccc}
 \toprule
 \textbf{Context} & \textbf{Batch} & \textbf{DEEPA (ms)} & \textbf{Pure ALiBi} & \textbf{RoPE GPT} & \textbf{DEEPA 8 GB Cap.} & \textbf{ALiBi 8 GB Cap.} & \textbf{RoPE 8 GB Cap.} \\
@@ -415,7 +427,7 @@ Table~\ref{tab:ablation} consolidates our 3-seed mixer-internal ablations (24 co
 \centering
 \caption{3-seed mixer-internal ablations ($1,500$ steps, \texttt{enwik8} 64 KB slice): \texttt{h6} is adopted for matched quality, $4.7\times$ tighter seed variance, and higher throughput.}
 \label{tab:ablation}
-\resizebox{\textwidth}{!}{%
+\fitwidth{%
 \begin{tabular}{lccccc}
 \toprule
 \textbf{Variant (3 seeds each)} & \textbf{Val @1024} & \textbf{@2048} & \textbf{@4096} & \textbf{tok/s} & \textbf{Verdict} \\
@@ -459,7 +471,7 @@ sCIFAR grayscale ($1\text{k}$) & \textbf{39.6 $\pm$ 0.1\%} & 36.8 $\pm$ 0.5\% & 
 \centering
 \caption{Causal parity control ($D=128, L=4$, curriculum $8\to 64$, up to 20k steps, 3 seeds, identical parameter counts): capping $\beta \in (0,1)$ removes negative eigenvalues.}
 \label{tab:beta}
-\resizebox{\textwidth}{!}{%
+\fitwidth{%
 \begin{tabular}{lccc}
 \toprule
 \textbf{Model / $\beta$ Regime} & \textbf{Acc @64 (Train)} & \textbf{Acc @256 ($4\times$)} & \textbf{Steps to Solve} \\
@@ -472,11 +484,11 @@ Pure SheafDelta, $\beta \in (0,1)$ & 99.8 / 99.9 / 99.6\% & 64.2 / 64.4 / 64.2\%
 \end{tabular}}
 \end{table}
 
-\begin{table}[htbp]
+\begin{sidewaystable}
 \centering
 \caption{Converged synthetic capability suite ($D=128, L=4$ [1 attention layer in hybrid], except \texttt{Copy\_paper} which uses the paper $14.4\text{M}$ [$D=384, L=8$] model; up to 20k steps, LR grid, 3 seeds; accuracy \% per seed, `[steps]', `x' = unsolved).}
 \label{tab:synth}
-\resizebox{\textwidth}{!}{%
+\fitwidth{%
 \begin{tabular}{lllll}
 \toprule
 \textbf{Task} & \textbf{ALiBi-DEEPA 3:1 (Ours)} & \textbf{Pure ALiBi} & \textbf{RoPE GPT} & \textbf{Pure SheafDelta} \\
@@ -492,12 +504,12 @@ Pure SheafDelta, $\beta \in (0,1)$ & 99.8 / 99.9 / 99.6\% & 64.2 / 64.4 / 64.2\%
 \textbf{SelCopy} ($T256$) & 99/99/99 [3.5--10.5k] & 100/99/99 [7--10k] & 99/100/99 [4--6.5k] & \textbf{100/100/99 [3--4k]} \\
 \bottomrule
 \end{tabular}}
-\end{table}
+\end{sidewaystable}
 
 \noindent\textbf{Analysis of Tables~\ref{tab:lra}--\ref{tab:synth}:}
 (1) \textbf{Long Range Arena:} ALiBi-DEEPA achieves 2 clear wins---beating Pure ALiBi by $+12.1\%$ and RoPE GPT by $+21.2\%$ on 4k-byte IMDb ($75.8\%$ vs.\ $63.7\%$ / $54.6\%$), and winning sCIFAR ($39.6\%$ vs.\ $36.8\%$ / $34.9\%$)---and ties within noise at chance on ListOps ($19.9 \pm 0.3\%$ vs.\ $19.4 \pm 0.6\%$).
 (2) \textbf{Causal Evidence for Negative Eigenvalues:} Capping $\beta \in (0,1)$ slows parity convergence $5.5\text{--}8.7\times$ ($2\text{k}\to 11\text{--}17.5\text{k}$ steps) and drops $4\times$ length extrapolation from $\sim 90\%$ down to $\sim 64\%$ on both mixers, providing direct causal evidence that $\beta \in (0,2)$ drives length-general state tracking.
-(3) \textbf{Capability Coverage \& LR Robustness:} ALiBi-DEEPA 3:1 is the only model with non-trivial success across all three capability families: associative recall (fastest on MQAR-8 and MQAR-32), state tracking (parity and non-abelian $S_3$, where Pure ALiBi and RoPE GPT fail), and length-general copying (\texttt{Copy\_paper}, where RoPE [$0\%$] and Pure SheafDelta [$14\text{--}18\%$] collapse). A full learning-rate robustness grid (every LR evaluated on all 3 seeds, selecting each model's LR by 3-seed mean) clarifies two points: first, the earlier small-model copy failure came from selecting $\text{LR}=3\times 10^{-3}$ via seed 0 alone---at its mean-optimal LR, DEEPA solves both \texttt{Copy\_paper} ($3/3$ at $10^{-3}$, $79\%$ mean at $4\times$) and small \texttt{Copy} ($3/3$ at $3\times 10^{-4}$, $33\%$ at $4\times$) on every seed, though Pure ALiBi still copies substantially better at $4\times$ ($93\text{--}100\%$) and $4\times$ faster. Second, on MQAR-64 at a single fixed LR, DEEPA solves $2/3$ seeds (missing at $84\%$ and $94\%$), whereas Pure ALiBi ($3/3$) and Pure SheafDelta ($3/3$) reach $3/3$ (RoPE $0/3$). All four models fail $NC^1$-complete $S_5$ \cite{merrill2024}.
+(3) \textbf{Capability Coverage \& LR Robustness:} ALiBi-DEEPA 3:1 is the only model with non-trivial success across all three capability families: associative recall (fastest on MQAR-8 and MQAR-32), state tracking (parity and non-abelian $S_3$, where Pure ALiBi and RoPE GPT fail), and length-general copying (\texttt{Copy\_paper}, where RoPE [$0\%$] and Pure SheafDelta [$14\text{--}18\%$] collapse). A full learning-rate robustness grid (every LR evaluated on all 3 seeds, selecting each model's LR by 3-seed mean) clarifies two points: first, the earlier small-model copy failure came from selecting $\text{LR}=3\times 10^{-3}$ via seed 0 alone---at its mean-optimal LR, DEEPA solves both \texttt{Copy\_paper} ($3/3$ at $10^{-3}$, $79\%$ mean at $4\times$) and small \texttt{Copy} ($3/3$ at $3\times 10^{-4}$, $33\%$ at $4\times$) on every seed, though Pure ALiBi still copies substantially better at $4\times$ ($93\text{--}100\%$) and $4\times$ faster. Second, on MQAR-64 at a single fixed LR, DEEPA solves $2/3$ seeds (the remaining seed reaches $94\%$), whereas Pure ALiBi ($3/3$) and Pure SheafDelta ($3/3$) reach $3/3$ (RoPE $0/3$). All four models fail $NC^1$-complete $S_5$ \cite{merrill2024}.
 
 % ======================== SECTION 6 ========================
 \section{Limitations and Future Work}
@@ -506,7 +518,7 @@ We note six concrete boundaries of this study:
 \begin{enumerate}
   \item \textbf{Short-Context Kernel Overhead ($T \le 1\text{k}$):} At $B=16, T=1024$, small-kernel launch overhead in the 6 Sheaf-Delta layers makes DEEPA $\sim 26\%$ slower than folded-kernel Pure ALiBi ($86.5\text{k}$ vs.\ $117.0\text{k}$ tok/s) and $\sim 12\%$ slower than RoPE GPT ($98.5\text{k}$ tok/s), while using $14\%$ more training VRAM at $16\text{k}$ than RoPE GPT ($2{,}749$ vs.\ $2{,}409\text{ MB}$) and $20\%$ more than folded-kernel Pure ALiBi ($2{,}284\text{ MB}$). Fusing the Householder dyadic transport and output projection into a single Triton kernel is the primary systems next step.
   \item \textbf{Monotonic ALiBi Penalty on 2D Raster Strides:} As shown by our CIFAR-10 \texttt{RoPE-DEEPA} diagnostic ($3.947$ vs.\ \texttt{ALiBi-DEEPA} $4.438$ bpd), ALiBi's monotonic distance decay handicaps fixed long-stride 2D dependencies. Mixing zero-slope or weak-slope heads in the attention layers is a targeted extension for 2D modalities.
-  \item \textbf{Copying Extrapolation and MQAR-64 Reliability:} Although DEEPA solves exact copying on $3/3$ seeds at trained length under its mean-optimal LR, it learns copying $4\times$ slower than Pure ALiBi and trails Pure ALiBi at $4\times$ length ($79\%$ paper / $33\%$ small vs.\ $93\text{--}100\%$). On MQAR-64 at a single LR, DEEPA solves $2/3$ seeds ($84\%$ and $94\%$ on misses) vs.\ $3/3$ for Pure ALiBi and Pure SheafDelta.
+  \item \textbf{Copying Extrapolation and MQAR-64 Reliability:} Although DEEPA solves exact copying on $3/3$ seeds at trained length under its mean-optimal LR, it learns copying $4\times$ slower than Pure ALiBi and trails Pure ALiBi at $4\times$ length ($79\%$ paper / $33\%$ small vs.\ $93\text{--}100\%$). On MQAR-64 at a single LR, DEEPA solves $2/3$ seeds (the remaining seed reaches $94\%$) vs.\ $3/3$ for Pure ALiBi and Pure SheafDelta.
   \item \textbf{Unsolved $S_5$ and Chance-Level ListOps:} All four single-step models fail $NC^1$-complete $S_5$ state tracking (motivating multi-reflection products \cite{siems2025} as future work), and all models remain near chance on LRA ListOps at this budget.
   \item \textbf{Byte-Level Scope Only:} All experiments are byte-level ($V=256$); subword (BPE) pretraining and downstream zero-shot benchmarks remain to be evaluated.
   \item \textbf{Scale Beyond $38\text{M}$ Converged Parameters:} While our scaling law validates DEEPA from $1.85\text{M}$ to $38.34\text{M}$ parameters at $5$ tokens/param (and VRAM fits $206\text{M}$ in $5.3\text{ GB}$), full Chinchilla training at $100\text{M}\text{--}1\text{B}$ scale on multi-GPU clusters remains future work.
