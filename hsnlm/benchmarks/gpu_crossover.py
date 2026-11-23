@@ -8,7 +8,7 @@ assert torch.cuda.is_available()
 torch.backends.cudnn.benchmark = True
 DIM, HEADS, LAYERS, VOCAB = 128, 4, 4, 256
 NS = (256, 512, 1024, 2048, 4096, 8192, 16384, 32768)
-OUT = "results/gpu_crossover.json"; os.makedirs("results", exist_ok=True)
+OUT = "benchmark_results/development/fused_kernel_crossover/gpu_crossover.json"; os.makedirs("benchmark_results", exist_ok=True)
 R = json.load(open(OUT)) if os.path.exists(OUT) else {}
 def save(): json.dump(R, open(OUT, "w"), indent=1)
 def log(*a): print(time.strftime("%H:%M:%S"), *a, flush=True)

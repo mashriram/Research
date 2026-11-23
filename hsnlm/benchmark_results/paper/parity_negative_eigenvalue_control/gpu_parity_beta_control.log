@@ -1,0 +1,202 @@
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+W1122 07:16:07.535000 1132187 torch/_inductor/utils.py:1137] [3/2_1] Not enough SMs to use max_autotune_gemm mode
+In file included from /home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmpmhy_bgih/main.c:4:
+/home/mukundan/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/include/python3.12/pyconfig.h:1874:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1874 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mukundan/learning/llm/Research/Research/hsnlm/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmpmhy_bgih/main.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+W1122 07:17:41.018000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:17:41.018000 1132187 torch/_dynamo/convert_frame.py:906] [6/8]    function: 'forward' (/home/mukundan/learning/llm/Research/Research/hsnlm/benchmarks/deepa_common.py:101)
+W1122 07:17:41.018000 1132187 torch/_dynamo/convert_frame.py:906] [6/8]    last reason: 6/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:17:41.018000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:17:41.018000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:18:38.546000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:18:38.546000 1132187 torch/_dynamo/convert_frame.py:906] [1/8]    function: 'embed_in' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:179)
+W1122 07:18:38.546000 1132187 torch/_dynamo/convert_frame.py:906] [1/8]    last reason: 1/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:18:38.546000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:18:38.546000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:18:38.589000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:18:38.589000 1132187 torch/_dynamo/convert_frame.py:906] [2/8]    function: 'forward' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:162)
+W1122 07:18:38.589000 1132187 torch/_dynamo/convert_frame.py:906] [2/8]    last reason: 2/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:18:38.589000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:18:38.589000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:18:38.607000 1132187 torch/_dynamo/convert_frame.py:906] [7/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:18:38.607000 1132187 torch/_dynamo/convert_frame.py:906] [7/8]    function: 'head' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:178)
+W1122 07:18:38.607000 1132187 torch/_dynamo/convert_frame.py:906] [7/8]    last reason: 7/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:18:38.607000 1132187 torch/_dynamo/convert_frame.py:906] [7/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:18:38.607000 1132187 torch/_dynamo/convert_frame.py:906] [7/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+07:18:39 sweep|parity|alibi-hybrid-h6-beta1|0.0003 {'steps_run': 11500, 'reached_len': 64, 'steps_to_solve': 10000, 'acc_T64': 0.9990005493164062, 'acc_T256': 0.6453514099121094}
+W1122 07:21:04.791000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:21:04.791000 1132187 torch/_dynamo/convert_frame.py:906] [1/8]    function: 'embed_in' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:179)
+W1122 07:21:04.791000 1132187 torch/_dynamo/convert_frame.py:906] [1/8]    last reason: 1/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:21:04.791000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:21:04.791000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:21:04.794000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:21:04.794000 1132187 torch/_dynamo/convert_frame.py:906] [2/8]    function: 'forward' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:162)
+W1122 07:21:04.794000 1132187 torch/_dynamo/convert_frame.py:906] [2/8]    last reason: 2/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:21:04.794000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:21:04.794000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:21:04.802000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:21:04.802000 1132187 torch/_dynamo/convert_frame.py:906] [6/8]    function: 'forward' (/home/mukundan/learning/llm/Research/Research/hsnlm/benchmarks/deepa_common.py:101)
+W1122 07:21:04.802000 1132187 torch/_dynamo/convert_frame.py:906] [6/8]    last reason: 6/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:21:04.802000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:21:04.802000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:21:04.805000 1132187 torch/_dynamo/convert_frame.py:906] [7/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:21:04.805000 1132187 torch/_dynamo/convert_frame.py:906] [7/8]    function: 'head' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:178)
+W1122 07:21:04.805000 1132187 torch/_dynamo/convert_frame.py:906] [7/8]    last reason: 7/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:21:04.805000 1132187 torch/_dynamo/convert_frame.py:906] [7/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:21:04.805000 1132187 torch/_dynamo/convert_frame.py:906] [7/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+07:21:05 sweep|parity|alibi-hybrid-h6-beta1|0.001 {'steps_run': 14500, 'reached_len': 64, 'steps_to_solve': 11500, 'acc_T64': 0.99920654296875, 'acc_T256': 0.6643772125244141}
+W1122 07:23:39.022000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:23:39.022000 1132187 torch/_dynamo/convert_frame.py:906] [1/8]    function: 'embed_in' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:179)
+W1122 07:23:39.022000 1132187 torch/_dynamo/convert_frame.py:906] [1/8]    last reason: 1/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:23:39.022000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:23:39.022000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:23:39.025000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:23:39.025000 1132187 torch/_dynamo/convert_frame.py:906] [2/8]    function: 'forward' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:162)
+W1122 07:23:39.025000 1132187 torch/_dynamo/convert_frame.py:906] [2/8]    last reason: 2/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:23:39.025000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:23:39.025000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:23:39.032000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:23:39.032000 1132187 torch/_dynamo/convert_frame.py:906] [6/8]    function: 'forward' (/home/mukundan/learning/llm/Research/Research/hsnlm/benchmarks/deepa_common.py:101)
+W1122 07:23:39.032000 1132187 torch/_dynamo/convert_frame.py:906] [6/8]    last reason: 6/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:23:39.032000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:23:39.032000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:23:39.035000 1132187 torch/_dynamo/convert_frame.py:906] [7/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:23:39.035000 1132187 torch/_dynamo/convert_frame.py:906] [7/8]    function: 'head' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:178)
+W1122 07:23:39.035000 1132187 torch/_dynamo/convert_frame.py:906] [7/8]    last reason: 7/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:23:39.035000 1132187 torch/_dynamo/convert_frame.py:906] [7/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:23:39.035000 1132187 torch/_dynamo/convert_frame.py:906] [7/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+07:23:39 sweep|parity|alibi-hybrid-h6-beta1|0.003 {'steps_run': 15500, 'reached_len': 64, 'steps_to_solve': 13000, 'acc_T64': 0.9991455078125, 'acc_T256': 0.653656005859375}
+07:23:39 DONE parity|alibi-hybrid-h6-beta1|seed0 {'reached_len': 64, 'steps_to_solve': 11500, 'acc_T64': 0.99920654296875, 'acc_T256': 0.6643772125244141}
+W1122 07:25:53.089000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:25:53.089000 1132187 torch/_dynamo/convert_frame.py:906] [1/8]    function: 'embed_in' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:179)
+W1122 07:25:53.089000 1132187 torch/_dynamo/convert_frame.py:906] [1/8]    last reason: 1/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:25:53.089000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:25:53.089000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:25:53.092000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:25:53.092000 1132187 torch/_dynamo/convert_frame.py:906] [2/8]    function: 'forward' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:162)
+W1122 07:25:53.092000 1132187 torch/_dynamo/convert_frame.py:906] [2/8]    last reason: 2/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:25:53.092000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:25:53.092000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:25:53.100000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:25:53.100000 1132187 torch/_dynamo/convert_frame.py:906] [6/8]    function: 'forward' (/home/mukundan/learning/llm/Research/Research/hsnlm/benchmarks/deepa_common.py:101)
+W1122 07:25:53.100000 1132187 torch/_dynamo/convert_frame.py:906] [6/8]    last reason: 6/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:25:53.100000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:25:53.100000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:25:53.103000 1132187 torch/_dynamo/convert_frame.py:906] [7/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:25:53.103000 1132187 torch/_dynamo/convert_frame.py:906] [7/8]    function: 'head' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:178)
+W1122 07:25:53.103000 1132187 torch/_dynamo/convert_frame.py:906] [7/8]    last reason: 7/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:25:53.103000 1132187 torch/_dynamo/convert_frame.py:906] [7/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:25:53.103000 1132187 torch/_dynamo/convert_frame.py:906] [7/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+07:25:53 DONE parity|alibi-hybrid-h6-beta1|seed1 {'reached_len': 64, 'steps_to_solve': 12500, 'acc_T64': 0.9934234619140625, 'acc_T256': 0.6453933715820312}
+W1122 07:28:07.840000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:28:07.840000 1132187 torch/_dynamo/convert_frame.py:906] [1/8]    function: 'embed_in' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:179)
+W1122 07:28:07.840000 1132187 torch/_dynamo/convert_frame.py:906] [1/8]    last reason: 1/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:28:07.840000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:28:07.840000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:28:07.843000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:28:07.843000 1132187 torch/_dynamo/convert_frame.py:906] [2/8]    function: 'forward' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:162)
+W1122 07:28:07.843000 1132187 torch/_dynamo/convert_frame.py:906] [2/8]    last reason: 2/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:28:07.843000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:28:07.843000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:28:07.851000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:28:07.851000 1132187 torch/_dynamo/convert_frame.py:906] [6/8]    function: 'forward' (/home/mukundan/learning/llm/Research/Research/hsnlm/benchmarks/deepa_common.py:101)
+W1122 07:28:07.851000 1132187 torch/_dynamo/convert_frame.py:906] [6/8]    last reason: 6/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:28:07.851000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:28:07.851000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:28:07.854000 1132187 torch/_dynamo/convert_frame.py:906] [7/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:28:07.854000 1132187 torch/_dynamo/convert_frame.py:906] [7/8]    function: 'head' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:178)
+W1122 07:28:07.854000 1132187 torch/_dynamo/convert_frame.py:906] [7/8]    last reason: 7/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:28:07.854000 1132187 torch/_dynamo/convert_frame.py:906] [7/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:28:07.854000 1132187 torch/_dynamo/convert_frame.py:906] [7/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+07:28:08 DONE parity|alibi-hybrid-h6-beta1|seed2 {'reached_len': 64, 'steps_to_solve': 12500, 'acc_T64': 0.9980239868164062, 'acc_T256': 0.6372013092041016}
+W1122 07:30:08.385000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:30:08.385000 1132187 torch/_dynamo/convert_frame.py:906] [1/8]    function: 'embed_in' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:179)
+W1122 07:30:08.385000 1132187 torch/_dynamo/convert_frame.py:906] [1/8]    last reason: 1/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:30:08.385000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:30:08.385000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:30:08.388000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:30:08.388000 1132187 torch/_dynamo/convert_frame.py:906] [2/8]    function: 'forward' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:162)
+W1122 07:30:08.388000 1132187 torch/_dynamo/convert_frame.py:906] [2/8]    last reason: 2/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:30:08.388000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:30:08.388000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:30:08.397000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:30:08.397000 1132187 torch/_dynamo/convert_frame.py:906] [6/8]    function: 'head' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:178)
+W1122 07:30:08.397000 1132187 torch/_dynamo/convert_frame.py:906] [6/8]    last reason: 6/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:30:08.397000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:30:08.397000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+07:30:08 sweep|parity|sheafdelta-pure-beta1|0.0003 {'steps_run': 10000, 'reached_len': 64, 'steps_to_solve': 9500, 'acc_T64': 0.9956207275390625, 'acc_T256': 0.6235790252685547}
+W1122 07:32:47.288000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:32:47.288000 1132187 torch/_dynamo/convert_frame.py:906] [1/8]    function: 'embed_in' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:179)
+W1122 07:32:47.288000 1132187 torch/_dynamo/convert_frame.py:906] [1/8]    last reason: 1/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:32:47.288000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:32:47.288000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:32:47.291000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:32:47.291000 1132187 torch/_dynamo/convert_frame.py:906] [2/8]    function: 'forward' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:162)
+W1122 07:32:47.291000 1132187 torch/_dynamo/convert_frame.py:906] [2/8]    last reason: 2/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:32:47.291000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:32:47.291000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:32:47.301000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:32:47.301000 1132187 torch/_dynamo/convert_frame.py:906] [6/8]    function: 'head' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:178)
+W1122 07:32:47.301000 1132187 torch/_dynamo/convert_frame.py:906] [6/8]    last reason: 6/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:32:47.301000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:32:47.301000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+07:32:47 sweep|parity|sheafdelta-pure-beta1|0.001 {'steps_run': 13500, 'reached_len': 64, 'steps_to_solve': 11500, 'acc_T64': 0.9982452392578125, 'acc_T256': 0.6423320770263672}
+W1122 07:36:21.377000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:36:21.377000 1132187 torch/_dynamo/convert_frame.py:906] [1/8]    function: 'embed_in' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:179)
+W1122 07:36:21.377000 1132187 torch/_dynamo/convert_frame.py:906] [1/8]    last reason: 1/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:36:21.377000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:36:21.377000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:36:21.380000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:36:21.380000 1132187 torch/_dynamo/convert_frame.py:906] [2/8]    function: 'forward' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:162)
+W1122 07:36:21.380000 1132187 torch/_dynamo/convert_frame.py:906] [2/8]    last reason: 2/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:36:21.380000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:36:21.380000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:36:21.389000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:36:21.389000 1132187 torch/_dynamo/convert_frame.py:906] [6/8]    function: 'head' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:178)
+W1122 07:36:21.389000 1132187 torch/_dynamo/convert_frame.py:906] [6/8]    last reason: 6/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:36:21.389000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:36:21.389000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+07:36:21 sweep|parity|sheafdelta-pure-beta1|0.003 {'steps_run': 18500, 'reached_len': 64, 'steps_to_solve': 18000, 'acc_T64': 0.9936370849609375, 'acc_T256': 0.6363906860351562}
+07:36:21 DONE parity|sheafdelta-pure-beta1|seed0 {'reached_len': 64, 'steps_to_solve': 11500, 'acc_T64': 0.9982452392578125, 'acc_T256': 0.6423320770263672}
+W1122 07:38:47.539000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:38:47.539000 1132187 torch/_dynamo/convert_frame.py:906] [1/8]    function: 'embed_in' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:179)
+W1122 07:38:47.539000 1132187 torch/_dynamo/convert_frame.py:906] [1/8]    last reason: 1/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:38:47.539000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:38:47.539000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:38:47.541000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:38:47.541000 1132187 torch/_dynamo/convert_frame.py:906] [2/8]    function: 'forward' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:162)
+W1122 07:38:47.541000 1132187 torch/_dynamo/convert_frame.py:906] [2/8]    last reason: 2/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:38:47.541000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:38:47.541000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:38:47.551000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:38:47.551000 1132187 torch/_dynamo/convert_frame.py:906] [6/8]    function: 'head' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:178)
+W1122 07:38:47.551000 1132187 torch/_dynamo/convert_frame.py:906] [6/8]    last reason: 6/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:38:47.551000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:38:47.551000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+07:38:48 DONE parity|sheafdelta-pure-beta1|seed1 {'reached_len': 64, 'steps_to_solve': 11000, 'acc_T64': 0.9990615844726562, 'acc_T256': 0.6438236236572266}
+W1122 07:42:14.235000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:42:14.235000 1132187 torch/_dynamo/convert_frame.py:906] [1/8]    function: 'embed_in' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:179)
+W1122 07:42:14.235000 1132187 torch/_dynamo/convert_frame.py:906] [1/8]    last reason: 1/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:42:14.235000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:42:14.235000 1132187 torch/_dynamo/convert_frame.py:906] [1/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:42:14.237000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:42:14.237000 1132187 torch/_dynamo/convert_frame.py:906] [2/8]    function: 'forward' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:162)
+W1122 07:42:14.237000 1132187 torch/_dynamo/convert_frame.py:906] [2/8]    last reason: 2/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:42:14.237000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:42:14.237000 1132187 torch/_dynamo/convert_frame.py:906] [2/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+W1122 07:42:14.247000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] torch._dynamo hit config.cache_size_limit (8)
+W1122 07:42:14.247000 1132187 torch/_dynamo/convert_frame.py:906] [6/8]    function: 'head' (/home/mukundan/learning/llm/Research/Research/hsnlm/hsnlm/models.py:178)
+W1122 07:42:14.247000 1132187 torch/_dynamo/convert_frame.py:906] [6/8]    last reason: 6/0: GLOBAL_STATE changed: grad_mode 
+W1122 07:42:14.247000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W1122 07:42:14.247000 1132187 torch/_dynamo/convert_frame.py:906] [6/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+07:42:14 DONE parity|sheafdelta-pure-beta1|seed2 {'reached_len': 64, 'steps_to_solve': 17500, 'acc_T64': 0.9963531494140625, 'acc_T256': 0.6418609619140625}
+07:42:14 ALL DONE

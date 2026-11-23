@@ -40,7 +40,7 @@ VARIANTS = {
     "h6_token_shift":     dict(mixer_heads=6, token_shift=True),      # causal shift on q,k before F.normalize (item 4)
     "h6_both":            dict(mixer_heads=6, postnorm_scaled=True, token_shift=True),
 }
-OUT = "results/gpu_v2_ablation.json"; os.makedirs("results", exist_ok=True)
+OUT = "benchmark_results/paper/mixer_ablation_v2/gpu_v2_ablation.json"; os.makedirs("benchmark_results", exist_ok=True)
 R = json.load(open(OUT)) if os.path.exists(OUT) else {}
 def save(): json.dump(R, open(OUT, "w"), indent=1)
 def log(*a): print(time.strftime("%H:%M:%S"), *a, flush=True)

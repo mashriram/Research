@@ -1,13 +1,13 @@
 """GPU replica of cpu_suite.py: same architectures/sizes/steps/data, device='cuda'.
-Purpose: direct CPU-vs-GPU comparison at matched scale (same 0.82M-param setup as results/cpu_suite.json).
-Resumable: results/gpu_suite.json holds finished runs; rerun skips them.  usage: gpu_suite.py [smoke]"""
+Purpose: direct CPU-vs-GPU comparison at matched scale (same 0.82M-param setup as benchmark_results/development/cpu_suite/cpu_suite.json).
+Resumable: benchmark_results/development/gpu_suite/gpu_suite.json holds finished runs; rerun skips them.  usage: gpu_suite.py [smoke]"""
 import sys, os, json, time, math, torch, torch.nn.functional as F; sys.path.insert(0, ".")
 from hsnlm import GPT, HybridLM, Config, ByteData
 assert torch.cuda.is_available(), "no CUDA device"
 DEV = "cuda"
 torch.backends.cudnn.benchmark = True
 SMOKE = len(sys.argv) > 1 and sys.argv[1] == "smoke"
-OUT = "results/gpu_suite_smoke.json" if SMOKE else "results/gpu_suite.json"; os.makedirs("results", exist_ok=True)
+OUT = "benchmark_results/development/gpu_suite/gpu_suite_smoke.json" if SMOKE else "benchmark_results/development/gpu_suite/gpu_suite.json"; os.makedirs("benchmark_results", exist_ok=True)
 R = json.load(open(OUT)) if os.path.exists(OUT) else {}
 def save(): json.dump(R, open(OUT, "w"), indent=1)
 def log(*a): print(time.strftime("%H:%M:%S"), *a, flush=True)

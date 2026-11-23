@@ -1,0 +1,219 @@
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+W1122 09:57:24.220000 1260985 torch/_inductor/utils.py:1137] [3/0_1] Not enough SMs to use max_autotune_gemm mode
+10:05:30 sweep|copy_paper|alibi-hybrid-h6|0.0003 {'steps_run': 2500, 'reached_len': 128, 'steps_to_solve': 2000, 'acc_T128': 0.9983444213867188, 'acc_T512': 0.2454700469970703}
+10:13:28 sweep|copy_paper|alibi-hybrid-h6|0.001 {'steps_run': 2500, 'reached_len': 128, 'steps_to_solve': 2000, 'acc_T128': 0.9997215270996094, 'acc_T512': 0.9977397918701172}
+10:21:26 sweep|copy_paper|alibi-hybrid-h6|0.003 {'steps_run': 2500, 'reached_len': 128, 'steps_to_solve': 2000, 'acc_T128': 0.9995574951171875, 'acc_T512': 0.9963798522949219}
+10:21:26 DONE copy_paper|alibi-hybrid-h6|seed0 {'reached_len': 128, 'steps_to_solve': 2000, 'acc_T128': 0.9997215270996094, 'acc_T512': 0.9977397918701172}
+10:29:23 DONE copy_paper|alibi-hybrid-h6|seed1 {'reached_len': 128, 'steps_to_solve': 2000, 'acc_T128': 0.9998092651367188, 'acc_T512': 0.9809036254882812}
+10:43:32 DONE copy_paper|alibi-hybrid-h6|seed2 {'reached_len': 128, 'steps_to_solve': 4000, 'acc_T128': 0.9994621276855469, 'acc_T512': 0.3846588134765625}
+10:45:49 sweep|copy_paper|alibi-pure|0.0003 {'steps_run': 1000, 'reached_len': 128, 'steps_to_solve': 500, 'acc_T128': 0.9989852905273438, 'acc_T512': 0.9605245590209961}
+10:48:05 sweep|copy_paper|alibi-pure|0.001 {'steps_run': 1000, 'reached_len': 128, 'steps_to_solve': 500, 'acc_T128': 0.9978179931640625, 'acc_T512': 0.9973917007446289}
+10:51:23 sweep|copy_paper|alibi-pure|0.003 {'steps_run': 1500, 'reached_len': 128, 'steps_to_solve': 1000, 'acc_T128': 0.9979743957519531, 'acc_T512': 0.9937210083007812}
+10:51:23 DONE copy_paper|alibi-pure|seed0 {'reached_len': 128, 'steps_to_solve': 500, 'acc_T128': 0.9989852905273438, 'acc_T512': 0.9605245590209961}
+10:53:39 DONE copy_paper|alibi-pure|seed1 {'reached_len': 128, 'steps_to_solve': 500, 'acc_T128': 0.9985847473144531, 'acc_T512': 0.9517936706542969}
+10:55:54 DONE copy_paper|alibi-pure|seed2 {'reached_len': 128, 'steps_to_solve': 500, 'acc_T128': 0.9986343383789062, 'acc_T512': 0.8734817504882812}
+10:58:40 sweep|copy_paper|rope-gpt|0.0003 {'steps_run': 1000, 'reached_len': 128, 'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.0038747787475585938}
+11:01:25 sweep|copy_paper|rope-gpt|0.001 {'steps_run': 1000, 'reached_len': 128, 'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.0038900375366210938}
+11:04:11 sweep|copy_paper|rope-gpt|0.003 {'steps_run': 1000, 'reached_len': 128, 'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.004017829895019531}
+11:04:11 DONE copy_paper|rope-gpt|seed0 {'reached_len': 128, 'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.0038747787475585938}
+11:06:56 DONE copy_paper|rope-gpt|seed1 {'reached_len': 128, 'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.0040302276611328125}
+11:09:42 DONE copy_paper|rope-gpt|seed2 {'reached_len': 128, 'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.0038747787475585938}
+11:20:13 sweep|copy_paper|sheafdelta-pure|0.0003 {'steps_run': 3000, 'reached_len': 128, 'steps_to_solve': 2500, 'acc_T128': 0.9960594177246094, 'acc_T512': 0.1366415023803711}
+11:41:03 sweep|copy_paper|sheafdelta-pure|0.001 {'steps_run': 6000, 'reached_len': 128, 'steps_to_solve': 5500, 'acc_T128': 0.9948768615722656, 'acc_T512': 0.15933895111083984}
+11:55:02 sweep|copy_paper|sheafdelta-pure|0.003 {'steps_run': 4000, 'reached_len': 128, 'steps_to_solve': 3500, 'acc_T128': 0.9957923889160156, 'acc_T512': 0.1807708740234375}
+11:55:02 DONE copy_paper|sheafdelta-pure|seed0 {'reached_len': 128, 'steps_to_solve': 2500, 'acc_T128': 0.9960594177246094, 'acc_T512': 0.1366415023803711}
+12:05:34 DONE copy_paper|sheafdelta-pure|seed1 {'reached_len': 128, 'steps_to_solve': 2500, 'acc_T128': 0.9973220825195312, 'acc_T512': 0.17590618133544922}
+12:19:31 DONE copy_paper|sheafdelta-pure|seed2 {'reached_len': 128, 'steps_to_solve': 3500, 'acc_T128': 0.9944572448730469, 'acc_T512': 0.14917278289794922}
+12:21:13 sweep|copy|alibi-hybrid-h6|0.0003 {'steps_run': 4000, 'reached_len': 128, 'steps_to_solve': 3500, 'acc_T128': 0.9980888366699219, 'acc_T512': 0.31640148162841797}
+12:23:08 sweep|copy|alibi-hybrid-h6|0.001 {'steps_run': 5000, 'reached_len': 128, 'steps_to_solve': 4500, 'acc_T128': 0.9952049255371094, 'acc_T512': 0.3672046661376953}
+12:25:37 sweep|copy|alibi-hybrid-h6|0.003 {'steps_run': 6500, 'reached_len': 128, 'steps_to_solve': 6000, 'acc_T128': 0.9991874694824219, 'acc_T512': 0.959681510925293}
+12:25:37 DONE copy|alibi-hybrid-h6|seed0 {'reached_len': 128, 'steps_to_solve': 6000, 'acc_T128': 0.9991874694824219, 'acc_T512': 0.959681510925293}
+12:32:59 DONE copy|alibi-hybrid-h6|seed1 {'reached_len': 128, 'steps_to_solve': None, 'acc_T128': 0.015087127685546875, 'acc_T512': 0.004426002502441406}
+12:35:28 DONE copy|alibi-hybrid-h6|seed2 {'reached_len': 128, 'steps_to_solve': 6000, 'acc_T128': 0.9977569580078125, 'acc_T512': 0.587031364440918}
+12:35:54 sweep|copy|alibi-pure|0.0003 {'steps_run': 1500, 'reached_len': 128, 'steps_to_solve': 1000, 'acc_T128': 0.9985847473144531, 'acc_T512': 0.9880704879760742}
+12:36:13 sweep|copy|alibi-pure|0.001 {'steps_run': 1000, 'reached_len': 128, 'steps_to_solve': 500, 'acc_T128': 0.9962120056152344, 'acc_T512': 0.9788818359375}
+12:36:54 sweep|copy|alibi-pure|0.003 {'steps_run': 2500, 'reached_len': 128, 'steps_to_solve': 2000, 'acc_T128': 0.997406005859375, 'acc_T512': 0.9545602798461914}
+12:36:54 DONE copy|alibi-pure|seed0 {'reached_len': 128, 'steps_to_solve': 1000, 'acc_T128': 0.9985847473144531, 'acc_T512': 0.9880704879760742}
+12:37:20 DONE copy|alibi-pure|seed1 {'reached_len': 128, 'steps_to_solve': 1000, 'acc_T128': 0.9981727600097656, 'acc_T512': 0.9810686111450195}
+12:37:46 DONE copy|alibi-pure|seed2 {'reached_len': 128, 'steps_to_solve': 1000, 'acc_T128': 0.9987411499023438, 'acc_T512': 0.9857702255249023}
+12:38:07 sweep|copy|rope-gpt|0.0003 {'steps_run': 1000, 'reached_len': 128, 'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.003912925720214844}
+12:38:29 sweep|copy|rope-gpt|0.001 {'steps_run': 1000, 'reached_len': 128, 'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.003939628601074219}
+12:38:50 sweep|copy|rope-gpt|0.003 {'steps_run': 1000, 'reached_len': 128, 'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.004036903381347656}
+12:38:50 DONE copy|rope-gpt|seed0 {'reached_len': 128, 'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.003912925720214844}
+12:39:12 DONE copy|rope-gpt|seed1 {'reached_len': 128, 'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.003952980041503906}
+12:39:33 DONE copy|rope-gpt|seed2 {'reached_len': 128, 'steps_to_solve': 500, 'acc_T128': 1.0, 'acc_T512': 0.0038900375366210938}
+12:46:59 sweep|copy|sheafdelta-pure|0.0003 {'steps_run': 18500, 'reached_len': 128, 'steps_to_solve': 18000, 'acc_T128': 0.9913444519042969, 'acc_T512': 0.2250080108642578}
+12:49:27 sweep|copy|sheafdelta-pure|0.001 {'steps_run': 6000, 'reached_len': 128, 'steps_to_solve': 5500, 'acc_T128': 0.9929656982421875, 'acc_T512': 0.2410755157470703}
+12:57:30 sweep|copy|sheafdelta-pure|0.003 {'steps_run': 20000, 'reached_len': 128, 'steps_to_solve': None, 'acc_T128': 0.0039520263671875, 'acc_T512': 0.003940582275390625}
+12:57:30 DONE copy|sheafdelta-pure|seed0 {'reached_len': 128, 'steps_to_solve': 5500, 'acc_T128': 0.9929656982421875, 'acc_T512': 0.2410755157470703}
+12:59:34 DONE copy|sheafdelta-pure|seed1 {'reached_len': 128, 'steps_to_solve': 4500, 'acc_T128': 0.9944534301757812, 'acc_T512': 0.2592172622680664}
+13:01:27 DONE copy|sheafdelta-pure|seed2 {'reached_len': 128, 'steps_to_solve': 4000, 'acc_T128': 0.9921112060546875, 'acc_T512': 0.19079303741455078}
+13:02:18 sweep|mqar8_T64|alibi-hybrid-h6|0.0003 {'steps_run': 4000, 'reached_len': 64, 'steps_to_solve': 3500, 'acc_T64': 0.99969482421875}
+13:02:39 sweep|mqar8_T64|alibi-hybrid-h6|0.001 {'steps_run': 1500, 'reached_len': 64, 'steps_to_solve': 1000, 'acc_T64': 0.99932861328125}
+13:03:00 sweep|mqar8_T64|alibi-hybrid-h6|0.003 {'steps_run': 1500, 'reached_len': 64, 'steps_to_solve': 1000, 'acc_T64': 0.99835205078125}
+13:03:00 DONE mqar8_T64|alibi-hybrid-h6|seed0 {'reached_len': 64, 'steps_to_solve': 3500, 'acc_T64': 0.99969482421875}
+13:03:26 DONE mqar8_T64|alibi-hybrid-h6|seed1 {'reached_len': 64, 'steps_to_solve': 1500, 'acc_T64': 0.99884033203125}
+13:03:55 DONE mqar8_T64|alibi-hybrid-h6|seed2 {'reached_len': 64, 'steps_to_solve': 1500, 'acc_T64': 0.99969482421875}
+13:04:25 sweep|mqar8_T64|alibi-pure|0.0003 {'steps_run': 7500, 'reached_len': 64, 'steps_to_solve': 7000, 'acc_T64': 0.994384765625}
+13:04:58 sweep|mqar8_T64|alibi-pure|0.001 {'steps_run': 8500, 'reached_len': 64, 'steps_to_solve': 6000, 'acc_T64': 0.9937744140625}
+13:06:14 sweep|mqar8_T64|alibi-pure|0.003 {'steps_run': 20000, 'reached_len': 64, 'steps_to_solve': None, 'acc_T64': 0.27532958984375}
+13:06:15 DONE mqar8_T64|alibi-pure|seed0 {'reached_len': 64, 'steps_to_solve': 7000, 'acc_T64': 0.994384765625}
+13:06:45 DONE mqar8_T64|alibi-pure|seed1 {'reached_len': 64, 'steps_to_solve': 6000, 'acc_T64': 0.9932861328125}
+13:07:26 DONE mqar8_T64|alibi-pure|seed2 {'reached_len': 64, 'steps_to_solve': 9000, 'acc_T64': 0.99530029296875}
+13:08:09 sweep|mqar8_T64|rope-gpt|0.0003 {'steps_run': 9500, 'reached_len': 64, 'steps_to_solve': 9000, 'acc_T64': 0.99176025390625}
+13:09:38 sweep|mqar8_T64|rope-gpt|0.001 {'steps_run': 20000, 'reached_len': 64, 'steps_to_solve': None, 'acc_T64': 0.170654296875}
+13:11:06 sweep|mqar8_T64|rope-gpt|0.003 {'steps_run': 20000, 'reached_len': 64, 'steps_to_solve': None, 'acc_T64': 0.17132568359375}
+13:11:06 DONE mqar8_T64|rope-gpt|seed0 {'reached_len': 64, 'steps_to_solve': 9000, 'acc_T64': 0.99176025390625}
+13:12:00 DONE mqar8_T64|rope-gpt|seed1 {'reached_len': 64, 'steps_to_solve': 9500, 'acc_T64': 0.9971923828125}
+13:12:43 DONE mqar8_T64|rope-gpt|seed2 {'reached_len': 64, 'steps_to_solve': 9000, 'acc_T64': 0.9921875}
+13:16:03 sweep|mqar8_T64|sheafdelta-pure|0.0003 {'steps_run': 14000, 'reached_len': 64, 'steps_to_solve': 13500, 'acc_T64': 0.99310302734375}
+13:19:17 sweep|mqar8_T64|sheafdelta-pure|0.001 {'steps_run': 14000, 'reached_len': 64, 'steps_to_solve': 13500, 'acc_T64': 0.99090576171875}
+13:21:53 sweep|mqar8_T64|sheafdelta-pure|0.003 {'steps_run': 11500, 'reached_len': 64, 'steps_to_solve': 11000, 'acc_T64': 0.99249267578125}
+13:21:53 DONE mqar8_T64|sheafdelta-pure|seed0 {'reached_len': 64, 'steps_to_solve': 13500, 'acc_T64': 0.99310302734375}
+13:23:15 DONE mqar8_T64|sheafdelta-pure|seed1 {'reached_len': 64, 'steps_to_solve': 5000, 'acc_T64': 0.99462890625}
+13:23:59 DONE mqar8_T64|sheafdelta-pure|seed2 {'reached_len': 64, 'steps_to_solve': 2500, 'acc_T64': 0.99505615234375}
+13:26:46 sweep|mqar32_T512|alibi-hybrid-h6|0.0003 {'steps_run': 3000, 'reached_len': 512, 'steps_to_solve': 2500, 'acc_T512': 0.999908447265625}
+13:29:50 sweep|mqar32_T512|alibi-hybrid-h6|0.001 {'steps_run': 3500, 'reached_len': 512, 'steps_to_solve': 3000, 'acc_T512': 0.999542236328125}
+13:35:02 sweep|mqar32_T512|alibi-hybrid-h6|0.003 {'steps_run': 6000, 'reached_len': 512, 'steps_to_solve': 5500, 'acc_T512': 0.9998321533203125}
+13:35:02 DONE mqar32_T512|alibi-hybrid-h6|seed0 {'reached_len': 512, 'steps_to_solve': 2500, 'acc_T512': 0.999908447265625}
+13:37:42 DONE mqar32_T512|alibi-hybrid-h6|seed1 {'reached_len': 512, 'steps_to_solve': 2500, 'acc_T512': 0.9997406005859375}
+13:40:19 DONE mqar32_T512|alibi-hybrid-h6|seed2 {'reached_len': 512, 'steps_to_solve': 2500, 'acc_T512': 0.99761962890625}
+13:42:08 sweep|mqar32_T512|alibi-pure|0.0003 {'steps_run': 3000, 'reached_len': 512, 'steps_to_solve': 2500, 'acc_T512': 0.9949798583984375}
+13:44:46 sweep|mqar32_T512|alibi-pure|0.001 {'steps_run': 4500, 'reached_len': 512, 'steps_to_solve': 4000, 'acc_T512': 0.9986114501953125}
+13:54:02 sweep|mqar32_T512|alibi-pure|0.003 {'steps_run': 16000, 'reached_len': 512, 'steps_to_solve': 15500, 'acc_T512': 0.9974822998046875}
+13:54:02 DONE mqar32_T512|alibi-pure|seed0 {'reached_len': 512, 'steps_to_solve': 4000, 'acc_T512': 0.9986114501953125}
+13:58:40 DONE mqar32_T512|alibi-pure|seed1 {'reached_len': 512, 'steps_to_solve': 6500, 'acc_T512': 0.995635986328125}
+14:00:42 DONE mqar32_T512|alibi-pure|seed2 {'reached_len': 512, 'steps_to_solve': 3000, 'acc_T512': 0.9960479736328125}
+14:13:45 sweep|mqar32_T512|rope-gpt|0.0003 {'steps_run': 20000, 'reached_len': 512, 'steps_to_solve': None, 'acc_T512': 0.0847320556640625}
+14:26:47 sweep|mqar32_T512|rope-gpt|0.001 {'steps_run': 20000, 'reached_len': 512, 'steps_to_solve': None, 'acc_T512': 0.0845184326171875}
+14:39:48 sweep|mqar32_T512|rope-gpt|0.003 {'steps_run': 20000, 'reached_len': 512, 'steps_to_solve': None, 'acc_T512': 0.0855865478515625}
+14:39:48 DONE mqar32_T512|rope-gpt|seed0 {'reached_len': 512, 'steps_to_solve': None, 'acc_T512': 0.0855865478515625}
+14:52:49 DONE mqar32_T512|rope-gpt|seed1 {'reached_len': 512, 'steps_to_solve': None, 'acc_T512': 0.0851287841796875}
+15:05:48 DONE mqar32_T512|rope-gpt|seed2 {'reached_len': 512, 'steps_to_solve': None, 'acc_T512': 0.08489990234375}
+15:08:40 sweep|mqar32_T512|sheafdelta-pure|0.0003 {'steps_run': 3000, 'reached_len': 512, 'steps_to_solve': 2500, 'acc_T512': 0.9947967529296875}
+15:14:48 sweep|mqar32_T512|sheafdelta-pure|0.001 {'steps_run': 6500, 'reached_len': 512, 'steps_to_solve': 6000, 'acc_T512': 0.9950714111328125}
+15:19:31 sweep|mqar32_T512|sheafdelta-pure|0.003 {'steps_run': 5000, 'reached_len': 512, 'steps_to_solve': 4500, 'acc_T512': 0.9929962158203125}
+15:19:31 DONE mqar32_T512|sheafdelta-pure|seed0 {'reached_len': 512, 'steps_to_solve': 6000, 'acc_T512': 0.9950714111328125}
+15:24:15 DONE mqar32_T512|sheafdelta-pure|seed1 {'reached_len': 512, 'steps_to_solve': 4500, 'acc_T512': 0.992828369140625}
+15:28:58 DONE mqar32_T512|sheafdelta-pure|seed2 {'reached_len': 512, 'steps_to_solve': 4500, 'acc_T512': 0.9971466064453125}
+15:46:12 sweep|mqar64_T512|alibi-hybrid-h6|0.0003 {'steps_run': 20000, 'reached_len': 512, 'steps_to_solve': None, 'acc_T512': 0.8415145874023438}
+15:57:25 sweep|mqar64_T512|alibi-hybrid-h6|0.001 {'steps_run': 13000, 'reached_len': 512, 'steps_to_solve': 12500, 'acc_T512': 0.9968490600585938}
+16:01:46 sweep|mqar64_T512|alibi-hybrid-h6|0.003 {'steps_run': 5000, 'reached_len': 512, 'steps_to_solve': 4500, 'acc_T512': 1.0}
+16:01:46 DONE mqar64_T512|alibi-hybrid-h6|seed0 {'reached_len': 512, 'steps_to_solve': 4500, 'acc_T512': 1.0}
+16:07:26 DONE mqar64_T512|alibi-hybrid-h6|seed1 {'reached_len': 512, 'steps_to_solve': 6000, 'acc_T512': 0.9966201782226562}
+16:24:41 DONE mqar64_T512|alibi-hybrid-h6|seed2 {'reached_len': 512, 'steps_to_solve': None, 'acc_T512': 0.06189727783203125}
+16:26:44 sweep|mqar64_T512|alibi-pure|0.0003 {'steps_run': 3500, 'reached_len': 512, 'steps_to_solve': 3000, 'acc_T512': 0.9923248291015625}
+16:32:15 sweep|mqar64_T512|alibi-pure|0.001 {'steps_run': 9500, 'reached_len': 512, 'steps_to_solve': 9000, 'acc_T512': 0.99578857421875}
+16:43:49 sweep|mqar64_T512|alibi-pure|0.003 {'steps_run': 20000, 'reached_len': 512, 'steps_to_solve': None, 'acc_T512': 0.8652801513671875}
+16:43:49 DONE mqar64_T512|alibi-pure|seed0 {'reached_len': 512, 'steps_to_solve': 9000, 'acc_T512': 0.99578857421875}
+16:55:25 DONE mqar64_T512|alibi-pure|seed1 {'reached_len': 512, 'steps_to_solve': None, 'acc_T512': 0.0622711181640625}
+16:57:45 DONE mqar64_T512|alibi-pure|seed2 {'reached_len': 512, 'steps_to_solve': 3500, 'acc_T512': 0.9983749389648438}
+17:10:46 sweep|mqar64_T512|rope-gpt|0.0003 {'steps_run': 20000, 'reached_len': 512, 'steps_to_solve': None, 'acc_T512': 0.0619659423828125}
+17:23:49 sweep|mqar64_T512|rope-gpt|0.001 {'steps_run': 20000, 'reached_len': 512, 'steps_to_solve': None, 'acc_T512': 0.062255859375}
+17:36:50 sweep|mqar64_T512|rope-gpt|0.003 {'steps_run': 20000, 'reached_len': 512, 'steps_to_solve': None, 'acc_T512': 0.062652587890625}
+17:36:50 DONE mqar64_T512|rope-gpt|seed0 {'reached_len': 512, 'steps_to_solve': None, 'acc_T512': 0.062652587890625}
+17:49:52 DONE mqar64_T512|rope-gpt|seed1 {'reached_len': 512, 'steps_to_solve': None, 'acc_T512': 0.06212615966796875}
+18:02:56 DONE mqar64_T512|rope-gpt|seed2 {'reached_len': 512, 'steps_to_solve': None, 'acc_T512': 0.06157684326171875}
+18:12:48 sweep|mqar64_T512|sheafdelta-pure|0.0003 {'steps_run': 10500, 'reached_len': 512, 'steps_to_solve': 10000, 'acc_T512': 0.9987335205078125}
+18:24:04 sweep|mqar64_T512|sheafdelta-pure|0.001 {'steps_run': 12000, 'reached_len': 512, 'steps_to_solve': 11500, 'acc_T512': 0.9933242797851562}
+18:42:50 sweep|mqar64_T512|sheafdelta-pure|0.003 {'steps_run': 20000, 'reached_len': 512, 'steps_to_solve': None, 'acc_T512': 0.9050750732421875}
+18:42:50 DONE mqar64_T512|sheafdelta-pure|seed0 {'reached_len': 512, 'steps_to_solve': 10000, 'acc_T512': 0.9987335205078125}
+19:01:36 DONE mqar64_T512|sheafdelta-pure|seed1 {'reached_len': 512, 'steps_to_solve': None, 'acc_T512': 0.06214141845703125}
+19:11:28 DONE mqar64_T512|sheafdelta-pure|seed2 {'reached_len': 512, 'steps_to_solve': 10000, 'acc_T512': 0.9975357055664062}
+19:12:15 sweep|parity|alibi-hybrid-h6|0.0003 {'steps_run': 2500, 'reached_len': 64, 'steps_to_solve': 2000, 'acc_T64': 1.0, 'acc_T256': 0.9017581939697266}
+19:12:58 sweep|parity|alibi-hybrid-h6|0.001 {'steps_run': 2500, 'reached_len': 64, 'steps_to_solve': 2000, 'acc_T64': 1.0, 'acc_T256': 0.9910373687744141}
+19:13:41 sweep|parity|alibi-hybrid-h6|0.003 {'steps_run': 2500, 'reached_len': 64, 'steps_to_solve': 2000, 'acc_T64': 1.0, 'acc_T256': 0.9886837005615234}
+19:13:41 DONE parity|alibi-hybrid-h6|seed0 {'reached_len': 64, 'steps_to_solve': 2000, 'acc_T64': 1.0, 'acc_T256': 0.9017581939697266}
+19:14:22 DONE parity|alibi-hybrid-h6|seed1 {'reached_len': 64, 'steps_to_solve': 2000, 'acc_T64': 1.0, 'acc_T256': 0.8660602569580078}
+19:15:05 DONE parity|alibi-hybrid-h6|seed2 {'reached_len': 64, 'steps_to_solve': 2000, 'acc_T64': 1.0, 'acc_T256': 0.9045276641845703}
+19:16:03 sweep|parity|alibi-pure|0.0003 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.4580535888671875, 'acc_T256': 0.3095378875732422}
+19:17:07 sweep|parity|alibi-pure|0.001 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.576324462890625, 'acc_T256': 0.5188179016113281}
+19:18:07 sweep|parity|alibi-pure|0.003 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.5783767700195312, 'acc_T256': 0.519683837890625}
+19:18:07 DONE parity|alibi-pure|seed0 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.4580535888671875, 'acc_T256': 0.3095378875732422}
+19:19:06 DONE parity|alibi-pure|seed1 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.5727157592773438, 'acc_T256': 0.5179576873779297}
+19:20:04 DONE parity|alibi-pure|seed2 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.56878662109375, 'acc_T256': 0.44042015075683594}
+19:21:03 sweep|parity|rope-gpt|0.0003 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.5482101440429688, 'acc_T256': 0.4415760040283203}
+19:22:09 sweep|parity|rope-gpt|0.001 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.5633697509765625, 'acc_T256': 0.51470947265625}
+19:23:10 sweep|parity|rope-gpt|0.003 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.5661697387695312, 'acc_T256': 0.5157146453857422}
+19:23:10 DONE parity|rope-gpt|seed0 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.5482101440429688, 'acc_T256': 0.4415760040283203}
+19:24:09 DONE parity|rope-gpt|seed1 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.5397491455078125, 'acc_T256': 0.4947013854980469}
+19:25:06 DONE parity|rope-gpt|seed2 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.5642623901367188, 'acc_T256': 0.5155067443847656}
+19:25:52 sweep|parity|sheafdelta-pure|0.0003 {'steps_run': 2500, 'reached_len': 64, 'steps_to_solve': 2000, 'acc_T64': 1.0, 'acc_T256': 0.9301910400390625}
+19:26:37 sweep|parity|sheafdelta-pure|0.001 {'steps_run': 2500, 'reached_len': 64, 'steps_to_solve': 2000, 'acc_T64': 1.0, 'acc_T256': 0.8489055633544922}
+19:27:21 sweep|parity|sheafdelta-pure|0.003 {'steps_run': 2500, 'reached_len': 64, 'steps_to_solve': 2000, 'acc_T64': 1.0, 'acc_T256': 0.9999980926513672}
+19:27:21 DONE parity|sheafdelta-pure|seed0 {'reached_len': 64, 'steps_to_solve': 2000, 'acc_T64': 1.0, 'acc_T256': 0.9301910400390625}
+19:28:06 DONE parity|sheafdelta-pure|seed1 {'reached_len': 64, 'steps_to_solve': 2000, 'acc_T64': 1.0, 'acc_T256': 0.8063564300537109}
+19:28:50 DONE parity|sheafdelta-pure|seed2 {'reached_len': 64, 'steps_to_solve': 2000, 'acc_T64': 1.0, 'acc_T256': 0.9878311157226562}
+19:29:57 sweep|s3|alibi-hybrid-h6|0.0003 {'steps_run': 4500, 'reached_len': 64, 'steps_to_solve': 4000, 'acc_T64': 0.9998397827148438, 'acc_T256': 0.9257659912109375}
+19:31:03 sweep|s3|alibi-hybrid-h6|0.001 {'steps_run': 4500, 'reached_len': 64, 'steps_to_solve': 4000, 'acc_T64': 0.9977645874023438, 'acc_T256': 0.9119148254394531}
+19:32:33 sweep|s3|alibi-hybrid-h6|0.003 {'steps_run': 6000, 'reached_len': 64, 'steps_to_solve': 3500, 'acc_T64': 0.9926834106445312, 'acc_T256': 0.8671112060546875}
+19:32:33 DONE s3|alibi-hybrid-h6|seed0 {'reached_len': 64, 'steps_to_solve': 4000, 'acc_T64': 0.9998397827148438, 'acc_T256': 0.9257659912109375}
+19:33:41 DONE s3|alibi-hybrid-h6|seed1 {'reached_len': 64, 'steps_to_solve': 4000, 'acc_T64': 0.9991989135742188, 'acc_T256': 0.9473896026611328}
+19:36:36 DONE s3|alibi-hybrid-h6|seed2 {'reached_len': 64, 'steps_to_solve': 13000, 'acc_T64': 0.9922103881835938, 'acc_T256': 0.48458099365234375}
+19:37:37 sweep|s3|alibi-pure|0.0003 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.28676605224609375, 'acc_T256': 0.19712066650390625}
+19:38:46 sweep|s3|alibi-pure|0.001 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.2840728759765625, 'acc_T256': 0.1967792510986328}
+19:39:52 sweep|s3|alibi-pure|0.003 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.2965240478515625, 'acc_T256': 0.19833946228027344}
+19:39:52 DONE s3|alibi-pure|seed0 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.28676605224609375, 'acc_T256': 0.19712066650390625}
+19:40:57 DONE s3|alibi-pure|seed1 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.29380035400390625, 'acc_T256': 0.19861793518066406}
+19:42:00 DONE s3|alibi-pure|seed2 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.301544189453125, 'acc_T256': 0.20054054260253906}
+19:43:03 sweep|s3|rope-gpt|0.0003 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.28448486328125, 'acc_T256': 0.19556236267089844}
+19:44:06 sweep|s3|rope-gpt|0.001 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.2913970947265625, 'acc_T256': 0.1972332000732422}
+19:45:19 sweep|s3|rope-gpt|0.003 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.27716064453125, 'acc_T256': 0.1934642791748047}
+19:45:19 DONE s3|rope-gpt|seed0 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.28448486328125, 'acc_T256': 0.19556236267089844}
+19:46:27 DONE s3|rope-gpt|seed1 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.28324127197265625, 'acc_T256': 0.1953582763671875}
+19:47:34 DONE s3|rope-gpt|seed2 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.28261566162109375, 'acc_T256': 0.19156265258789062}
+19:48:32 sweep|s3|sheafdelta-pure|0.0003 {'steps_run': 3500, 'reached_len': 64, 'steps_to_solve': 3000, 'acc_T64': 0.9996490478515625, 'acc_T256': 0.9225139617919922}
+19:49:21 sweep|s3|sheafdelta-pure|0.001 {'steps_run': 2500, 'reached_len': 64, 'steps_to_solve': 2000, 'acc_T64': 0.9947357177734375, 'acc_T256': 0.8487186431884766}
+19:50:27 sweep|s3|sheafdelta-pure|0.003 {'steps_run': 4000, 'reached_len': 64, 'steps_to_solve': 3500, 'acc_T64': 0.9915313720703125, 'acc_T256': 0.8602199554443359}
+19:50:27 DONE s3|sheafdelta-pure|seed0 {'reached_len': 64, 'steps_to_solve': 3000, 'acc_T64': 0.9996490478515625, 'acc_T256': 0.9225139617919922}
+19:52:09 DONE s3|sheafdelta-pure|seed1 {'reached_len': 64, 'steps_to_solve': 6000, 'acc_T64': 0.9927902221679688, 'acc_T256': 0.8886566162109375}
+19:53:01 DONE s3|sheafdelta-pure|seed2 {'reached_len': 64, 'steps_to_solve': 2500, 'acc_T64': 0.9999847412109375, 'acc_T256': 0.9641895294189453}
+19:56:45 sweep|s5|alibi-hybrid-h6|0.0003 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.040008544921875, 'acc_T256': 0.016256332397460938}
+20:00:24 sweep|s5|alibi-hybrid-h6|0.001 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.0299530029296875, 'acc_T256': 0.013868331909179688}
+20:04:30 sweep|s5|alibi-hybrid-h6|0.003 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.090179443359375, 'acc_T256': 0.028682708740234375}
+20:04:30 DONE s5|alibi-hybrid-h6|seed0 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.040008544921875, 'acc_T256': 0.016256332397460938}
+20:08:29 DONE s5|alibi-hybrid-h6|seed1 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.0246734619140625, 'acc_T256': 0.012561798095703125}
+20:12:21 DONE s5|alibi-hybrid-h6|seed2 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.0284881591796875, 'acc_T256': 0.0134124755859375}
+20:13:23 sweep|s5|alibi-pure|0.0003 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.0239410400390625, 'acc_T256': 0.012437820434570312}
+20:14:24 sweep|s5|alibi-pure|0.001 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.02429962158203125, 'acc_T256': 0.012407302856445312}
+20:15:25 sweep|s5|alibi-pure|0.003 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.0240325927734375, 'acc_T256': 0.012273788452148438}
+20:15:25 DONE s5|alibi-pure|seed0 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.0239410400390625, 'acc_T256': 0.012437820434570312}
+20:16:25 DONE s5|alibi-pure|seed1 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.0248565673828125, 'acc_T256': 0.01236724853515625}
+20:17:36 DONE s5|alibi-pure|seed2 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.024261474609375, 'acc_T256': 0.012578964233398438}
+20:18:44 sweep|s5|rope-gpt|0.0003 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.02446746826171875, 'acc_T256': 0.012357711791992188}
+20:19:50 sweep|s5|rope-gpt|0.001 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.02423858642578125, 'acc_T256': 0.012331008911132812}
+20:20:53 sweep|s5|rope-gpt|0.003 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.02384185791015625, 'acc_T256': 0.012287139892578125}
+20:20:53 DONE s5|rope-gpt|seed0 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.02446746826171875, 'acc_T256': 0.012357711791992188}
+20:21:58 DONE s5|rope-gpt|seed1 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.02419281005859375, 'acc_T256': 0.01226806640625}
+20:23:01 DONE s5|rope-gpt|seed2 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.02405548095703125, 'acc_T256': 0.012529373168945312}
+20:27:22 sweep|s5|sheafdelta-pure|0.0003 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.04022216796875, 'acc_T256': 0.016222000122070312}
+20:31:57 sweep|s5|sheafdelta-pure|0.001 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.05664825439453125, 'acc_T256': 0.02028656005859375}
+20:36:26 sweep|s5|sheafdelta-pure|0.003 {'steps_run': 20000, 'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.06464385986328125, 'acc_T256': 0.022317886352539062}
+20:36:26 DONE s5|sheafdelta-pure|seed0 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.04022216796875, 'acc_T256': 0.016222000122070312}
+20:41:05 DONE s5|sheafdelta-pure|seed1 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.06070709228515625, 'acc_T256': 0.021448135375976562}
+20:45:39 DONE s5|sheafdelta-pure|seed2 {'reached_len': 8, 'steps_to_solve': None, 'acc_T64': 0.0639495849609375, 'acc_T256': 0.023654937744140625}
+20:49:30 sweep|selcopy|alibi-hybrid-h6|0.0003 {'steps_run': 9000, 'reached_len': 256, 'steps_to_solve': 8500, 'acc_T256': 0.990631103515625}
+20:51:40 sweep|selcopy|alibi-hybrid-h6|0.001 {'steps_run': 5000, 'reached_len': 256, 'steps_to_solve': 4500, 'acc_T256': 0.99249267578125}
+20:53:50 sweep|selcopy|alibi-hybrid-h6|0.003 {'steps_run': 5000, 'reached_len': 256, 'steps_to_solve': 3500, 'acc_T256': 0.994720458984375}
+20:53:50 DONE selcopy|alibi-hybrid-h6|seed0 {'reached_len': 256, 'steps_to_solve': 3500, 'acc_T256': 0.994720458984375}
+20:57:03 DONE selcopy|alibi-hybrid-h6|seed1 {'reached_len': 256, 'steps_to_solve': 7000, 'acc_T256': 0.991455078125}
+21:02:13 DONE selcopy|alibi-hybrid-h6|seed2 {'reached_len': 256, 'steps_to_solve': 10500, 'acc_T256': 0.990478515625}
+21:05:05 sweep|selcopy|alibi-pure|0.0003 {'steps_run': 10000, 'reached_len': 256, 'steps_to_solve': 9500, 'acc_T256': 0.996337890625}
+21:07:57 sweep|selcopy|alibi-pure|0.001 {'steps_run': 10000, 'reached_len': 256, 'steps_to_solve': 9500, 'acc_T256': 0.991912841796875}
+21:10:41 sweep|selcopy|alibi-pure|0.003 {'steps_run': 9500, 'reached_len': 256, 'steps_to_solve': 9000, 'acc_T256': 0.9921875}
+21:10:41 DONE selcopy|alibi-pure|seed0 {'reached_len': 256, 'steps_to_solve': 9500, 'acc_T256': 0.996337890625}
+21:12:51 DONE selcopy|alibi-pure|seed1 {'reached_len': 256, 'steps_to_solve': 7000, 'acc_T256': 0.99267578125}
+21:15:51 DONE selcopy|alibi-pure|seed2 {'reached_len': 256, 'steps_to_solve': 10000, 'acc_T256': 0.9921875}
+21:19:55 sweep|selcopy|rope-gpt|0.0003 {'steps_run': 12500, 'reached_len': 256, 'steps_to_solve': 12000, 'acc_T256': 0.991668701171875}
+21:22:42 sweep|selcopy|rope-gpt|0.001 {'steps_run': 8500, 'reached_len': 256, 'steps_to_solve': 6500, 'acc_T256': 0.993194580078125}
+21:24:50 sweep|selcopy|rope-gpt|0.003 {'steps_run': 6500, 'reached_len': 256, 'steps_to_solve': 6000, 'acc_T256': 0.99053955078125}
+21:24:50 DONE selcopy|rope-gpt|seed0 {'reached_len': 256, 'steps_to_solve': 6500, 'acc_T256': 0.993194580078125}
+21:27:07 DONE selcopy|rope-gpt|seed1 {'reached_len': 256, 'steps_to_solve': 4500, 'acc_T256': 0.99725341796875}
+21:28:36 DONE selcopy|rope-gpt|seed2 {'reached_len': 256, 'steps_to_solve': 4000, 'acc_T256': 0.99261474609375}
+21:31:28 sweep|selcopy|sheafdelta-pure|0.0003 {'steps_run': 6000, 'reached_len': 256, 'steps_to_solve': 5500, 'acc_T256': 0.997772216796875}
+21:33:35 sweep|selcopy|sheafdelta-pure|0.001 {'steps_run': 4500, 'reached_len': 256, 'steps_to_solve': 4000, 'acc_T256': 0.99786376953125}
+21:36:10 sweep|selcopy|sheafdelta-pure|0.003 {'steps_run': 5500, 'reached_len': 256, 'steps_to_solve': 5000, 'acc_T256': 0.992889404296875}
+21:36:10 DONE selcopy|sheafdelta-pure|seed0 {'reached_len': 256, 'steps_to_solve': 4000, 'acc_T256': 0.99786376953125}
+21:38:17 DONE selcopy|sheafdelta-pure|seed1 {'reached_len': 256, 'steps_to_solve': 3000, 'acc_T256': 0.996612548828125}
+21:40:24 DONE selcopy|sheafdelta-pure|seed2 {'reached_len': 256, 'steps_to_solve': 4000, 'acc_T256': 0.992523193359375}
+21:40:24 ALL DONE

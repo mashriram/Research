@@ -8,7 +8,7 @@ its own magnitude-mask machinery under torch.compile with a data-dependent topk 
 recompilation. This isolates the one piece worth measuring: plain bottleneck factorization, fixed
 rank, ordinary backprop, no exotic machinery. Same recipe as gpu_scale.py (14M-param hybrid-fused
 config, enwik8, bf16, 1500 steps) for direct comparison against the dense result (1.021 bpb, 14.64M
-params, 760.2s, 4737.7 MB, from results/gpu_scale.json)."""
+params, 760.2s, 4737.7 MB, from benchmark_results/development/gpu_scale/gpu_scale.json)."""
 import sys, os, copy, json, time, math, torch, torch.nn as nn, torch.nn.functional as F; sys.path.insert(0, ".")
 from hsnlm import Config, ByteData
 from hsnlm.models import LM, HBlock, TBlock, RMSNorm, make_mixer
@@ -17,7 +17,7 @@ torch.backends.cudnn.benchmark = True
 DIM, HEADS, LAYERS, CTX, B, VOCAB = 384, 8, 8, 1024, 16, 256
 PATTERN = "ddddddda"  # the 7:1 winner from gpu_scale.py
 STEPS = 1500
-OUT = "results/gpu_lowrank_mlp.json"; os.makedirs("results", exist_ok=True)
+OUT = "benchmark_results/development/lowrank_mlp/gpu_lowrank_mlp.json"; os.makedirs("benchmark_results", exist_ok=True)
 R = json.load(open(OUT)) if os.path.exists(OUT) else {}
 def save(): json.dump(R, open(OUT, "w"), indent=1)
 def log(*a): print(time.strftime("%H:%M:%S"), *a, flush=True)

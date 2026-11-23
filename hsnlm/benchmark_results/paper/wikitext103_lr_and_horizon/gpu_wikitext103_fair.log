@@ -1,0 +1,54 @@
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+18:48:28 sweep|alibi-hybrid-h6|0.001 (300, 2.0258, 56.8)
+18:49:25 sweep|alibi-hybrid-h6|0.001 (600, 1.8585, 113.4)
+18:50:22 sweep|alibi-hybrid-h6|0.001 (900, 1.7564, 170.1)
+18:51:18 sweep|alibi-hybrid-h6|0.001 (1200, 1.6471, 226.8)
+18:52:15 sweep|alibi-hybrid-h6|0.001 (1500, 1.5895, 283.5)
+18:52:23 DONE sweep|alibi-hybrid-h6|0.001 1.639
+18:53:22 sweep|alibi-hybrid-h6|0.003 (300, 2.0439, 56.8)
+18:54:19 sweep|alibi-hybrid-h6|0.003 (600, 1.8811, 113.6)
+18:55:16 sweep|alibi-hybrid-h6|0.003 (900, 1.7626, 170.4)
+18:56:13 sweep|alibi-hybrid-h6|0.003 (1200, 1.6509, 227.2)
+18:57:10 sweep|alibi-hybrid-h6|0.003 (1500, 1.5783, 284.0)
+18:57:17 DONE sweep|alibi-hybrid-h6|0.003 1.6283
+19:00:07 long|alibi-hybrid-h6|seed0 (881, 1.8274, 166.6)
+19:02:53 long|alibi-hybrid-h6|seed0 (1762, 1.6359, 333.4)
+19:05:40 long|alibi-hybrid-h6|seed0 (2643, 1.5298, 500.4)
+19:08:27 long|alibi-hybrid-h6|seed0 (3524, 1.3829, 667.3)
+19:11:14 long|alibi-hybrid-h6|seed0 (4405, 1.3067, 834.1)
+19:11:14 long|alibi-hybrid-h6|seed0 (4406, 1.4042, 834.3)
+19:11:21 DONE long|alibi-hybrid-h6|seed0 {'val_bpb': 1.3757, 'val_bpb_len2048': 1.352, 'val_bpb_len4096': 1.4102, 'val_bpb_full': 1.4266}
+19:14:11 long|alibi-hybrid-h6|seed1 (881, 1.758, 166.6)
+19:16:57 long|alibi-hybrid-h6|seed1 (1762, 1.6359, 333.4)
+19:19:44 long|alibi-hybrid-h6|seed1 (2643, 1.4792, 500.2)
+19:22:31 long|alibi-hybrid-h6|seed1 (3524, 1.4832, 667.0)
+19:25:18 long|alibi-hybrid-h6|seed1 (4405, 1.4332, 833.7)
+19:25:18 long|alibi-hybrid-h6|seed1 (4406, 1.3042, 833.9)
+19:25:25 DONE long|alibi-hybrid-h6|seed1 {'val_bpb': 1.3726, 'val_bpb_len2048': 1.3469, 'val_bpb_len4096': 1.4024, 'val_bpb_full': 1.4233}
+19:26:10 sweep|alibi-pure|0.001 (300, 2.3209, 41.9)
+19:26:52 sweep|alibi-pure|0.001 (600, 2.0012, 83.9)
+19:27:34 sweep|alibi-pure|0.001 (900, 1.8294, 125.9)
+19:28:16 sweep|alibi-pure|0.001 (1200, 1.6969, 167.9)
+19:28:58 sweep|alibi-pure|0.001 (1500, 1.6194, 209.8)
+19:29:02 DONE sweep|alibi-pure|0.001 1.649
+19:29:47 sweep|alibi-pure|0.003 (300, 2.3393, 42.0)
+19:30:29 sweep|alibi-pure|0.003 (600, 1.9487, 84.1)
+19:31:11 sweep|alibi-pure|0.003 (900, 1.8203, 126.2)
+19:31:53 sweep|alibi-pure|0.003 (1200, 1.6775, 168.3)
+19:32:36 sweep|alibi-pure|0.003 (1500, 1.5865, 210.4)
+19:32:40 DONE sweep|alibi-pure|0.003 1.6179
+19:34:46 long|alibi-pure|seed0 (881, 1.8639, 123.4)
+19:36:50 long|alibi-pure|seed0 (1762, 1.6611, 247.0)
+19:38:54 long|alibi-pure|seed0 (2643, 1.5772, 370.5)
+19:40:57 long|alibi-pure|seed0 (3524, 1.4208, 494.1)
+19:43:01 long|alibi-pure|seed0 (4405, 1.3456, 617.7)
+19:43:01 long|alibi-pure|seed0 (4406, 1.4382, 617.8)
+19:43:06 DONE long|alibi-pure|seed0 {'val_bpb': 1.3902, 'val_bpb_len2048': 1.3596, 'val_bpb_len4096': 1.4186, 'val_bpb_full': 1.441}
+19:45:12 long|alibi-pure|seed1 (881, 1.819, 123.5)
+19:47:15 long|alibi-pure|seed1 (1762, 1.6888, 247.1)
+19:49:19 long|alibi-pure|seed1 (2643, 1.519, 370.8)
+19:51:23 long|alibi-pure|seed1 (3524, 1.53, 494.4)
+19:53:26 long|alibi-pure|seed1 (4405, 1.4739, 618.1)
+19:53:26 long|alibi-pure|seed1 (4406, 1.349, 618.2)
+19:53:31 DONE long|alibi-pure|seed1 {'val_bpb': 1.3875, 'val_bpb_len2048': 1.3567, 'val_bpb_len4096': 1.414, 'val_bpb_full': 1.4398}
+19:53:31 ALL DONE

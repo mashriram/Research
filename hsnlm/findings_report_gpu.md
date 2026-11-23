@@ -48,7 +48,7 @@ Fixed token budget per step (B·N = 8192, so batch shrinks as context grows), 4 
 
 \* fp32/16384 and similar rows are single median-of-5 timings; †bf16 at 16k/32k showed run-to-run variance (105,892 vs a clean isolated re-measurement of 210,337 and 187,904 tok/s respectively — both re-measurements confirm sheaf-delta is well above GPT at these lengths, but treat the exact bf16 multiplier at 16-32k as "clearly >1x, magnitude ±40% uncertain" rather than a precise number; this needs more seeds/isolated runs to tighten.
 
-**Reading:** eager-mode HSN never had a chance on GPU — kernel-launch overhead from its many small ops makes it *worse* relative to the Transformer than on CPU (`hsn-eager` tok/s is 20-150x below GPT across the board, both dtypes; see raw data in `results/gpu_crossover.json`). The **fused** kernel changes the shape of the curve entirely: its tok/s is roughly flat in `N` (true O(N) scaling — compute per token doesn't grow with context) while GPT's falls steadily (O(N²) attention cost eventually dominates even with a fused flash-attention kernel). The crossover — the context length past which sheaf-delta trains faster — is **~1.5-2k tokens in fp32** and **~16-32k tokens in bf16** (bf16 matters because PyTorch's flash-attention path is tuned for reduced precision and gets ~2-6x faster under bf16 while our kernel gets only a modest 0-15% boost from bf16; the net effect is that **bf16 — the precision anyone would actually train in — pushes the crossover context much further out than the fp32 number suggests**). fp32 also loses outright above ctx 4096 for GPT/8192 for HSN (the "math" attention fallback, not flash, since fp32 doesn't get the fused CUDA kernel) — not shown as OOM rows for clarity, see `results/gpu_speed.json`.
+**Reading:** eager-mode HSN never had a chance on GPU — kernel-launch overhead from its many small ops makes it *worse* relative to the Transformer than on CPU (`hsn-eager` tok/s is 20-150x below GPT across the board, both dtypes; see raw data in `benchmark_results/development/fused_kernel_crossover/gpu_crossover.json`). The **fused** kernel changes the shape of the curve entirely: its tok/s is roughly flat in `N` (true O(N) scaling — compute per token doesn't grow with context) while GPT's falls steadily (O(N²) attention cost eventually dominates even with a fused flash-attention kernel). The crossover — the context length past which sheaf-delta trains faster — is **~1.5-2k tokens in fp32** and **~16-32k tokens in bf16** (bf16 matters because PyTorch's flash-attention path is tuned for reduced precision and gets ~2-6x faster under bf16 while our kernel gets only a modest 0-15% boost from bf16; the net effect is that **bf16 — the precision anyone would actually train in — pushes the crossover context much further out than the fp32 number suggests**). fp32 also loses outright above ctx 4096 for GPT/8192 for HSN (the "math" attention fallback, not flash, since fp32 doesn't get the fused CUDA kernel) — not shown as OOM rows for clarity, see `benchmark_results/development/speed_vs_length/gpu_speed.json`.
 
 ### 3.2 Same test at width 256 (`benchmarks/gpu_speed.py`) — crossover not reached, same card
 
@@ -382,24 +382,24 @@ Framing matters here: nothing in this report supports "better than Transformer i
 
 ```
 hsnlm/fastmixer_fused.py        FusedSheafDeltaMixer (fla chunk_gated_delta_rule), registered as mixer="sheafdelta-fused"
-benchmarks/gpu_suite.py         matched CPU-suite replication on GPU (results/gpu_suite.json)
-benchmarks/gpu_speed.py         width-256 context sweep, fp32+bf16 (results/gpu_speed.json)
-benchmarks/gpu_crossover.py     width-128 context sweep, fp32+bf16, the main G1 test (results/gpu_crossover.json)
+benchmarks/gpu_suite.py         matched CPU-suite replication on GPU (benchmark_results/development/gpu_suite/gpu_suite.json)
+benchmarks/gpu_speed.py         width-256 context sweep, fp32+bf16 (benchmark_results/development/speed_vs_length/gpu_speed.json)
+benchmarks/gpu_crossover.py     width-128 context sweep, fp32+bf16, the main G1 test (benchmark_results/development/fused_kernel_crossover/gpu_crossover.json)
 benchmarks/gpu_decode.py        O(1)-decode port, extended to ctx 65536
 benchmarks/gpu_reversible.py    reversible-memory port, extended to ctx 8192
-benchmarks/gpu_credit.py        backprop-alternatives port (results/gpu_credit.json)
-benchmarks/gpu_scale.py         ~14.6M-param run, GPT vs hsn-fused vs hybrid-fused (results/gpu_scale.json)
-benchmarks/gpu_ratio.py         G5 hybrid-ratio ablation, 14M scale (results/gpu_ratio.json)
-benchmarks/gpu_lowrank_mlp.py   fixed-rank low-rank MLP A/B test, 14M scale (results/gpu_lowrank_mlp.json)
-benchmarks/gpu_scale_ckpt.py    ~200M-param gradient-checkpointed run, GPT vs hsn-fused vs hybrid-fused 7:1 (results/gpu_scale_ckpt.json)
-benchmarks/gpu_scale_ckpt_31.py ~200M-param run, hybrid-fused with the 3:1 ratio (results/gpu_scale_ckpt_31.json)
-benchmarks/gpu_posenc.py           NoPE/ALiBi from scratch, bug-fixed (§5h, §5k) (results/gpu_posenc.json)
-benchmarks/gpu_posenc_recheck.py   pure ALiBi + ALiBi-hybrid, bug-fixed, nwin=64 matched (§5h) (results/gpu_posenc_recheck.json)
+benchmarks/gpu_credit.py        backprop-alternatives port (benchmark_results/development/credit_assignment/gpu_credit.json)
+benchmarks/gpu_scale.py         ~14.6M-param run, GPT vs hsn-fused vs hybrid-fused (benchmark_results/development/gpu_scale/gpu_scale.json)
+benchmarks/gpu_ratio.py         G5 hybrid-ratio ablation, 14M scale (benchmark_results/development/attention_ratio/gpu_ratio.json)
+benchmarks/gpu_lowrank_mlp.py   fixed-rank low-rank MLP A/B test, 14M scale (benchmark_results/development/lowrank_mlp/gpu_lowrank_mlp.json)
+benchmarks/gpu_scale_ckpt.py    ~200M-param gradient-checkpointed run, GPT vs hsn-fused vs hybrid-fused 7:1 (benchmark_results/development/gpu_scale_ckpt/gpu_scale_ckpt.json)
+benchmarks/gpu_scale_ckpt_31.py ~200M-param run, hybrid-fused with the 3:1 ratio (benchmark_results/development/gpu_scale_ckpt/gpu_scale_ckpt_31.json)
+benchmarks/gpu_posenc.py           NoPE/ALiBi from scratch, bug-fixed (§5h, §5k) (benchmark_results/development/positional_encoding/gpu_posenc.json)
+benchmarks/gpu_posenc_recheck.py   pure ALiBi + ALiBi-hybrid, bug-fixed, nwin=64 matched (§5h) (benchmark_results/development/positional_encoding/gpu_posenc_recheck.json)
 benchmarks/gpu_yarn.py / _recheck.py / _hybrid.py   YaRN on GPT and on the hybrid's attention layers (§5d, §5h)
-benchmarks/gpu_alibi_hybrid_ratio.py   4:1/5:1 ratio dilution with ALiBi attention, bug-fixed (§5k) (results/gpu_alibi_hybrid_4to1.json)
-benchmarks/gpu_swa_alibi_hybrid.py     sliding-window ALiBi-hybrid, bug-fixed (§5k) (results/gpu_swa_alibi_hybrid.json)
-benchmarks/gpu_multiseed_compiled.py   3-seed compiled recheck of RoPE-hybrid/pure-ALiBi/ALiBi-hybrid (§5i) (results/gpu_multiseed_compiled.json)
-benchmarks/gpu_isoquality_compiled.py  fair compiled iso-quality, GPT vs hybrid vs alibi-pure, with @2048/@4096 (§5e, §5i) (results/gpu_isoquality_compiled.json)
-benchmarks/gpu_reconcile_clean.py      width-128/ctx-16384 crossover, one isolated subprocess per arch (§5j) (results/gpu_reconcile_clean_{gpt,hsn-fused,hybrid}.json)
+benchmarks/gpu_alibi_hybrid_ratio.py   4:1/5:1 ratio dilution with ALiBi attention, bug-fixed (§5k) (benchmark_results/development/alibi_hybrid_ratio/gpu_alibi_hybrid_4to1.json)
+benchmarks/gpu_swa_alibi_hybrid.py     sliding-window ALiBi-hybrid, bug-fixed (§5k) (benchmark_results/development/sliding_window_alibi/gpu_swa_alibi_hybrid.json)
+benchmarks/gpu_multiseed_compiled.py   3-seed compiled recheck of RoPE-hybrid/pure-ALiBi/ALiBi-hybrid (§5i) (benchmark_results/paper/multiseed_compiled/gpu_multiseed_compiled.json)
+benchmarks/gpu_isoquality_compiled.py  fair compiled iso-quality, GPT vs hybrid vs alibi-pure, with @2048/@4096 (§5e, §5i) (benchmark_results/paper/isoquality_vs_rope/gpu_isoquality_compiled.json)
+benchmarks/gpu_reconcile_clean.py      width-128/ctx-16384 crossover, one isolated subprocess per arch (§5j) (benchmark_results/development/reconcile_speed_quality/gpu_reconcile_clean_{gpt,hsn-fused,hybrid}.json)
 ```
 Setup: `cd hsnlm && uv venv .venv --python 3.12 && source .venv/bin/activate && uv pip install torch --index-url https://download.pytorch.org/whl/cu124 numpy flash-linear-attention`. Data: `data/enwik8` (mattmahoney.net), `data/shakespeare.txt` (karpathy/char-rnn), fetched fresh — not checked into git.

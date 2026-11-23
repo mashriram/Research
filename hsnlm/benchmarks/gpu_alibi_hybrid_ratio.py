@@ -24,7 +24,7 @@ def spread_pattern(n_attn, n_layers):
         pat[pos] = "a"
     return "".join(pat)
 PATTERN = spread_pattern(N_ATTN, LAYERS)
-OUT = f"results/gpu_alibi_hybrid_{RATIO_NAME}.json"; os.makedirs("results", exist_ok=True)
+OUT = f"benchmark_results/development/alibi_hybrid_ratio/gpu_alibi_hybrid_{RATIO_NAME}.json"; os.makedirs("benchmark_results", exist_ok=True)
 R = json.load(open(OUT)) if os.path.exists(OUT) else {}
 def save(): json.dump(R, open(OUT, "w"), indent=1)
 def log(*a): print(time.strftime("%H:%M:%S"), *a, flush=True)

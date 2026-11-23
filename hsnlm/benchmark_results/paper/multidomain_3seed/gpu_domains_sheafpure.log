@@ -1,0 +1,111 @@
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+W1122 05:40:23.810000 1080508 torch/_inductor/utils.py:1137] [3/0_1] Not enough SMs to use max_autotune_gemm mode
+05:41:34 code|sheafdelta-pure|seed0 (300, 1.9756, 61.4)
+05:42:36 code|sheafdelta-pure|seed0 (600, 1.5561, 122.7)
+05:43:37 code|sheafdelta-pure|seed0 (900, 1.2834, 184.1)
+05:44:38 code|sheafdelta-pure|seed0 (1200, 1.3281, 245.5)
+05:45:40 code|sheafdelta-pure|seed0 (1500, 1.1171, 306.8)
+05:45:48 DONE code|sheafdelta-pure|seed0 {'tok_s': 80104.9243, 'val_bpb': 1.5757, 'val_bpb_len2048': 1.5528, 'val_bpb_len4096': 1.4207, 'val_bpb_full': 1.3881}
+05:46:51 code|sheafdelta-pure|seed1 (300, 1.8419, 61.3)
+05:47:53 code|sheafdelta-pure|seed1 (600, 1.8185, 122.7)
+05:48:54 code|sheafdelta-pure|seed1 (900, 1.6926, 184.0)
+05:49:55 code|sheafdelta-pure|seed1 (1200, 1.2996, 245.4)
+05:50:57 code|sheafdelta-pure|seed1 (1500, 1.0411, 306.8)
+05:51:04 DONE code|sheafdelta-pure|seed1 {'tok_s': 80116.8165, 'val_bpb': 1.5496, 'val_bpb_len2048': 1.525, 'val_bpb_len4096': 1.3899, 'val_bpb_full': 1.3673}
+05:52:08 code|sheafdelta-pure|seed2 (300, 2.1615, 61.3)
+05:53:10 code|sheafdelta-pure|seed2 (600, 1.9134, 122.7)
+05:54:11 code|sheafdelta-pure|seed2 (900, 1.6085, 184.0)
+05:55:12 code|sheafdelta-pure|seed2 (1200, 1.4906, 245.4)
+05:56:14 code|sheafdelta-pure|seed2 (1500, 1.3451, 306.8)
+05:56:22 DONE code|sheafdelta-pure|seed2 {'tok_s': 80109.7411, 'val_bpb': 1.539, 'val_bpb_len2048': 1.5136, 'val_bpb_len4096': 1.3793, 'val_bpb_full': 1.3682}
+05:57:25 hindi|sheafdelta-pure|seed0 (300, 1.245, 61.3)
+05:58:27 hindi|sheafdelta-pure|seed0 (600, 1.0392, 122.7)
+05:59:28 hindi|sheafdelta-pure|seed0 (900, 0.8788, 184.1)
+06:00:30 hindi|sheafdelta-pure|seed0 (1200, 0.7892, 245.5)
+06:01:31 hindi|sheafdelta-pure|seed0 (1500, 0.8942, 306.8)
+06:01:39 DONE hindi|sheafdelta-pure|seed0 {'tok_s': 80093.3658, 'val_bpb': 0.9404, 'val_bpb_len2048': 0.9355, 'val_bpb_len4096': 0.9036, 'val_bpb_full': 0.8774}
+06:02:42 hindi|sheafdelta-pure|seed1 (300, 1.25, 61.4)
+06:03:44 hindi|sheafdelta-pure|seed1 (600, 1.0598, 122.8)
+06:04:45 hindi|sheafdelta-pure|seed1 (900, 0.8416, 184.2)
+06:05:46 hindi|sheafdelta-pure|seed1 (1200, 0.8635, 245.5)
+06:06:48 hindi|sheafdelta-pure|seed1 (1500, 0.7822, 306.9)
+06:06:56 DONE hindi|sheafdelta-pure|seed1 {'tok_s': 80068.0014, 'val_bpb': 0.9349, 'val_bpb_len2048': 0.9293, 'val_bpb_len4096': 0.8993, 'val_bpb_full': 0.8761}
+06:07:59 hindi|sheafdelta-pure|seed2 (300, 1.0477, 61.3)
+06:09:01 hindi|sheafdelta-pure|seed2 (600, 0.9399, 122.7)
+06:10:02 hindi|sheafdelta-pure|seed2 (900, 0.8972, 184.1)
+06:11:03 hindi|sheafdelta-pure|seed2 (1200, 0.8439, 245.6)
+06:12:05 hindi|sheafdelta-pure|seed2 (1500, 0.7927, 307.0)
+06:12:13 DONE hindi|sheafdelta-pure|seed2 {'tok_s': 80064.4367, 'val_bpb': 0.9372, 'val_bpb_len2048': 0.932, 'val_bpb_len4096': 0.9009, 'val_bpb_full': 0.8764}
+06:13:16 zh|sheafdelta-pure|seed0 (300, 2.6408, 61.3)
+06:14:18 zh|sheafdelta-pure|seed0 (600, 2.3521, 122.6)
+06:15:19 zh|sheafdelta-pure|seed0 (900, 2.077, 184.0)
+06:16:20 zh|sheafdelta-pure|seed0 (1200, 1.6734, 245.3)
+06:17:22 zh|sheafdelta-pure|seed0 (1500, 1.794, 306.7)
+06:17:29 DONE zh|sheafdelta-pure|seed0 {'tok_s': 80133.6774, 'val_bpb': 2.3535, 'val_bpb_len2048': 2.3413, 'val_bpb_len4096': 2.3667, 'val_bpb_full': 2.0851}
+06:18:33 zh|sheafdelta-pure|seed1 (300, 2.6702, 61.3)
+06:19:34 zh|sheafdelta-pure|seed1 (600, 2.5763, 122.6)
+06:20:35 zh|sheafdelta-pure|seed1 (900, 2.1331, 184.0)
+06:21:37 zh|sheafdelta-pure|seed1 (1200, 1.8986, 245.3)
+06:22:38 zh|sheafdelta-pure|seed1 (1500, 1.999, 306.6)
+06:22:46 DONE zh|sheafdelta-pure|seed1 {'tok_s': 80147.6267, 'val_bpb': 2.3583, 'val_bpb_len2048': 2.3461, 'val_bpb_len4096': 2.3744, 'val_bpb_full': 2.0796}
+06:23:50 zh|sheafdelta-pure|seed2 (300, 2.6459, 61.3)
+06:24:51 zh|sheafdelta-pure|seed2 (600, 2.0372, 122.6)
+06:25:52 zh|sheafdelta-pure|seed2 (900, 2.1318, 184.0)
+06:26:54 zh|sheafdelta-pure|seed2 (1200, 2.2298, 245.3)
+06:27:55 zh|sheafdelta-pure|seed2 (1500, 1.782, 306.7)
+06:28:03 DONE zh|sheafdelta-pure|seed2 {'tok_s': 80129.7115, 'val_bpb': 2.3572, 'val_bpb_len2048': 2.3453, 'val_bpb_len4096': 2.3727, 'val_bpb_full': 2.0851}
+06:29:06 dna|sheafdelta-pure|seed0 (300, 1.6939, 61.4)
+06:30:08 dna|sheafdelta-pure|seed0 (600, 1.6107, 122.8)
+06:31:09 dna|sheafdelta-pure|seed0 (900, 1.6079, 184.3)
+06:32:11 dna|sheafdelta-pure|seed0 (1200, 1.5522, 245.7)
+06:33:12 dna|sheafdelta-pure|seed0 (1500, 1.5248, 307.2)
+06:33:20 DONE dna|sheafdelta-pure|seed0 {'tok_s': 80010.8221, 'val_bpb': 1.7601, 'val_bpb_len2048': 1.7589, 'val_bpb_len4096': 1.772, 'val_bpb_full': 1.7389}
+06:34:23 dna|sheafdelta-pure|seed1 (300, 1.5486, 61.4)
+06:35:25 dna|sheafdelta-pure|seed1 (600, 1.5624, 122.8)
+06:36:26 dna|sheafdelta-pure|seed1 (900, 1.841, 184.2)
+06:37:28 dna|sheafdelta-pure|seed1 (1200, 1.4949, 245.7)
+06:38:29 dna|sheafdelta-pure|seed1 (1500, 1.2296, 307.1)
+06:38:37 DONE dna|sheafdelta-pure|seed1 {'tok_s': 80024.8619, 'val_bpb': 1.7595, 'val_bpb_len2048': 1.7583, 'val_bpb_len4096': 1.7719, 'val_bpb_full': 1.7394}
+06:39:41 dna|sheafdelta-pure|seed2 (300, 1.827, 61.3)
+06:40:42 dna|sheafdelta-pure|seed2 (600, 1.5919, 122.8)
+06:41:44 dna|sheafdelta-pure|seed2 (900, 1.6078, 184.2)
+06:42:45 dna|sheafdelta-pure|seed2 (1200, 1.6671, 245.7)
+06:43:46 dna|sheafdelta-pure|seed2 (1500, 1.568, 307.1)
+06:43:54 DONE dna|sheafdelta-pure|seed2 {'tok_s': 80021.6848, 'val_bpb': 1.7589, 'val_bpb_len2048': 1.7581, 'val_bpb_len4096': 1.7708, 'val_bpb_full': 1.737}
+06:44:58 image|sheafdelta-pure|seed0 (300, 5.0034, 61.4)
+06:45:59 image|sheafdelta-pure|seed0 (600, 4.9338, 122.8)
+06:47:01 image|sheafdelta-pure|seed0 (900, 4.5902, 184.2)
+06:48:02 image|sheafdelta-pure|seed0 (1200, 4.9195, 245.6)
+06:49:03 image|sheafdelta-pure|seed0 (1500, 4.5663, 307.1)
+06:49:11 DONE image|sheafdelta-pure|seed0 {'tok_s': 80038.9919, 'val_bpb': 4.7597, 'val_bpb_len2048': 4.7559, 'val_bpb_len4096': 4.7658, 'val_bpb_full': 4.477}
+06:50:15 image|sheafdelta-pure|seed1 (300, 5.2455, 61.3)
+06:51:16 image|sheafdelta-pure|seed1 (600, 4.9234, 122.7)
+06:52:18 image|sheafdelta-pure|seed1 (900, 5.004, 184.1)
+06:53:19 image|sheafdelta-pure|seed1 (1200, 4.6755, 245.6)
+06:54:21 image|sheafdelta-pure|seed1 (1500, 4.8853, 307.0)
+06:54:28 DONE image|sheafdelta-pure|seed1 {'tok_s': 80057.9116, 'val_bpb': 4.7823, 'val_bpb_len2048': 4.7804, 'val_bpb_len4096': 4.7897, 'val_bpb_full': 4.4995}
+06:55:32 image|sheafdelta-pure|seed2 (300, 5.2119, 61.3)
+06:56:33 image|sheafdelta-pure|seed2 (600, 5.0873, 122.7)
+06:57:34 image|sheafdelta-pure|seed2 (900, 4.5761, 184.1)
+06:58:36 image|sheafdelta-pure|seed2 (1200, 4.4099, 245.6)
+06:59:37 image|sheafdelta-pure|seed2 (1500, 4.4976, 307.0)
+06:59:45 DONE image|sheafdelta-pure|seed2 {'tok_s': 80053.5949, 'val_bpb': 4.7828, 'val_bpb_len2048': 4.7796, 'val_bpb_len4096': 4.7922, 'val_bpb_full': 4.5046}
+07:00:49 audio|sheafdelta-pure|seed0 (300, 3.7815, 61.3)
+07:01:50 audio|sheafdelta-pure|seed0 (600, 3.4365, 122.6)
+07:02:52 audio|sheafdelta-pure|seed0 (900, 3.2672, 184.0)
+07:03:53 audio|sheafdelta-pure|seed0 (1200, 3.7999, 245.4)
+07:04:54 audio|sheafdelta-pure|seed0 (1500, 2.2099, 306.8)
+07:05:02 DONE audio|sheafdelta-pure|seed0 {'tok_s': 80098.5637, 'val_bpb': 3.2117, 'val_bpb_len2048': 3.2062, 'val_bpb_len4096': 2.9938, 'val_bpb_full': 3.3368}
+07:06:06 audio|sheafdelta-pure|seed1 (300, 3.6453, 61.4)
+07:07:07 audio|sheafdelta-pure|seed1 (600, 3.2325, 122.7)
+07:08:08 audio|sheafdelta-pure|seed1 (900, 3.8887, 184.1)
+07:09:10 audio|sheafdelta-pure|seed1 (1200, 3.0806, 245.5)
+07:10:11 audio|sheafdelta-pure|seed1 (1500, 2.5868, 306.9)
+07:10:19 DONE audio|sheafdelta-pure|seed1 {'tok_s': 80071.4015, 'val_bpb': 3.1935, 'val_bpb_len2048': 3.1874, 'val_bpb_len4096': 2.979, 'val_bpb_full': 3.3234}
+07:11:23 audio|sheafdelta-pure|seed2 (300, 3.8479, 61.3)
+07:12:24 audio|sheafdelta-pure|seed2 (600, 3.4266, 122.6)
+07:13:25 audio|sheafdelta-pure|seed2 (900, 2.8877, 184.0)
+07:14:27 audio|sheafdelta-pure|seed2 (1200, 2.7521, 245.4)
+07:15:28 audio|sheafdelta-pure|seed2 (1500, 2.7593, 306.8)
+07:15:36 DONE audio|sheafdelta-pure|seed2 {'tok_s': 80105.9407, 'val_bpb': 3.2082, 'val_bpb_len2048': 3.2023, 'val_bpb_len4096': 2.9899, 'val_bpb_full': 3.333}
+07:15:36 ALL DONE

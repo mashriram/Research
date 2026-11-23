@@ -55,11 +55,12 @@ class SheafDeltaMixer(nn.Module):
         s.g = nn.Linear(D, D, bias=False); s.out = nn.Linear(D, D, bias=False); s.edge = nn.Linear(D, s.K * H)
         s.V = nn.Parameter(torch.randn(s.K, s.M, D)); s.onorm = RMSNorm(s.dh)
         s.postnorm, s.postnorm_scaled, s.token_shift = c.postnorm, c.postnorm_scaled, c.token_shift
+        s.beta_max = getattr(c, "beta_max", 2.0)
         if s.token_shift: s.alpha_q = nn.Parameter(torch.full((H, 1), 0.5)); s.alpha_k = nn.Parameter(torch.full((H, 1), 0.5))
     def _proj_raw(s, x):
         sh = x.shape[:-1]; q, k, v = s.qkv(x).view(*sh, 3, s.H, s.dh).unbind(-3)
         b, a = s.ba(x).view(*sh, 2, s.H).unbind(-2)
-        return q, k, v, 2 * torch.sigmoid(b), 0.8 + 0.2 * torch.sigmoid(a)
+        return q, k, v, s.beta_max * torch.sigmoid(b), 0.8 + 0.2 * torch.sigmoid(a)
     def _proj(s, x):  # forward(): x is [B,T,D], shift (if on) done vectorized over T
         q, k, v, b, a = s._proj_raw(x)
         if s.token_shift:

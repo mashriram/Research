@@ -14,7 +14,7 @@ torch.backends.cudnn.benchmark = True
 DIM, HEADS, LAYERS, CTX, B, VOCAB = 384, 8, 8, 1024, 16, 256
 STEPS = 1500
 PATTERN = "dddaddda"  # the §5a winner: 2 attention layers of 8, evenly spread
-OUT = "results/gpu_alibi_hybrid.json"; os.makedirs("results", exist_ok=True)
+OUT = "benchmark_results/development/alibi_hybrid_ratio/gpu_alibi_hybrid.json"; os.makedirs("benchmark_results", exist_ok=True)
 R = json.load(open(OUT)) if os.path.exists(OUT) else {}
 def save(): json.dump(R, open(OUT, "w"), indent=1)
 def log(*a): print(time.strftime("%H:%M:%S"), *a, flush=True)

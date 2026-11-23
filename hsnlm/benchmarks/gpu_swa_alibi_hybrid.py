@@ -21,8 +21,8 @@ torch.backends.cudnn.benchmark = True
 DIM, HEADS, LAYERS, CTX, B, VOCAB = 384, 8, 8, 1024, 16, 256
 STEPS = 1500
 PATTERN = "dddaddda"
-OUT = "results/gpu_swa_alibi_hybrid.json"
-os.makedirs("results", exist_ok=True)
+OUT = "benchmark_results/development/sliding_window_alibi/gpu_swa_alibi_hybrid.json"
+os.makedirs("benchmark_results", exist_ok=True)
 R = json.load(open(OUT)) if os.path.exists(OUT) else {}
 def save(): json.dump(R, open(OUT, "w"), indent=1)
 def log(*a): print(time.strftime("%H:%M:%S"), *a, flush=True)
@@ -227,7 +227,7 @@ def bench_decode_o1():
 
 if __name__ == "__main__":
     # Wait for running 4to1 job to finish so there is zero GPU contention
-    f4to1 = "results/gpu_alibi_hybrid_4to1.json"
+    f4to1 = "benchmark_results/development/alibi_hybrid_ratio/gpu_alibi_hybrid_4to1.json"
     while os.path.exists(f4to1):
         try:
             d4 = json.load(open(f4to1))

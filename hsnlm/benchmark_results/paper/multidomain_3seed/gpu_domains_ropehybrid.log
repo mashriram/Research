@@ -1,0 +1,39 @@
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+W1121 18:16:46.021000 712831 torch/_inductor/utils.py:1137] [6/0] Not enough SMs to use max_autotune_gemm mode
+18:17:50 image|rope-hybrid-h6|seed0 (300, 4.5827, 58.9)
+18:18:49 image|rope-hybrid-h6|seed0 (600, 4.5191, 117.8)
+18:19:48 image|rope-hybrid-h6|seed0 (900, 4.1193, 176.7)
+18:20:47 image|rope-hybrid-h6|seed0 (1200, 4.2625, 235.6)
+18:21:46 image|rope-hybrid-h6|seed0 (1500, 4.0107, 294.4)
+18:21:54 DONE image|rope-hybrid-h6|seed0 {'tok_s': 83464.5584, 'val_bpb': 4.1782, 'val_bpb_len2048': 4.4433, 'val_bpb_len4096': 5.0601, 'val_bpb_full': 3.9418}
+18:22:56 image|rope-hybrid-h6|seed1 (300, 4.7796, 58.8)
+18:23:54 image|rope-hybrid-h6|seed1 (600, 4.4289, 117.6)
+18:24:53 image|rope-hybrid-h6|seed1 (900, 4.536, 176.5)
+18:25:52 image|rope-hybrid-h6|seed1 (1200, 4.1569, 235.4)
+18:26:51 image|rope-hybrid-h6|seed1 (1500, 4.3287, 294.3)
+18:26:58 DONE image|rope-hybrid-h6|seed1 {'tok_s': 83512.9621, 'val_bpb': 4.1756, 'val_bpb_len2048': 4.614, 'val_bpb_len4096': 5.2296, 'val_bpb_full': 3.9383}
+18:28:00 image|rope-hybrid-h6|seed2 (300, 4.7482, 58.9)
+18:28:59 image|rope-hybrid-h6|seed2 (600, 4.5244, 117.8)
+18:29:58 image|rope-hybrid-h6|seed2 (900, 4.0985, 176.7)
+18:30:57 image|rope-hybrid-h6|seed2 (1200, 3.9298, 235.6)
+18:31:56 image|rope-hybrid-h6|seed2 (1500, 3.9674, 294.4)
+18:32:03 DONE image|rope-hybrid-h6|seed2 {'tok_s': 83467.6677, 'val_bpb': 4.1929, 'val_bpb_len2048': 4.6134, 'val_bpb_len4096': 5.3564, 'val_bpb_full': 3.9607}
+18:33:05 code|rope-hybrid-h6|seed0 (300, 1.8839, 58.9)
+18:34:04 code|rope-hybrid-h6|seed0 (600, 1.3103, 117.7)
+18:35:02 code|rope-hybrid-h6|seed0 (900, 1.0841, 176.6)
+18:36:01 code|rope-hybrid-h6|seed0 (1200, 1.0732, 235.4)
+18:37:00 code|rope-hybrid-h6|seed0 (1500, 0.9681, 294.3)
+18:37:07 DONE code|rope-hybrid-h6|seed0 {'tok_s': 83514.947, 'val_bpb': 1.2879, 'val_bpb_len2048': 1.2303, 'val_bpb_len4096': 1.1295, 'val_bpb_full': 1.1395}
+18:38:09 code|rope-hybrid-h6|seed1 (300, 1.7465, 58.7)
+18:39:08 code|rope-hybrid-h6|seed1 (600, 1.4807, 117.5)
+18:40:06 code|rope-hybrid-h6|seed1 (900, 1.3742, 176.4)
+18:41:05 code|rope-hybrid-h6|seed1 (1200, 1.1435, 235.2)
+18:42:04 code|rope-hybrid-h6|seed1 (1500, 0.8884, 294.0)
+18:42:11 DONE code|rope-hybrid-h6|seed1 {'tok_s': 83578.2868, 'val_bpb': 1.2997, 'val_bpb_len2048': 1.2455, 'val_bpb_len4096': 1.1413, 'val_bpb_full': 1.1477}
+18:43:13 code|rope-hybrid-h6|seed2 (300, 2.1268, 58.7)
+18:44:12 code|rope-hybrid-h6|seed2 (600, 1.6472, 117.5)
+18:45:10 code|rope-hybrid-h6|seed2 (900, 1.3606, 176.4)
+18:46:09 code|rope-hybrid-h6|seed2 (1200, 1.2417, 235.2)
+18:47:08 code|rope-hybrid-h6|seed2 (1500, 1.1592, 294.0)
+18:47:15 DONE code|rope-hybrid-h6|seed2 {'tok_s': 83583.128, 'val_bpb': 1.2949, 'val_bpb_len2048': 1.2449, 'val_bpb_len4096': 1.1384, 'val_bpb_full': 1.148}
+18:47:16 ALL DONE

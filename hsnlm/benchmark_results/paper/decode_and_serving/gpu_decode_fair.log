@@ -1,0 +1,85 @@
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+07:43:06 check alibi-hybrid-h6 {'step_vs_forward_maxabs': 0.005783259868621826, 'logit_scale': 0.3165908455848694, 'sheaf_step_vs_library_maxabs': 0.0}
+07:43:06 check alibi-pure {'step_vs_forward_maxabs': 1.3709068298339844e-06, 'logit_scale': 0.3207136392593384, 'sheaf_step_vs_library_maxabs': None}
+07:43:07 check rope-gpt {'step_vs_forward_maxabs': 1.1920928955078125e-06, 'logit_scale': 0.3139537572860718, 'sheaf_step_vs_library_maxabs': None}
+07:43:08 alibi-hybrid-h6|1024|B1|eager {'status': 'ok', 'ms_per_step': 4.085856500751106, 'tok_s': 244.74672564153178, 'peak_mem_mb': 68.246016, 'cache_mb': 3.514368, 'weights_mb': 28.872696}
+07:43:08 alibi-hybrid-h6|1024|B1|graph {'status': 'ok', 'ms_per_step': 0.9238729981007054, 'tok_s': 1082.3998558847331, 'peak_mem_mb': 68.246016, 'cache_mb': 3.514368, 'weights_mb': 28.872696}
+07:43:08 alibi-hybrid-h6|1024|B8|graph {'status': 'ok', 'ms_per_step': 1.2202840007375926, 'tok_s': 6555.850929098843, 'peak_mem_mb': 95.03232, 'cache_mb': 28.114944, 'weights_mb': 28.872696}
+07:43:09 alibi-hybrid-h6|1024|B32|graph {'status': 'ok', 'ms_per_step': 2.16235850166413, 'tok_s': 14798.656178137488, 'peak_mem_mb': 193.491456, 'cache_mb': 112.459776, 'weights_mb': 28.872696}
+07:43:10 alibi-hybrid-h6|1024|B128|graph {'status': 'ok', 'ms_per_step': 6.518019003124209, 'tok_s': 19637.86849020342, 'peak_mem_mb': 562.043904, 'cache_mb': 449.839104, 'weights_mb': 28.872696}
+07:43:10 alibi-hybrid-h6|4096|B1|eager {'status': 'ok', 'ms_per_step': 4.158440999162849, 'tok_s': 240.47473565245093, 'peak_mem_mb': 110.844416, 'cache_mb': 12.951552, 'weights_mb': 28.872696}
+07:43:11 alibi-hybrid-h6|4096|B1|graph {'status': 'ok', 'ms_per_step': 1.2317710024944972, 'tok_s': 811.8392119759836, 'peak_mem_mb': 110.844416, 'cache_mb': 12.951552, 'weights_mb': 28.872696}
+07:43:11 alibi-hybrid-h6|4096|B8|graph {'status': 'ok', 'ms_per_step': 1.7205250005645212, 'tok_s': 4649.743536057379, 'peak_mem_mb': 204.657664, 'cache_mb': 103.612416, 'weights_mb': 28.872696}
+07:43:12 alibi-hybrid-h6|4096|B32|graph {'status': 'ok', 'ms_per_step': 4.113035502086859, 'tok_s': 7780.141937448374, 'peak_mem_mb': 529.609216, 'cache_mb': 414.449664, 'weights_mb': 28.872696}
+07:43:14 alibi-hybrid-h6|4096|B128|graph {'status': 'ok', 'ms_per_step': 14.265965000959113, 'tok_s': 8972.403899168017, 'peak_mem_mb': 1804.131328, 'cache_mb': 1657.798656, 'weights_mb': 28.872696}
+07:43:15 alibi-hybrid-h6|16384|B1|eager {'status': 'ok', 'ms_per_step': 4.905120000330498, 'tok_s': 203.86861074400252, 'peak_mem_mb': 168.138752, 'cache_mb': 50.700288, 'weights_mb': 28.872696}
+07:43:15 alibi-hybrid-h6|16384|B1|graph {'status': 'ok', 'ms_per_step': 2.5418389996048063, 'tok_s': 393.41594812081945, 'peak_mem_mb': 176.659456, 'cache_mb': 50.700288, 'weights_mb': 28.872696}
+07:43:16 alibi-hybrid-h6|16384|B8|graph {'status': 'ok', 'ms_per_step': 4.456862501683645, 'tok_s': 1794.9846998820096, 'peak_mem_mb': 540.92288, 'cache_mb': 405.602304, 'weights_mb': 28.872696}
+07:43:18 alibi-hybrid-h6|16384|B32|graph {'status': 'ok', 'ms_per_step': 12.707270499959122, 'tok_s': 2518.2433946064925, 'peak_mem_mb': 1771.844096, 'cache_mb': 1622.409216, 'weights_mb': 28.872696}
+07:43:23 alibi-hybrid-h6|16384|B128|graph {'status': 'ok', 'ms_per_step': 47.95772850047797, 'tok_s': 2669.0171532774802, 'peak_mem_mb': 6670.244864, 'cache_mb': 6489.636864, 'weights_mb': 28.872696}
+07:43:24 alibi-hybrid-h6|65536|B1|eager {'status': 'ok', 'ms_per_step': 9.370017502078554, 'tok_s': 106.72338656551813, 'peak_mem_mb': 354.981888, 'cache_mb': 201.695232, 'weights_mb': 28.872696}
+07:43:26 alibi-hybrid-h6|65536|B1|graph {'status': 'ok', 'ms_per_step': 7.4636835015553515, 'tok_s': 133.98210143712697, 'peak_mem_mb': 363.501568, 'cache_mb': 201.695232, 'weights_mb': 28.872696}
+07:43:27 alibi-hybrid-h6|65536|B8|graph {'status': 'ok', 'ms_per_step': 13.621490503282985, 'tok_s': 587.3072405748753, 'peak_mem_mb': 1784.349184, 'cache_mb': 1613.561856, 'weights_mb': 28.872696}
+07:43:33 alibi-hybrid-h6|65536|B32|graph {'status': 'ok', 'ms_per_step': 47.47296549976454, 'tok_s': 674.0678544751689, 'peak_mem_mb': 6638.547456, 'cache_mb': 6454.247424, 'weights_mb': 28.872696}
+07:43:33 alibi-hybrid-h6|65536|B128|graph {'status': 'OOM'}
+07:43:34 alibi-pure|1024|B1|eager {'status': 'ok', 'ms_per_step': 1.3315555006556679, 'tok_s': 751.0013660771876, 'peak_mem_mb': 202.659328, 'cache_mb': 12.582912, 'weights_mb': 28.521216}
+07:43:34 alibi-pure|1024|B1|graph {'status': 'ok', 'ms_per_step': 0.7838755009288434, 'tok_s': 1275.7127870625661, 'peak_mem_mb': 202.659328, 'cache_mb': 12.582912, 'weights_mb': 28.521216}
+07:43:34 alibi-pure|1024|B8|graph {'status': 'ok', 'ms_per_step': 1.1948020037380047, 'tok_s': 6695.670056604821, 'peak_mem_mb': 292.519424, 'cache_mb': 100.663296, 'weights_mb': 28.521216}
+07:43:35 alibi-pure|1024|B32|graph {'status': 'ok', 'ms_per_step': 3.334095501486445, 'tok_s': 9597.80545750216, 'peak_mem_mb': 603.323904, 'cache_mb': 402.653184, 'weights_mb': 28.521216}
+07:43:36 alibi-pure|1024|B128|graph {'status': 'ok', 'ms_per_step': 11.722796498361276, 'tok_s': 10918.896358722344, 'peak_mem_mb': 1820.983296, 'cache_mb': 1610.612736, 'weights_mb': 28.521216}
+07:43:37 alibi-pure|4096|B1|eager {'status': 'ok', 'ms_per_step': 2.341397997952299, 'tok_s': 427.09526568082975, 'peak_mem_mb': 259.509248, 'cache_mb': 50.331648, 'weights_mb': 28.521216}
+07:43:37 alibi-pure|4096|B1|graph {'status': 'ok', 'ms_per_step': 2.1287309973558877, 'tok_s': 469.7634418073995, 'peak_mem_mb': 268.028928, 'cache_mb': 50.331648, 'weights_mb': 28.521216}
+07:43:38 alibi-pure|4096|B8|graph {'status': 'ok', 'ms_per_step': 3.555627499736147, 'tok_s': 2249.9544737444116, 'peak_mem_mb': 628.699648, 'cache_mb': 402.653184, 'weights_mb': 28.521216}
+07:43:40 alibi-pure|4096|B32|graph {'status': 'ok', 'ms_per_step': 12.178993496490875, 'tok_s': 2627.4749230484554, 'peak_mem_mb': 1845.411328, 'cache_mb': 1610.612736, 'weights_mb': 28.521216}
+07:43:45 alibi-pure|4096|B128|graph {'status': 'ok', 'ms_per_step': 45.87529399941559, 'tok_s': 2790.1728542956175, 'peak_mem_mb': 6686.949376, 'cache_mb': 6442.450944, 'weights_mb': 28.521216}
+07:43:46 alibi-pure|16384|B1|eager {'status': 'ok', 'ms_per_step': 7.412326998746721, 'tok_s': 134.91039995524756, 'peak_mem_mb': 444.976128, 'cache_mb': 201.326592, 'weights_mb': 28.521216}
+07:43:47 alibi-pure|16384|B1|graph {'status': 'ok', 'ms_per_step': 7.19568349813926, 'tok_s': 138.9722046916865, 'peak_mem_mb': 453.495808, 'cache_mb': 201.326592, 'weights_mb': 28.521216}
+07:43:49 alibi-pure|16384|B8|graph {'status': 'ok', 'ms_per_step': 12.92166750135948, 'tok_s': 619.1151412275796, 'peak_mem_mb': 1871.327744, 'cache_mb': 1610.612736, 'weights_mb': 28.521216}
+07:43:54 alibi-pure|16384|B32|graph {'status': 'ok', 'ms_per_step': 46.74814100144431, 'tok_s': 684.5191982930688, 'peak_mem_mb': 6711.777792, 'cache_mb': 6442.450944, 'weights_mb': 28.521216}
+07:43:55 alibi-pure|16384|B128|graph {'status': 'OOM'}
+07:43:58 alibi-pure|65536|B1|eager {'status': 'ok', 'ms_per_step': 27.644535999570508, 'tok_s': 36.173513638121335, 'peak_mem_mb': 1076.87424, 'cache_mb': 805.306368, 'weights_mb': 28.521216}
+07:44:01 alibi-pure|65536|B1|graph {'status': 'ok', 'ms_per_step': 27.358987998013617, 'tok_s': 36.551059566699045, 'peak_mem_mb': 1085.39392, 'cache_mb': 805.306368, 'weights_mb': 28.521216}
+07:44:07 alibi-pure|65536|B8|graph {'status': 'ok', 'ms_per_step': 51.4454289987043, 'tok_s': 155.50458331684797, 'peak_mem_mb': 6731.084288, 'cache_mb': 6442.450944, 'weights_mb': 28.521216}
+07:44:07 alibi-pure|65536|B32|graph {'status': 'OOM'}
+07:44:08 alibi-pure|65536|B128|graph {'status': 'OOM'}
+07:44:08 rope-gpt|1024|B1|eager {'status': 'ok', 'ms_per_step': 3.5395184968365356, 'tok_s': 282.52430405258673, 'peak_mem_mb': 313.415168, 'cache_mb': 12.582912, 'weights_mb': 28.521216}
+07:44:09 rope-gpt|1024|B1|graph {'status': 'ok', 'ms_per_step': 0.892031497642165, 'tok_s': 1121.0366479695163, 'peak_mem_mb': 313.415168, 'cache_mb': 12.582912, 'weights_mb': 28.521216}
+07:44:09 rope-gpt|1024|B8|graph {'status': 'ok', 'ms_per_step': 1.7503795024822466, 'tok_s': 4570.437432942426, 'peak_mem_mb': 403.27168, 'cache_mb': 100.663296, 'weights_mb': 28.521216}
+07:44:10 rope-gpt|1024|B32|graph {'status': 'ok', 'ms_per_step': 4.2258710018359125, 'tok_s': 7572.403413662587, 'peak_mem_mb': 714.113024, 'cache_mb': 402.653184, 'weights_mb': 28.521216}
+07:44:12 rope-gpt|1024|B128|graph {'status': 'ok', 'ms_per_step': 14.469390498561552, 'tok_s': 8846.26066403591, 'peak_mem_mb': 1923.400192, 'cache_mb': 1610.612736, 'weights_mb': 28.521216}
+07:44:12 rope-gpt|4096|B1|eager {'status': 'ok', 'ms_per_step': 3.516493503411766, 'tok_s': 284.37419236798866, 'peak_mem_mb': 361.56672, 'cache_mb': 50.331648, 'weights_mb': 28.521216}
+07:44:13 rope-gpt|4096|B1|graph {'status': 'ok', 'ms_per_step': 1.0877765016630292, 'tok_s': 919.306492161916, 'peak_mem_mb': 361.568768, 'cache_mb': 50.331648, 'weights_mb': 28.521216}
+07:44:13 rope-gpt|4096|B8|graph {'status': 'ok', 'ms_per_step': 4.331235501012998, 'tok_s': 1847.048030089554, 'peak_mem_mb': 713.781248, 'cache_mb': 402.653184, 'weights_mb': 28.521216}
+07:44:15 rope-gpt|4096|B32|graph {'status': 'ok', 'ms_per_step': 14.336053500301205, 'tok_s': 2232.1345270738334, 'peak_mem_mb': 1922.072576, 'cache_mb': 1610.612736, 'weights_mb': 28.521216}
+07:44:22 rope-gpt|4096|B128|graph {'status': 'ok', 'ms_per_step': 55.84580449794885, 'tok_s': 2292.0253571546505, 'peak_mem_mb': 6755.2384, 'cache_mb': 6442.450944, 'weights_mb': 28.521216}
+07:44:22 rope-gpt|16384|B1|eager {'status': 'ok', 'ms_per_step': 3.552530997694703, 'tok_s': 281.48945094326183, 'peak_mem_mb': 512.365056, 'cache_mb': 201.326592, 'weights_mb': 28.521216}
+07:44:23 rope-gpt|16384|B1|graph {'status': 'ok', 'ms_per_step': 1.9137784984195605, 'tok_s': 522.5265101608267, 'peak_mem_mb': 512.367104, 'cache_mb': 201.326592, 'weights_mb': 28.521216}
+07:44:25 rope-gpt|16384|B8|graph {'status': 'ok', 'ms_per_step': 15.095021000888664, 'tok_s': 529.9760761862491, 'peak_mem_mb': 1921.7408, 'cache_mb': 1610.612736, 'weights_mb': 28.521216}
+07:44:31 rope-gpt|16384|B32|graph {'status': 'ok', 'ms_per_step': 56.04545700043673, 'tok_s': 570.9651006994313, 'peak_mem_mb': 6753.910784, 'cache_mb': 6442.450944, 'weights_mb': 28.521216}
+07:44:32 rope-gpt|16384|B128|graph {'status': 'OOM'}
+07:44:32 rope-gpt|65536|B1|eager {'status': 'ok', 'ms_per_step': 5.6688024997129105, 'tok_s': 176.404099463801, 'peak_mem_mb': 1116.344832, 'cache_mb': 805.306368, 'weights_mb': 28.521216}
+07:44:33 rope-gpt|65536|B1|graph {'status': 'ok', 'ms_per_step': 5.514034502994036, 'tok_s': 181.3554121681711, 'peak_mem_mb': 1116.34688, 'cache_mb': 805.306368, 'weights_mb': 28.521216}
+07:44:40 rope-gpt|65536|B8|graph {'status': 'ok', 'ms_per_step': 58.11516000176198, 'tok_s': 137.65771271656914, 'peak_mem_mb': 6753.579008, 'cache_mb': 6442.450944, 'weights_mb': 28.521216}
+07:44:41 rope-gpt|65536|B32|graph {'status': 'OOM'}
+07:44:41 rope-gpt|65536|B128|graph {'status': 'OOM'}
+07:44:49 capacity|alibi-hybrid-h6|4096 {'max_batch': 512, 'status': 'ok', 'ms_per_step': 59.79071750334697, 'tok_s': 8563.202138715584, 'peak_mem_mb': 7056.273408, 'cache_mb': 6631.194624, 'weights_mb': 28.872696}
+07:44:56 capacity|alibi-hybrid-h6|16384 {'max_batch': 128, 'status': 'ok', 'ms_per_step': 48.1275980018836, 'tok_s': 2659.596682863549, 'peak_mem_mb': 6832.118784, 'cache_mb': 6489.636864, 'weights_mb': 28.872696}
+07:45:03 capacity|alibi-hybrid-h6|65536 {'max_batch': 32, 'status': 'ok', 'ms_per_step': 47.502649500529515, 'tok_s': 673.6466352185955, 'peak_mem_mb': 6774.862336, 'cache_mb': 6454.247424, 'weights_mb': 28.872696}
+07:45:10 capacity|alibi-pure|4096 {'max_batch': 128, 'status': 'ok', 'ms_per_step': 45.357989001786336, 'tok_s': 2821.99459934079, 'peak_mem_mb': 6755.106816, 'cache_mb': 6442.450944, 'weights_mb': 28.521216}
+07:45:17 capacity|alibi-pure|16384 {'max_batch': 32, 'status': 'ok', 'ms_per_step': 47.18203099764651, 'tok_s': 678.2243011454127, 'peak_mem_mb': 6754.376192, 'cache_mb': 6442.450944, 'weights_mb': 28.521216}
+07:45:24 capacity|alibi-pure|65536 {'max_batch': 8, 'status': 'ok', 'ms_per_step': 51.54289599886397, 'tok_s': 155.21052600878934, 'peak_mem_mb': 6756.643328, 'cache_mb': 6442.450944, 'weights_mb': 28.521216}
+07:45:32 capacity|rope-gpt|4096 {'max_batch': 128, 'status': 'ok', 'ms_per_step': 56.43216450334876, 'tok_s': 2268.2100026910066, 'peak_mem_mb': 6755.2384, 'cache_mb': 6442.450944, 'weights_mb': 28.521216}
+07:45:38 capacity|rope-gpt|16384 {'max_batch': 32, 'status': 'ok', 'ms_per_step': 56.27830900266417, 'tok_s': 568.6027275354905, 'peak_mem_mb': 6753.910784, 'cache_mb': 6442.450944, 'weights_mb': 28.521216}
+07:45:44 capacity|rope-gpt|65536 {'max_batch': 8, 'status': 'ok', 'ms_per_step': 58.93554800059064, 'tok_s': 135.74150527827152, 'peak_mem_mb': 6753.579008, 'cache_mb': 6442.450944, 'weights_mb': 28.521216}
+07:45:44 ALL DONE
+Current Triton version 3.2.0 is below the recommended 3.3.0 version. Errors may occur and these issues will not be fixed. Please consider upgrading Triton.
+07:49:06 capacity|alibi-hybrid-h6|4096 {'max_batch': 576, 'status': 'ok', 'ms_per_step': 67.47114400423015, 'tok_s': 8536.982861353103, 'peak_mem_mb': 7728.882688, 'cache_mb': 7460.093952, 'weights_mb': 28.872696}
+07:49:16 capacity|alibi-hybrid-h6|16384 {'max_batch': 144, 'status': 'ok', 'ms_per_step': 54.28300550192944, 'tok_s': 2652.763948283624, 'peak_mem_mb': 7549.824, 'cache_mb': 7300.841472, 'weights_mb': 28.872696}
+07:49:26 capacity|alibi-hybrid-h6|65536 {'max_batch': 36, 'status': 'ok', 'ms_per_step': 52.306446497823345, 'tok_s': 688.2516861759685, 'peak_mem_mb': 7546.467328, 'cache_mb': 7261.028352, 'weights_mb': 28.872696}
+07:49:37 capacity|alibi-pure|4096 {'max_batch': 144, 'status': 'ok', 'ms_per_step': 51.7717314978654, 'tok_s': 2781.440678798569, 'peak_mem_mb': 7553.503232, 'cache_mb': 7247.757312, 'weights_mb': 28.521216}
+07:49:47 capacity|alibi-pure|16384 {'max_batch': 36, 'status': 'ok', 'ms_per_step': 51.424258501356235, 'tok_s': 700.0587086549932, 'peak_mem_mb': 7552.590848, 'cache_mb': 7247.757312, 'weights_mb': 28.521216}
+07:49:57 capacity|alibi-pure|65536 {'max_batch': 9, 'status': 'ok', 'ms_per_step': 55.22458849736722, 'tok_s': 162.9708838922189, 'peak_mem_mb': 7554.847232, 'cache_mb': 7247.757312, 'weights_mb': 28.521216}
+07:50:09 capacity|rope-gpt|4096 {'max_batch': 144, 'status': 'ok', 'ms_per_step': 63.080646003072616, 'tok_s': 2282.792094313458, 'peak_mem_mb': 7553.659392, 'cache_mb': 7247.757312, 'weights_mb': 28.521216}
+07:50:20 capacity|rope-gpt|16384 {'max_batch': 36, 'status': 'ok', 'ms_per_step': 62.29974650341319, 'tok_s': 577.8514684329845, 'peak_mem_mb': 7552.165376, 'cache_mb': 7247.757312, 'weights_mb': 28.521216}
+07:50:28 capacity|rope-gpt|65536 {'max_batch': 9, 'status': 'ok', 'ms_per_step': 62.468074498610804, 'tok_s': 144.07359394757952, 'peak_mem_mb': 7551.794176, 'cache_mb': 7247.757312, 'weights_mb': 28.521216}
+07:50:28 ALL DONE

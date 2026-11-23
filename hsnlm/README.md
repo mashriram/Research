@@ -47,7 +47,7 @@ uv pip install torch --index-url https://download.pytorch.org/whl/cu124 numpy fl
 #   data/shakespeare.txt  — karpathy/char-rnn
 ```
 
-All benchmark scripts live in `benchmarks/`, and their raw results in `results/` (as JSON + logs). The scripts referenced throughout the docs above (e.g. `gpu_ratio.py`, `gpu_posenc.py`, `gpu_isoquality_compiled.py`) are runnable as-is once the data files above are in place. See `findings_report_gpu.md` §12 for the full list and what each one measures.
+All benchmark scripts live in `benchmarks/` (map: [benchmarks/README.md](benchmarks/README.md)). Every benchmark has its own folder under `benchmark_results/paper/` or `benchmark_results/development/` with its JSON results, logs, and a README explaining what it tests, how to reproduce it, and the results (index: [benchmark_results/README.md](benchmark_results/README.md)). The scripts referenced throughout the docs above (e.g. `gpu_ratio.py`, `gpu_posenc.py`, `gpu_isoquality_compiled.py`) are runnable as-is once the data files above are in place. See `findings_report_gpu.md` §12 for the full list and what each one measures.
 
 ## Status
 
